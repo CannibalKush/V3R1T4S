@@ -1,0 +1,112 @@
+{
+ "source": {
+  "url": "https://web.mat.upc.edu/francesc.comellas/delta-d/table_degree_diameter.html",
+  "fetched_utc": "2026-10-10T19:22:57Z",
+  "http_last_modified": "Sat, 10 Oct 2026 10:26:18 GMT",
+  "etag": "\"b40c-65d79e532c680\"",
+  "bytes": 46092,
+  "sha256": "5482007a83c3ec57cfa03a9df9af0fa98336fd7c5f7509c49ea1cf202b8bfea3",
+  "method": "one plain curl GET with the default curl User-Agent, no cookies, no retries; parsed with parse_comellas_table.py (126 cells); only our seven cells are recorded here, the page itself is not redistributed",
+  "page_change_since_2026-10-08_snapshot": "new version (Last-Modified 2026-10-10); the legend adds Nishant Bhakar (3,7) and (4,6), October 9, 2026; none of our seven cells changed"
+ },
+ "cells": {
+  "(15,4)": {
+   "degree": 15,
+   "diameter": 4,
+   "live_entry": 11780,
+   "live_entry_raw_text": "11 780",
+   "live_entry_is_cayley_graph": false,
+   "live_entry_bold_(proven_optimal)": false,
+   "live_holder": "Rishabh Rajiv, 30 Sep 2026 (Zenodo 10.5281/zenodo.23052995), per desc_g4.html anchor 154",
+   "our_order": 13365,
+   "margin": 1585,
+   "moore_bound": 44326,
+   "our_file": "graphs/G_15_4_n13365.edges",
+   "our_edge_list_sha256": "2d36814028c63e32e527fc0f88ac08cbc70be134f8786de4867c58d748dae52f"
+  },
+  "(15,3)": {
+   "degree": 15,
+   "diameter": 3,
+   "live_entry": 1539,
+   "live_entry_raw_text": "1 539",
+   "live_entry_is_cayley_graph": false,
+   "live_entry_bold_(proven_optimal)": false,
+   "live_holder": "Rishabh Rajiv, 30 Sep 2026 (Zenodo 10.5281/zenodo.23052995), per desc_g3.html anchor 153",
+   "our_order": 1620,
+   "margin": 81,
+   "moore_bound": 3166,
+   "our_file": "graphs/G_15_3_n1620.edges.txt",
+   "our_edge_list_sha256": "da9faa8c8a875ac789506ca3f91a45db37b3f1f3952b729c88199557caa792ce"
+  },
+  "(14,4)": {
+   "degree": 14,
+   "diameter": 4,
+   "live_entry": 8303,
+   "live_entry_raw_text": "8 303",
+   "live_entry_is_cayley_graph": false,
+   "live_entry_bold_(proven_optimal)": false,
+   "live_holder": "Michel de Messieres, 3 Oct 2026 (Zenodo concept 10.5281/zenodo.23113462), per desc_g4.html anchor 144",
+   "our_order": 8424,
+   "margin": 121,
+   "moore_bound": 33321,
+   "our_file": "graphs/G_14_4_n8424.edges.txt",
+   "our_edge_list_sha256": "71ef820b5804f77c626209fbcda3a8bd50c546a5fb70175cbe36a9f98f22f281"
+  },
+  "(9,4)": {
+   "degree": 9,
+   "diameter": 4,
+   "live_entry": 1640,
+   "live_entry_raw_text": "* 1 640",
+   "live_entry_is_cayley_graph": true,
+   "live_entry_bold_(proven_optimal)": false,
+   "live_holder": "Francesc Comellas 2024, Cayley graph (asterisk in the table), per desc_g4.html anchor 94",
+   "our_order": 1700,
+   "margin": 60,
+   "moore_bound": 5266,
+   "our_file": "graphs/G_9_4_n1700.edges",
+   "our_edge_list_sha256": "d271a1e84aa9539ba47f8d036cd15e4a5a9ccc5a4752d0dacc94a9d35f17eebd"
+  },
+  "(13,4)": {
+   "degree": 13,
+   "diameter": 4,
+   "live_entry": 6615,
+   "live_entry_raw_text": "6 615",
+   "live_entry_is_cayley_graph": false,
+   "live_entry_bold_(proven_optimal)": false,
+   "live_holder": "Dharunish Yugeswardeenoo, Oct. 2026 per the table legend (colour #99EF99, \"soft mint\"; (13,4) is in his Oct. 2026 list); desc_g4.html anchor 134 still describes Rajiv's former 6 611 entry",
+   "our_order": 6630,
+   "margin": 15,
+   "moore_bound": 24506,
+   "our_file": "graphs/G_13_4_n6630.edges",
+   "our_edge_list_sha256": "7c44e128901d6dd6b64e0574b90ff8aa21872462338fd267bab466cb268e10a4"
+  },
+  "(13,6)": {
+   "degree": 13,
+   "diameter": 6,
+   "live_entry": 535302,
+   "live_entry_raw_text": "535 302",
+   "live_entry_is_cayley_graph": false,
+   "live_entry_bold_(proven_optimal)": false,
+   "live_holder": "Dharunish Yugeswardeenoo, Oct. 2026 per the table update log (desc_g6.html still describes the former 534 234 entry)",
+   "our_order": 535495,
+   "margin": 193,
+   "moore_bound": 3528890,
+   "our_file": "graphs/G_13_6_n535495.edges.gz",
+   "our_edge_list_sha256": "4ed4fc62000b3cbc6c23b08d9db4af383aa28b01e69fc802b5b1bbdbab170e94"
+  },
+  "(15,6)": {
+   "degree": 15,
+   "diameter": 6,
+   "live_entry": 1424474,
+   "live_entry_raw_text": "1 424 474",
+   "live_entry_is_cayley_graph": false,
+   "live_entry_bold_(proven_optimal)": false,
+   "live_holder": "Dharunish Yugeswardeenoo, Oct. 2026 per the table update log (desc_g6.html still describes the former 1 424 472 entry)",
+   "our_order": 1424896,
+   "margin": 422,
+   "moore_bound": 8687926,
+   "our_file": "graphs/G_15_6_n1424896.edges.gz",
+   "our_edge_list_sha256": "554149b59ffe151197dff3ae48ae315596d9c618924d25db4775b1315ab47a75"
+  }
+ }
+}

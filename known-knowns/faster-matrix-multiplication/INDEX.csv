@@ -1,0 +1,6 @@
+format_sorted,stored_n,rank,criterion_bar_2026-10-10T19-25Z,margin,fmm_sota,perminov_ZT_Z_Q,matmulcatalog_F2_RQZ,merlijnw70,derived_from,file,sha256
+14x15x15,14x15x15,1843,1848,-5,1848,1905/1895/1848,1895/1890,none,peel of LITA 15x15x15 rank 1977 (n-axis; e=(1;..;-5 at 7;..;1) f=e_0),schemes/14x15x15_r1843_Q.json,c86dba238db8a26bef6a4e8f5e224e8524e5d61cd0b89625fe34b43e27813ac3
+13x14x14,13x14x14,1558,1582,-24,1582,1614/1614/1582,1614/1614,none,peel of LITA 14x14x14 rank 1593 (n-axis; e=e_1+e_8 f=e_0-e_1),schemes/13x14x14_r1558_Q.json,15e46337bdca5a92090021dbd11a6fcb9d57f352a396ea6b34e1f32888fe0702
+15x16x16,15x16x16,2196,2223,-27,2223,2302/2302/2223,2302/2302,none,peel of LITA 16x16x16 rank 2236 (n-axis; e=e_1+e_9 f=e_0-e_1),schemes/15x16x16_r2196_Q.json,11c2649664a1d8d4386b225bb0ba62f3a5f1c819b575f50ce9830c478fb67113
+14x14x15,14x14x15,1716,1789,-73,1789,1798/1798/1790,1798/1798,none,peel of our 14x15x15 rank 1843 (m-axis; e=e_0 f=(1;..;-5 at 7;..;1)),schemes/14x14x15_r1716_Q.json,83e880a0ecbab4bc6af7c0105365e9ee69aac2c2dc0ac272073249e856f34a56
+13x14x15,13x14x15,1677,1681,-4,1681,1681/1681/1681,1681/1681,none,peel of our 14x14x15 rank 1716 (n-axis; e=e_1+e_9 f=e_1),schemes/13x14x15_r1677_Q.json,4230f61d432b627d0624105deb004451e8332ccca32c1834746cff2e11c7d6bc

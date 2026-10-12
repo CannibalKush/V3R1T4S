@@ -1,0 +1,4 @@
+X=100000000000000000000000000000000000000000000000000 sigma=1 pmin=5 crt=1 sieve: 203280220 primes >= 3 up to 4294967291 (12s)
+master: 65647 tasks at depth 11 (12s)
+resume: 0/65647 tasks already done
+all done (784s)

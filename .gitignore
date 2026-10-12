@@ -1,0 +1,10 @@
+# decompressed copies made by the check commands
+/known-knowns/biggest-graphs/graphs/G_13_6_n535495.edges
+/known-knowns/biggest-graphs/graphs/G_15_6_n1424896.edges
+# downloads and outputs made by the VNN-COMP and RobustBench check commands
+/known-knowns/vnncomp-2026-unsolved-instances/downloads/
+/known-knowns/vnncomp-2026-unsolved-instances/results.txt
+/known-knowns/robustbench-cifar100-stronger-attack/data/
+/known-knowns/robustbench-cifar100-stronger-attack/models/
+/known-knowns/robustbench-cifar100-stronger-attack/x_adv.npy
+__pycache__/

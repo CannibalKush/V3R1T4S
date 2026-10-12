@@ -1,0 +1,10 @@
+HTTP/2 200 
+date: Sat, 10 Oct 2026 19:23:48 GMT
+content-type: text/html
+content-length: 127021
+vary: Accept-Encoding
+last-modified: Sat, 10 Oct 2026 11:57:45 GMT
+etag: "1f02d-65d7b2c444525"
+accept-ranges: bytes
+alt-svc: h3=":443"; ma=86400
+

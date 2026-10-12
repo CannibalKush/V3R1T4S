@@ -1,0 +1,10 @@
+sieve: 203280220 odd primes <= 4294967295, largest 4294967291
+VSEL: 62061 prefixes
+task subset: 62061 of 65647
+top done: 62061 tasks at depth 11
+DONE
+real 600.88
+user 4094.31
+sys 4.11
+EXIT 0
+Thu Oct  8 09:46:08 PDT 2026

@@ -1,0 +1,32 @@
+{
+ "N": 1424896,
+ "m": 10671331,
+ "base": 1417248,
+ "t": 7648,
+ "ydeg": 7,
+ "Delta": 15,
+ "q": 11,
+ "m_blocks": 4,
+ "SP_size": 7679,
+ "SL_size": 7648,
+ "sp_file": "data/cutsets/H11_points_s5.json",
+ "sl_file": "data/cutsets/H11_lines_s1.json",
+ "seed": 1,
+ "slots": {
+  "P0": 15358,
+  "L0": 7648,
+  "P1": 7679,
+  "L1": 15296,
+  "P2": 7679,
+  "L2": 15296,
+  "P3": 15358,
+  "L3": 7648
+ },
+ "free_slots_left": 30778,
+ "sha256": "7ff1c67724f1761b3d889467bb8058f6041acd9b3d752a4a6e4f11f3ccff8c36",
+ "deg_hist": {
+  "13": 7687,
+  "14": 15404,
+  "15": 1401805
+ }
+}

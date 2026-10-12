@@ -1,0 +1,6 @@
+cell,n,d,w,delsarte_upper_bound,exact_lp_optimum,live_lower_bound,live_printed_upper_bound_johnson,improvement,file,sha256
+"A(31,12,10)",31,12,10,197,8091/41,108,229,32,certificates/cert_A31_12_10.json,55a37061bdcec133339a3fff911bd11dce4cc3a803228c2c4356d34124134c7a
+"A(31,12,11)",31,12,11,380,145638/383,186,415,35,certificates/cert_A31_12_11.json,80d19d9c197a2d2bb1ffb59e84dcf6b88e0457fcc7a940ab474f5b858f72a245
+"A(32,12,10)",32,12,10,245,26784/109,123,300,55,certificates/cert_A32_12_10.json,cd26f38b98336b35249cec72c9352f2b9b11c8c37c8e9dd30af35af18587125d
+"A(32,12,15)",32,12,15,2511,1102464/439,629,2641,130,certificates/cert_A32_12_15.json,f9a6cfeabfdb72c77091ed63362069d6ae50102d1403c64c4f077bf8e28c8e70
+"A(32,12,16)",32,12,16,2652,801009/302,1144,2870,218,certificates/cert_A32_12_16.json,d2ee753eb6af47ed837892cc96e9fb3fe2356defabddd772a397cbedb7e241b0

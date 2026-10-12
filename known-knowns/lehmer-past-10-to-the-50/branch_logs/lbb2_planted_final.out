@@ -1,0 +1,56 @@
+E=10 pmin=3 R=1 K2=0.0 K3=0.0 T3=0: ref 4 engine 4 (raw 4) MATCH | TOTAL nodes 333 m2apcand 0 m2q1 1866 m3euler 0 m1int 4 m2int 5
+E=10 pmin=3 R=1 K2=100.0 K3=0.0 T3=0: ref 4 engine 4 (raw 4) MATCH | TOTAL nodes 333 m2apcand 689 m2q1 121 m3euler 0 m1int 4 m2int 4
+E=10 pmin=3 R=1 K2=0.0 K3=50.0 T3=64: ref 4 engine 4 (raw 4) MATCH | TOTAL nodes 184 m2apcand 0 m2q1 1866 m3euler 258 m1int 4 m2int 5
+E=10 pmin=3 R=1 K2=0.1 K3=0.5 T3=2: ref 4 engine 4 (raw 4) MATCH | TOTAL nodes 328 m2apcand 166 m2q1 469 m3euler 3 m1int 4 m2int 5
+E=10 pmin=3 R=1 K2=1.0 K3=2.0 T3=4: ref 4 engine 4 (raw 4) MATCH | TOTAL nodes 274 m2apcand 243 m2q1 190 m3euler 79 m1int 4 m2int 4
+E=10 pmin=3 R=1 K2=100.0 K3=50.0 T3=64: ref 4 engine 4 (raw 4) MATCH | TOTAL nodes 184 m2apcand 689 m2q1 121 m3euler 258 m1int 4 m2int 4
+E=10 pmin=3 R=1 K2=0.01 K3=0.05 T3=0: ref 4 engine 4 (raw 4) MATCH | TOTAL nodes 333 m2apcand 0 m2q1 1866 m3euler 0 m1int 4 m2int 5
+  ref solutions: [(3, 5, 15), (3, 5, 17, 255), (3, 5, 17, 257, 65535), (3, 5, 17, 285, 2507)]
+E=12 pmin=3 R=1 K2=0.0 K3=0.0 T3=0: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 4844 m2apcand 0 m2q1 22168 m3euler 0 m1int 5 m2int 8
+E=12 pmin=3 R=1 K2=100.0 K3=0.0 T3=0: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 4844 m2apcand 29585 m2q1 191 m3euler 0 m1int 5 m2int 7
+E=12 pmin=3 R=1 K2=0.0 K3=50.0 T3=64: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 704 m2apcand 0 m2q1 21290 m3euler 14475 m1int 4 m2int 8
+E=12 pmin=3 R=1 K2=0.1 K3=0.5 T3=2: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 3826 m2apcand 1946 m2q1 2839 m3euler 82 m1int 5 m2int 7
+E=12 pmin=3 R=1 K2=1.0 K3=2.0 T3=4: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 3824 m2apcand 2183 m2q1 2139 m3euler 87 m1int 5 m2int 7
+E=12 pmin=3 R=1 K2=100.0 K3=50.0 T3=64: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 704 m2apcand 29554 m2q1 191 m3euler 14475 m1int 4 m2int 7
+E=12 pmin=3 R=1 K2=0.01 K3=0.05 T3=0: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 4844 m2apcand 14 m2q1 20912 m3euler 0 m1int 5 m2int 8
+  ref solutions: [(3, 5, 15), (3, 5, 17, 255), (3, 5, 17, 257, 65535), (3, 5, 17, 285, 2507), (3, 5, 17, 377, 1217, 2295), (3, 5, 17, 395, 1059, 2303), (3, 5, 33, 53, 69, 8343)]
+E=14 pmin=3 R=1 K2=0.0 K3=0.0 T3=0: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 46906 m2apcand 0 m2q1 179224 m3euler 0 m1int 5 m2int 8
+E=14 pmin=3 R=1 K2=100.0 K3=0.0 T3=0: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 46906 m2apcand 264457 m2q1 2142 m3euler 0 m1int 5 m2int 7
+E=14 pmin=3 R=1 K2=0.0 K3=50.0 T3=64: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 6908 m2apcand 0 m2q1 177928 m3euler 60240 m1int 5 m2int 8
+E=14 pmin=3 R=1 K2=0.1 K3=0.5 T3=2: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 18177 m2apcand 3231 m2q1 30218 m3euler 1572 m1int 5 m2int 8
+E=14 pmin=3 R=1 K2=1.0 K3=2.0 T3=4: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 16735 m2apcand 5637 m2q1 27569 m3euler 2766 m1int 5 m2int 8
+E=14 pmin=3 R=1 K2=100.0 K3=50.0 T3=64: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 6908 m2apcand 264427 m2q1 2142 m3euler 60240 m1int 5 m2int 7
+E=14 pmin=3 R=1 K2=0.01 K3=0.05 T3=0: ref 7 engine 7 (raw 7) MATCH | TOTAL nodes 31935 m2apcand 764 m2q1 75744 m3euler 391 m1int 5 m2int 8
+  ref solutions: [(3, 5, 15), (3, 5, 17, 255), (3, 5, 17, 257, 65535), (3, 5, 17, 285, 2507), (3, 5, 17, 377, 1217, 2295), (3, 5, 17, 395, 1059, 2303), (3, 5, 33, 53, 69, 8343)]
+E=16 pmin=3 R=1 K2=0.0 K3=0.0 T3=0: ref 9 engine 9 (raw 9) MATCH | TOTAL nodes 403472 m2apcand 0 m2q1 2084370 m3euler 0 m1int 8 m2int 14
+E=16 pmin=3 R=1 K2=100.0 K3=0.0 T3=0: ref 9 engine 9 (raw 9) MATCH | TOTAL nodes 403472 m2apcand 1151136 m2q1 27570 m3euler 0 m1int 8 m2int 9
+E=16 pmin=3 R=1 K2=0.0 K3=50.0 T3=64: ref 9 engine 9 (raw 9) MATCH | TOTAL nodes 57895 m2apcand 0 m2q1 2055242 m3euler 292202 m1int 8 m2int 14
+E=16 pmin=3 R=1 K2=0.1 K3=0.5 T3=2: ref 9 engine 9 (raw 9) MATCH | TOTAL nodes 210699 m2apcand 17990 m2q1 236224 m3euler 28976 m1int 8 m2int 13
+E=16 pmin=3 R=1 K2=1.0 K3=2.0 T3=4: ref 9 engine 9 (raw 9) MATCH | TOTAL nodes 112808 m2apcand 112376 m2q1 89466 m3euler 104635 m1int 8 m2int 12
+E=16 pmin=3 R=1 K2=100.0 K3=50.0 T3=64: ref 9 engine 9 (raw 9) MATCH | TOTAL nodes 57895 m2apcand 1150875 m2q1 27570 m3euler 292202 m1int 8 m2int 9
+E=16 pmin=3 R=1 K2=0.01 K3=0.05 T3=0: ref 9 engine 9 (raw 9) MATCH | TOTAL nodes 370046 m2apcand 4903 m2q1 410845 m3euler 555 m1int 8 m2int 14
+  ref solutions: [(3, 5, 15), (3, 5, 17, 255), (3, 5, 17, 257, 65535), (3, 5, 17, 257, 68975, 1314417), (3, 5, 17, 285, 2507), (3, 5, 17, 353, 929, 83623935), (3, 5, 17, 377, 1217, 2295), (3, 5, 17, 395, 1059, 2303), (3, 5, 33, 53, 69, 8343)]
+E=14 pmin=3 R=3 K2=0.0 K3=0.0 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 47426 m2apcand 0 m2q1 176350 m3euler 0 m1int 5 m2int 8
+E=14 pmin=3 R=3 K2=100.0 K3=0.0 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 47426 m2apcand 264483 m2q1 2141 m3euler 0 m1int 5 m2int 6
+E=14 pmin=3 R=3 K2=0.0 K3=50.0 T3=64: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 6908 m2apcand 0 m2q1 174963 m3euler 60261 m1int 4 m2int 8
+E=14 pmin=3 R=3 K2=0.1 K3=0.5 T3=2: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 18177 m2apcand 3241 m2q1 30300 m3euler 1603 m1int 5 m2int 7
+E=14 pmin=3 R=3 K2=1.0 K3=2.0 T3=4: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 16788 m2apcand 5703 m2q1 27549 m3euler 2731 m1int 5 m2int 7
+E=14 pmin=3 R=3 K2=100.0 K3=50.0 T3=64: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 6908 m2apcand 264449 m2q1 2141 m3euler 60261 m1int 4 m2int 6
+E=14 pmin=3 R=3 K2=0.01 K3=0.05 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 31895 m2apcand 765 m2q1 76021 m3euler 404 m1int 5 m2int 7
+  ref solutions: []
+E=16 pmin=3 R=3 K2=0.0 K3=0.0 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 404050 m2apcand 0 m2q1 2150636 m3euler 0 m1int 6 m2int 13
+E=16 pmin=3 R=3 K2=100.0 K3=0.0 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 404050 m2apcand 1151259 m2q1 27569 m3euler 0 m1int 6 m2int 11
+E=16 pmin=3 R=3 K2=0.0 K3=50.0 T3=64: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 57895 m2apcand 0 m2q1 2124092 m3euler 292231 m1int 6 m2int 13
+E=16 pmin=3 R=3 K2=0.1 K3=0.5 T3=2: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 210532 m2apcand 18001 m2q1 236592 m3euler 29048 m1int 6 m2int 12
+E=16 pmin=3 R=3 K2=1.0 K3=2.0 T3=4: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 112489 m2apcand 112313 m2q1 89529 m3euler 105083 m1int 6 m2int 11
+E=16 pmin=3 R=3 K2=100.0 K3=50.0 T3=64: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 57895 m2apcand 1150988 m2q1 27569 m3euler 292231 m1int 6 m2int 11
+E=16 pmin=3 R=3 K2=0.01 K3=0.05 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 369590 m2apcand 4974 m2q1 411361 m3euler 570 m1int 6 m2int 13
+  ref solutions: []
+E=16 pmin=5 R=1 K2=0.0 K3=0.0 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 74 m2apcand 0 m2q1 6 m3euler 0 m1int 0 m2int 0
+E=16 pmin=5 R=1 K2=100.0 K3=0.0 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 74 m2apcand 1 m2q1 1 m3euler 0 m1int 0 m2int 0
+E=16 pmin=5 R=1 K2=0.0 K3=50.0 T3=64: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 47 m2apcand 0 m2q1 1 m3euler 403 m1int 0 m2int 0
+E=16 pmin=5 R=1 K2=0.1 K3=0.5 T3=2: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 72 m2apcand 1 m2q1 1 m3euler 1 m1int 0 m2int 0
+E=16 pmin=5 R=1 K2=1.0 K3=2.0 T3=4: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 72 m2apcand 1 m2q1 1 m3euler 1 m1int 0 m2int 0
+E=16 pmin=5 R=1 K2=100.0 K3=50.0 T3=64: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 47 m2apcand 0 m2q1 1 m3euler 403 m1int 0 m2int 0
+E=16 pmin=5 R=1 K2=0.01 K3=0.05 T3=0: ref 0 engine 0 (raw 0) MATCH | TOTAL nodes 74 m2apcand 0 m2q1 6 m3euler 0 m1int 0 m2int 0
+  ref solutions: []

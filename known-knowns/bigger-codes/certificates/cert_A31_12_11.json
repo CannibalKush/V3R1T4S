@@ -1,0 +1,22 @@
+{
+ "n": 31,
+ "d": 12,
+ "w": 11,
+ "delta": 6,
+ "float_value": 380.2558746736294,
+ "y": {
+  "1": "8151/10724",
+  "2": "1045/5362",
+  "3": "9405/139412"
+ },
+ "a": {
+  "6": "77880/383",
+  "8": "40095/383",
+  "9": "27280/383"
+ },
+ "lp_optimum": "145638/383",
+ "U": 380,
+ "optimal": true,
+ "method": "exact optimal basis (float LP guess, exact Gaussian elimination over Q)",
+ "claimed_U": 380
+}

@@ -1,0 +1,145 @@
+{
+ "method": "one GET per source with curl and an honest User-Agent \"V3R1T4S-release-check/0.2 (one GET per source, no retries; github.com/elder-plinius/V3R1T4S)\"; no retries, no cookies. Only the values below are recorded; the source files are not redistributed. Parsed with the-record-we-beat/parse_sources.py.",
+ "criterion_sources": [
+  "fmm_sota.json",
+  "perminov_README.md",
+  "merlijn_SHA256SUMS",
+  "matmulcatalog_COVERAGE.md"
+ ],
+ "context_source_not_a_criterion": "lita_README.md (LITA lists square formats only; it lists none of our five formats)",
+ "sources": {
+  "fmm_sota.json": {
+   "url": "https://raw.githubusercontent.com/sedoglavic/fmm_digest/master/fmm_sota.json",
+   "fetched_utc": "2026-10-10T19:25:52Z",
+   "http_status": 200,
+   "server_date": "Sat, 10 Oct 2026 19:25:52 GMT",
+   "etag": "\"12bf7cfe96e0309ab7e00ec072570d8c6df597f835ae3e878d5f6446ff6c4410\"",
+   "bytes": 343798,
+   "sha256": "d0da2c364dcf4d13c0721ea8b7c3dcd7fae4f6f3c843d22a714a1ccb9bd244c1"
+  },
+  "perminov_README.md": {
+   "url": "https://raw.githubusercontent.com/dronperminov/FastMatrixMultiplication/master/README.md",
+   "fetched_utc": "2026-10-10T19:25:53Z",
+   "http_status": 200,
+   "server_date": "Sat, 10 Oct 2026 19:25:53 GMT",
+   "etag": "\"64830189fa5f3085efdf810941590d0bb688a2f0efa7bb49b3ebd02b3b28fe5b\"",
+   "bytes": 112671,
+   "sha256": "7b0761ecc0fa1988cb2ef0efeca503af974eeb6ade76d30629308ebba7e78341"
+  },
+  "merlijn_SHA256SUMS": {
+   "url": "https://raw.githubusercontent.com/MerlijnW70/fmm-schemes/main/SHA256SUMS",
+   "fetched_utc": "2026-10-10T19:25:53Z",
+   "http_status": 200,
+   "server_date": "Sat, 10 Oct 2026 19:25:53 GMT",
+   "etag": "\"e3f88f1f05a4888225dfa66214d56a2c255ce6c060a5aaf27c83e368bfb6b958\"",
+   "bytes": 3044,
+   "sha256": "de848328881cf69cbe2a8d8309e04d94826cf1431b5b39e81db63f95af58a3fd"
+  },
+  "matmulcatalog_COVERAGE.md": {
+   "url": "https://raw.githubusercontent.com/solven-eu/matmulcatalog/master/generated/COVERAGE.md",
+   "fetched_utc": "2026-10-10T19:25:53Z",
+   "http_status": 200,
+   "server_date": "Sat, 10 Oct 2026 19:25:54 GMT",
+   "etag": "\"bb1e611b4c47333b5940aacc1ac3bfaf1e8f277acbb54be030a89e1f94b029f8\"",
+   "bytes": 94842,
+   "sha256": "c2a9bd929b477acb44d4f92aa8055a0c26eab3c33121c0734be650c5c86254b7"
+  },
+  "lita_README.md": {
+   "url": "https://raw.githubusercontent.com/khoruzhii/lita/main/README.md",
+   "fetched_utc": "2026-10-10T19:25:54Z",
+   "http_status": 200,
+   "server_date": "Sat, 10 Oct 2026 19:25:54 GMT",
+   "etag": "\"6a5dea6e88e3484dda32d6d44289d1e4c43f6900a29a40a75f2d16f7b40ab291\"",
+   "bytes": 6078,
+   "sha256": "97df246f15643a7396307765d23432d03bcb5af97a9f8bf92cae85cb428d5b3f"
+  }
+ },
+ "fmm_sota_createdAt": "2026-10-09T11:45:48",
+ "formats": {
+  "14x15x15": {
+   "ours": 1843,
+   "fmm_sota": 1848,
+   "perminov_row_raw": "| `14x15x15` |  1905 (?)   | 1895 (1905)  | 1848 (1905)  | **2.801382482** |",
+   "perminov_ZT_Z_Q": [
+    1905,
+    1895,
+    1848
+   ],
+   "merlijn_lowest": null,
+   "matmulcatalog_row_raw": "| `⟨14,15,15⟩` | **✓ 1895** Dronperminov-Z [Z→F₂] | **✓ 1890** Dronperminov-Q | — | — | **1890** in R/Q/Z | +55893 | — |",
+   "matmulcatalog_F2": 1895,
+   "matmulcatalog_RQZ": 1890,
+   "bar_min_of_four_sources": 1848,
+   "strictly_below_bar": true,
+   "margin": -5
+  },
+  "13x14x14": {
+   "ours": 1558,
+   "fmm_sota": 1582,
+   "perminov_row_raw": "| `13x14x14` |  1614 (?)   | 1614 (1625)  | 1582 (1625)  |   2.817691580   |",
+   "perminov_ZT_Z_Q": [
+    1614,
+    1614,
+    1582
+   ],
+   "merlijn_lowest": null,
+   "matmulcatalog_row_raw": "| `⟨13,14,14⟩` | **✓ 1614** Dronperminov-ZT [Z→F₂] | **✓ 1614** Dronperminov-ZT | — | — | **1614** in F₂, R/Q/Z | +36606 | — |",
+   "matmulcatalog_F2": 1614,
+   "matmulcatalog_RQZ": 1614,
+   "bar_min_of_four_sources": 1582,
+   "strictly_below_bar": true,
+   "margin": -24
+  },
+  "15x16x16": {
+   "ours": 2196,
+   "fmm_sota": 2223,
+   "perminov_row_raw": "| `15x16x16` |  2302 (?)   |   2302 (?)   | 2223 (2262)  | **2.801308741** |",
+   "perminov_ZT_Z_Q": [
+    2302,
+    2302,
+    2223
+   ],
+   "merlijn_lowest": null,
+   "matmulcatalog_row_raw": "| `⟨15,16,16⟩` | **✓ 2302** Dronperminov-ZT [Z→F₂] | **✓ 2302** Dronperminov-ZT | — | — | **2302** in F₂, R/Q/Z | +51980 | — |",
+   "matmulcatalog_F2": 2302,
+   "matmulcatalog_RQZ": 2302,
+   "bar_min_of_four_sources": 2223,
+   "strictly_below_bar": true,
+   "margin": -27
+  },
+  "14x14x15": {
+   "ours": 1716,
+   "fmm_sota": 1789,
+   "perminov_row_raw": "| `14x14x15` |  1798 (?)   | 1798 (1813)  | 1790 (1813)  |   2.813604914   |",
+   "perminov_ZT_Z_Q": [
+    1798,
+    1798,
+    1790
+   ],
+   "merlijn_lowest": null,
+   "matmulcatalog_row_raw": "| `⟨14,14,15⟩` | **✓ 1798** Dronperminov-ZT [Z→F₂] | **✓ 1798** Dronperminov-ZT | — | — | **1798** in F₂, R/Q/Z | +42512 | — |",
+   "matmulcatalog_F2": 1798,
+   "matmulcatalog_RQZ": 1798,
+   "bar_min_of_four_sources": 1789,
+   "strictly_below_bar": true,
+   "margin": -73
+  },
+  "13x14x15": {
+   "ours": 1677,
+   "fmm_sota": 1681,
+   "perminov_row_raw": "| `13x14x15` |  1681 (?)   | 1681 (1714)  | 1681 (1714)  |   2.816136526   |",
+   "perminov_ZT_Z_Q": [
+    1681,
+    1681,
+    1681
+   ],
+   "merlijn_lowest": null,
+   "matmulcatalog_row_raw": "| `⟨13,14,15⟩` | **✓ 1681** Dronperminov-ZT [Z→F₂] | **✓ 1681** Dronperminov-ZT | — | — | **1681** in F₂, R/Q/Z | +42817 | — |",
+   "matmulcatalog_F2": 1681,
+   "matmulcatalog_RQZ": 1681,
+   "bar_min_of_four_sources": 1681,
+   "strictly_below_bar": true,
+   "margin": -4
+  }
+ }
+}

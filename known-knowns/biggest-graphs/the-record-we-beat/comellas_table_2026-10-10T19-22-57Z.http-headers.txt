@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Date: Sat, 10 Oct 2026 19:22:58 GMT
+Last-Modified: Sat, 10 Oct 2026 10:26:18 GMT
+ETag: "b40c-65d79e532c680"
+Accept-Ranges: bytes
+Content-Length: 46092
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+

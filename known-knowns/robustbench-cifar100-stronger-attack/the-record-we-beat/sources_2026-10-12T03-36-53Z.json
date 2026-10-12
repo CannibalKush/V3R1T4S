@@ -1,0 +1,55 @@
+{
+ "method": "one GET per source with curl and the honest User-Agent \"V3R1T4S-release-check/0.2 (one GET per source, no retries; github.com/elder-plinius/V3R1T4S)\"; no retries, no cookies. Only the values below are recorded; the source files are not redistributed.",
+ "record": "RobustBench CIFAR-100, Linf, eps = 8/255: robust accuracy of Addepalli2022Efficient_RN18 under AutoAttack (standard version), as listed in the model's model_info file and on the leaderboard",
+ "sources": {
+  "model_info": {
+   "url": "https://raw.githubusercontent.com/RobustBench/robustbench/master/model_info/cifar100/Linf/Addepalli2022Efficient_RN18.json",
+   "fetched_utc": "2026-10-12T03:36:53Z",
+   "http": {
+    "status": "HTTP/2 200",
+    "content-type": "text/plain; charset=utf-8",
+    "etag": "\"abefbaa7e76fc4752d7cb4767c48f904ab230c35d0207c47f38e1cf463a0518f\"",
+    "date": "Mon, 12 Oct 2026 03:36:53 GMT",
+    "content-length": "468"
+   },
+   "bytes": 468,
+   "sha256": "43eee2a7950a52c45c0de9fc44e917ee7827d70b6c43727bbe7b909d6c7e105c",
+   "extracted": {
+    "name": "Efficient and Effective Augmentation Strategy for Adversarial Training",
+    "authors": "Sravanti Addepalli, Samyak Jain, Venkatesh Babu Radhakrishnan",
+    "venue": "NeurIPS 2022",
+    "architecture": "ResNet-18",
+    "eps": "8/255",
+    "clean_acc": "65.45",
+    "reported": "27.69",
+    "autoattack_acc": "27.67",
+    "additional_data": false,
+    "unreliable": false
+   },
+   "external_field": "absent (no lower value from another attack is listed for this model)",
+   "same_bytes_as": "copies fetched 2026-10-11T20:15:21Z, 2026-10-12T00:54:24Z and 01:17:29Z (same sha256)"
+  },
+  "robustbench_head": {
+   "url": "https://api.github.com/repos/RobustBench/robustbench/commits/master",
+   "fetched_utc": "2026-10-12T03:36:53Z",
+   "commit": "78fcc9e48a07a861268f295a777b975f25155964",
+   "committer_date": "2025-03-31T12:30:24Z"
+  },
+  "leaderboard": {
+   "url": "https://robustbench.github.io/cifar100/Linf.html",
+   "checked_utc": "2026-10-12T01:13Z (by a reviewer; not re-fetched for this release)",
+   "extracted": "rank 33 of 38: Addepalli2022Efficient_RN18, ResNet-18, clean 65.45, AutoAttack 27.67, best known robust accuracy 27.67"
+  }
+ },
+ "bar": {
+  "percent": 27.67,
+  "images": 2767,
+  "definition": "lowest published robust accuracy for this model: RobustBench AutoAttack 27.67 (no 'external' value); the paper reports 27.69 (arXiv:2210.15318); the stronger-attack papers that re-evaluate RobustBench CIFAR-100 models (A3 arXiv:2203.05154, AutoAE arXiv:2211.12713, MALT arXiv:2407.02240, PMA arXiv:2411.15210) do not evaluate this model, and the CR Attack README (Pan et al., AAAI 2025) lists 27.67, equal to AutoAttack; a literature and code search (arXiv, GitHub, web; 2026-10-12) found no lower value"
+ },
+ "ours": {
+  "robust_images": 2757,
+  "robust_percent": 27.57,
+  "clean_images": 6545,
+  "images_below_bar": 10
+ }
+}

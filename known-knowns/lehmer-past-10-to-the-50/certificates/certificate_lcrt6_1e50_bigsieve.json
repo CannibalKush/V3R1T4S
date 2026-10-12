@@ -1,0 +1,27 @@
+{
+ "summary_file": "lcrt6_1e50_bigsieve.summary.json",
+ "summary_sha256": "943b738c8b1e780f7de42ab3d01d7f52d7557cf5987d466d6e55dbad3135f893",
+ "E": 50,
+ "X": "100000000000000000000000000000000000000000000000000",
+ "A_3_divides_N": {
+  "omega_max": 27,
+  "ratio_bound": 2.92893332849949,
+  "ratio_bound_exact_lt_4": true
+ },
+ "B_k_ge_3": {
+  "omega_max": 30,
+  "ratio_bound": 2.949927372665658,
+  "ratio_bound_exact_lt_3": true
+ },
+ "C_search": {
+  "X_bound_to_summary": true,
+  "complete": true,
+  "kmax": 32,
+  "live_nodes": 130205304,
+  "digest_live": "7c1d8e5190f9754f",
+  "visited_nodes": 2169013803,
+  "events": [],
+  "solutions": []
+ },
+ "VERDICT": "NO LEHMER NUMBER N <= 10^50"
+}

@@ -1,0 +1,87 @@
+{
+ "method": "one GET per source with curl and the honest User-Agent \"V3R1T4S-release-check/0.2 (one GET per source, no retries; github.com/elder-plinius/V3R1T4S)\"; no retries, no cookies. Only the values below are recorded; the source files are not redistributed. Rows extracted with the-record-we-beat/parse_results.py.",
+ "pinned_commits": {
+  "VNN-COMP/vnncomp2026_benchmarks": {
+   "commit": "303f2327a8e8411efc4457da03d2016ce42733cf",
+   "note": "HEAD of main at 2026-10-12T03:36:28Z (GitHub API commits/main); repository pushed_at 2026-07-07T10:57:09Z"
+  },
+  "VNN-COMP/vnncomp2026_results": {
+   "commit": "eea564f5d0a8751d8321a409214db14d03f452b8",
+   "note": "HEAD of main at 2026-10-12T03:36:28Z; repository pushed_at 2026-08-03T14:07:46Z"
+  }
+ },
+ "sources": {
+  "results.txt": {
+   "url": "https://raw.githubusercontent.com/VNN-COMP/vnncomp2026_results/main/SCORING/results.txt",
+   "fetched_utc": "2026-10-12T03:36:49Z",
+   "http": {
+    "status": "HTTP/2 200",
+    "content-type": "text/plain; charset=utf-8",
+    "etag": "\"3aaa631e8ff8cd8b7906e9dd4ef03db1d7dd1094ebd8586ddaf40ac13d84cea6\"",
+    "date": "Mon, 12 Oct 2026 03:36:50 GMT",
+    "content-length": "7681226"
+   },
+   "bytes": 7681226,
+   "sha256": "ec1b6fcbdef79539ffee17adbda2e99add137ba963a5306b87904035289eb26f",
+   "row_lines": 3618,
+   "all_tool_unsolved_rows": 127,
+   "category": "2026_traffic_signs_recognition_2023",
+   "category_header": "3 participating tools: ['alpha_beta_crown', 'pyrat', 'vibecheck']",
+   "rows": [
+    "Row: ['3_30_30_QConv_16_3_QConv_32_2_Dense_43_ep_30-model_30_idx_1703_eps_1.00000', 'timeout', '-', 'timeout']",
+    "Row: ['3_30_30_QConv_16_3_QConv_32_2_Dense_43_ep_30-model_30_idx_178_eps_1.00000', 'timeout', '-', 'timeout']"
+   ],
+   "same_bytes_as": "earlier copies fetched 2026-10-10T23:28Z, 2026-10-11T05:15:47Z, 15:21:13Z and 22:38:07Z (same sha256)"
+  },
+  "results_tree": {
+   "url": "https://api.github.com/repos/VNN-COMP/vnncomp2026_results/git/trees/eea564f5d0a8751d8321a409214db14d03f452b8?recursive=1",
+   "fetched_utc": "2026-10-12T03:36:51Z",
+   "bytes": 8449492,
+   "sha256": "24994089da508b0e87beac014cc69d53f07d14702479ebe950c034982908ed7a",
+   "entries": 27250,
+   "truncated": false,
+   "paths_containing_idx_1703_eps_1_or_idx_178_eps_1": [],
+   "note": "no tool published a counterexample file for either eps-1 instance; the published counterexamples for these two images are at eps 3, 5, 10 and 15 only (alpha_beta_crown, vibecheck), and each of those 16 files has 2136 to 2612 of its 2700 coordinates outside the eps-1 box (checked 2026-10-11)"
+  },
+  "counterexamples_v2.py": {
+   "url": "https://raw.githubusercontent.com/VNN-COMP/vnncomp2026_results/eea564f5d0a8751d8321a409214db14d03f452b8/SCORING/counterexamples_v2.py",
+   "fetched_utc": "2026-10-12T03:36:52Z",
+   "bytes": 23193,
+   "sha256": "5ab7a4df717ed1c80ec0477372eb394a4a2a460a5060f0eebe030a76d219faab"
+  },
+  "benchmark_README.md": {
+   "url": "https://raw.githubusercontent.com/VNN-COMP/vnncomp2026_benchmarks/303f2327a8e8411efc4457da03d2016ce42733cf/benchmarks/traffic_signs_recognition_2023/README.md",
+   "fetched_utc": "2026-10-12T03:37Z",
+   "extracted": {
+    "source_repository": "https://github.com/apostovan21/vnncomp2023.git",
+    "source_commit": "3587d3b11dc4ebffcf9784a93fb35a943eec5656",
+    "exported_utc": "2026-07-02T15:44:03Z"
+   }
+  },
+  "instances.csv (2.0)": {
+   "url": "https://raw.githubusercontent.com/VNN-COMP/vnncomp2026_benchmarks/main/benchmarks/traffic_signs_recognition_2023/2.0/instances.csv",
+   "extracted_rows": [
+    "onnx/3_30_30_QConv_16_3_QConv_32_2_Dense_43_ep_30.onnx,vnnlib/model_30_idx_1703_eps_1.00000.vnnlib,480.0",
+    "onnx/3_30_30_QConv_16_3_QConv_32_2_Dense_43_ep_30.onnx,vnnlib/model_30_idx_178_eps_1.00000.vnnlib,480.0"
+   ],
+   "version_dir_note": "vibecheck (scored in this category), agate and n2v ran version directory 2.0 according to their results.csv (checked 2026-10-11T22:38Z); alpha_beta_crown and pyrat ran 1.0, whose ONNX file is byte-identical (same git blob 47ceb5df…); our witnesses are checked against the 2.0 properties"
+  }
+ },
+ "benchmark_files": {
+  "onnx/3_30_30_QConv_16_3_QConv_32_2_Dense_43_ep_30.onnx.gz": {
+   "sha256_gz": "baeca5c8bcf58a9b8bf8a22cf59fffd2fc5e2baac0fd1e5be467dbb716f78a83",
+   "sha256": "9fb711d9b0019889d648df23ce477a083f0f6d6ef13f732de284a607f0abdce6",
+   "git_blob_sha1": "47ceb5df8a22924d5e758fe1f551a16dab4709a5"
+  },
+  "vnnlib/model_30_idx_1703_eps_1.00000.vnnlib.gz": {
+   "sha256_gz": "5e4318e8e9320325f0d03f110439f1febe8b34a407bafd4e737359cb958f590a",
+   "sha256": "cdd6b802863e0f0d7f958e2474743cb7a8706ce75478e8d721462b1a212551d5",
+   "git_blob_sha1": "e605e30f2765b65c2087e4ead3cbf527855eb251"
+  },
+  "vnnlib/model_30_idx_178_eps_1.00000.vnnlib.gz": {
+   "sha256_gz": "3b690c291a9f43f4a47ad1987d92abc301c9075fa7567418a1599fe142c3b20e",
+   "sha256": "746adabaff524f20fd49e6dd246a3346cbf1a9f32d55c80346d6b76ecf094571",
+   "git_blob_sha1": "38105e891181e82c5833a1332cea17dd6d660bac"
+  }
+ }
+}

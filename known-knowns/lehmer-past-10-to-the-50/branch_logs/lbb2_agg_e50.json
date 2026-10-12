@@ -1,0 +1,22 @@
+{
+ "dir": "runs/e50_S1000000000",
+ "ntask": 41170,
+ "workers": 10,
+ "workers_finished": 10,
+ "tasks_done": 41170,
+ "missing": 0,
+ "prefix_mismatch": 0,
+ "nodes_total": 3805754261,
+ "m2apcand": 220780104,
+ "m2q1": 1713809944,
+ "m3euler": 241524181,
+ "m1int": 0,
+ "m2int": 0,
+ "euler_pass": 0,
+ "solutions": 0,
+ "segq": 0,
+ "segchild": 0,
+ "maxq1": 164887049,
+ "events": {},
+ "complete_and_clean": true
+}
