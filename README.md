@@ -4,7 +4,7 @@ UNSOLVED PROBLEMS, BROKEN OPEN 🔓 Unbroken ciphers, open conjectures, record t
 
 ⊰•-•✧•-•-⦑/V\E/R\I/T\A/S\⦒-•-•✧•-•⊱
 
-> *"Veritas liberabit vos."* The truth will set you free.
+> *"Veritas liberabit nos."* The truth will set us free.
 
 ## 🏆 Wins
 
