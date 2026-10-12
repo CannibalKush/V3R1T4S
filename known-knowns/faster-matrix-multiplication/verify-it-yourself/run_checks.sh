@@ -1,6 +1,6 @@
 #!/bin/sh
-# Check the five shipped schemes (Brent equations, exact via CRT-bounded modular arithmetic; rank), their sha256
-# against INDEX.csv, and three negative controls.  python3 + numpy.  Exit 0 iff everything passes.
+# Check the seven shipped scheme files (the five records and the superseded 1843 and 2196): Brent equations (exact
+# via CRT-bounded modular arithmetic), rank, sha256 against INDEX.csv, and three negative controls.  python3 + numpy.  Exit 0 iff everything passes.
 set -u
 HERE=$(cd "$(dirname "$0")/.." && pwd)
 SECTION=known-knowns/faster-matrix-multiplication
@@ -10,6 +10,7 @@ require() {  # input files must be present
   done
 }
 require schemes/13x14x14_r1558_Q.json schemes/13x14x15_r1677_Q.json schemes/14x14x15_r1716_Q.json \
+        schemes/14x15x15_r1842_Q.json schemes/15x16x16_r2180_Q.json \
         schemes/14x15x15_r1843_Q.json schemes/15x16x16_r2196_Q.json
 TMP=${TMPDIR:-/tmp}/v3r1t4s-fmm.$$
 mkdir -p "$TMP"

@@ -34,11 +34,14 @@ of this release.
 ## How the tensor was made
 
 The images were attacked with an ensemble of APGD-style attacks (Croce and Hein's AutoAttack components) using margin
-losses (CW, DLR and targeted variants), a published constraint-relaxation attack (CR Attack) as a warm start, and
+losses (CW, DLR and targeted variants), a published constraint-relaxation attack (CR Attack, run from the clean images) whose outputs seeded our own
+warm-started attack, and
 many random restarts concentrated on the images closest to the decision boundary; every replaced image was re-checked
 on CPU before it went into the tensor. The image that took the count from 2,758 to 2,757 (index 2137) needed 250
-restarts of 100 steps. Images that the model already misclassifies are left unchanged (3,455 images). The attack code
-is not part of this release; the claim rests on the tensor and the checker.
+restarts of 100 steps. Images that the model already misclassifies are left unchanged (3,455 images). The code of every
+stage, with the exact commands, seeds and runtimes, is in `how-we-built-it/` (its last step regenerates the published
+tensor bit for bit from small stored inputs); `HOW_WE_FOUND_IT.md` tells how the search went. The claim itself rests on
+the tensor and the checker.
 
 ## Storage (lossless)
 
@@ -84,4 +87,6 @@ README.md, RUN_IT_YOURSELF.md, INDEX.csv
 adversarial-examples/  x_adv_Addepalli2022Efficient_RN18.npz (the tensor, lossless, 45.5 MB), robust_indices.txt (the 2,757 robust images)
 verify-it-yourself/    unpack.py (restore + losslessness proof), rbcheck.py (standalone checker), run_checks.sh, RECEIPTS.md
 the-record-we-beat/    sources_2026-10-12T03-36-53Z.json (fetch time, HTTP headers, sha256, extracted values)
+how-we-built-it/       the generating code (six attack stages), README.md (commands, seeds, hardware), SMOKE.md, stage6-inputs/
+HOW_WE_FOUND_IT.md     how the search went, what failed, credits
 ```

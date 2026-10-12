@@ -1,0 +1,8 @@
+# Versions present in the Python environment that ran the searches and the smoke runs
+# (CPython 3.12.13, macOS on Apple silicon arm64).
+# Search engines (lb_lns*.py, xwalk.py, gs_run.py, gslib.py, lns6.py): numpy + numba (+ llvmlite).
+# Certificates (delsarte/make_certs.py): numpy + scipy (HiGHS LP solver inside scipy.optimize.linprog).
+numpy==2.5.3
+numba==0.68.0
+llvmlite==0.50.0
+scipy==1.18.1

@@ -1,0 +1,6 @@
+# Versions in the Python 3.12.13 environment (macOS, arm64) that ran the search and wrote the witnesses.
+ortools==9.15.6755
+onnx==1.23.2
+onnxruntime==1.31.0
+numpy==2.5.3
+protobuf==6.33.6

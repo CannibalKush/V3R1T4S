@@ -41,9 +41,25 @@ python3 the-record-we-beat/parse_brouwer_table.py Andw.html the-record-we-beat/c
 (STRICT_BEAT / TIE / BELOW for codes, STRICT_BELOW_UB for the Delsarte values). Any code whose cell now prints a lower
 bound ≥ our size is no longer an improvement (see Corrections in `READ_BEFORE_CITING.md` at the repository root).
 
-## 4. Rebuilding the codes
+## 4. Regenerate
 
-The codes are the output of a randomised local search and are not rebuilt deterministically; the files themselves
-are the claim. To see how far each is from its seed, download the seed file named in `INDEX.csv` from Brouwer's code
-archive (directory `cwc/` next to the table; files such as `a26.6.9.5761H` hold one hex word per line) and compare
-the word sets; our own measurement is quoted in the README (1 %–17 % of the words changed).
+[`how-we-built-it/README.md`](how-we-built-it/README.md) lists, for every code and certificate, the archive seed file (with sha256), the script,
+the random seeds and the number of rounds of each step (python3 with `numpy`, `numba`, `scipy`; versions in
+`how-we-built-it/requirements.txt`). The searches are randomised but seeded, so 25 of the 30 codes and all 5
+certificates are defined by deterministic command chains; we reran the short ones below and got the published files
+byte for byte, but not the long chains (hours of CPU each). The five A(n,8,7) codes, n = 52..56, came from a driver
+whose random stream depended on Python's per-process string hashing and cannot be replayed exactly. Smallest
+example (about a minute on two cores), from this directory:
+
+```sh
+cd how-we-built-it
+sh fetch_seeds.sh seeds                                     # 28 archive files, checked against SEEDS.sha256
+python3 convert_seed.py seeds/d8/a34.8.7.601H 34 7 s0.npy
+NUMBA_NUM_THREADS=2 python3 lb_lns_gen.py s0.npy 34 8 7 walk --seed 31 --rounds 2
+python3 write_code.py A34_8_7_602.txt 34 walk_best.npy
+shasum -a 256 A34_8_7_602.txt                               # 1a1d0958...1e = codes/A34_8_7_602.txt
+cd delsarte && for c in "31 12 10" "31 12 11" "32 12 10" "32 12 15" "32 12 16"; do python3 make_certs.py $c out; done
+# (in zsh write ${=c}); out/*.json are byte-identical to certificates/*.json
+```
+`how-we-built-it/SMOKE.md` has the output of this run. To see how far each code is from its seed, compare its word
+set with the converted seed file; our own measurement is quoted in the README (1 %–17 % of the words changed).

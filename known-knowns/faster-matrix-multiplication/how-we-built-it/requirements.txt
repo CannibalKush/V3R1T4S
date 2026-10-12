@@ -1,0 +1,4 @@
+# Python 3.12.13 was used; the LITA .npz loader needs numpy (fmmcheck.py also needs numpy).
+# numba is needed only by the absorption tools (absorb_exact.py, maxkill.py, pairtools.py).
+numpy==2.5.3
+numba==0.68.0

@@ -87,8 +87,11 @@ independent set on the conflict graph of the candidates exactly, and accepts the
 exact maximum independent set of the words that are free with respect to it; the table itself notes that
 Graham–Sloane codes "are not always maximal", so these cells are the weakest novelty claims here.
 On the nine cells where this was measured, the codes differ from their seeds in between 1 % (A(27,6,9), A(26,6,8))
-and 17 % (A(26,6,9)) of the words. The search code is not part of this release; the claim rests on the files and the
-checkers only.
+and 17 % (A(26,6,9)) of the words. The search code, the exact command chain and random seeds of every code and
+certificate, and the sha256 of each archive seed file are in [`how-we-built-it/`](how-we-built-it/README.md) (25 of
+the 30 codes and all 5 certificates come from seeded, deterministic command chains; the five A(n,8,7) walks cannot be
+replayed exactly, see there); the story is in [`HOW_WE_FOUND_IT.md`](HOW_WE_FOUND_IT.md). The claim still rests on
+the files and the checkers only.
 
 ### Checking the codes
 
@@ -135,6 +138,8 @@ codes/               A<n>_<d>_<w>_<M>.txt, 30 files
 certificates/        cert_A31_12_10.json ... cert_A32_12_16.json
 verify-it-yourself/  cwcheck.py, delsarte_check.py, run_checks.sh, RECEIPTS.md
 the-record-we-beat/  HTTP headers and sha256 of Andw.html at both fetch times (2026-10-08, 2026-10-10), parsed values of our cells, claims.csv (the 35 current claims), the parser
+how-we-built-it/     the generating code (local-search engines, Graham-Sloane rebuild, Delsarte certificate maker), commands, seeds, SMOKE.md
+HOW_WE_FOUND_IT.md   how the agents got there, what failed, credits
 ```
 
 ## References

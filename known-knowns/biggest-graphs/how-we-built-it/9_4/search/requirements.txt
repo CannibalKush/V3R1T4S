@@ -1,0 +1,5 @@
+# Python 3.12.13 (versions present in the environment that produced and re-ran the search)
+numpy==2.5.3
+numba==0.68.0
+llvmlite==0.50.0
+galois==0.4.11

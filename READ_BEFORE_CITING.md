@@ -38,7 +38,9 @@ two cipher-challenge commitments. Cite the commit hash you checked, not `main`.
 | [`sealed-envelopes/`](sealed-envelopes/) | salted hash commitments for the two Bouchaudy cipher solves |
 
 Each family has `README.md` (scope, comparison, credits, limitations), `RUN_IT_YOURSELF.md` (commands, expected
-output) and `verify-it-yourself/` (checkers, `run_checks.sh`, and `RECEIPTS.md`: their output on the shipped files).
+output), `verify-it-yourself/` (checkers, `run_checks.sh`, and `RECEIPTS.md`: their output on the shipped files),
+`how-we-built-it/` (the code that generated the objects, pinned requirements, exact commands, `SMOKE.md`: a small
+test run) and `HOW_WE_FOUND_IT.md` (the brief the agent was given, what failed, what worked, credits).
 
 ## How to verify
 
@@ -46,7 +48,7 @@ output) and `verify-it-yourself/` (checkers, `run_checks.sh`, and `RECEIPTS.md`:
 shasum -a 256 -c SHA256SUMS                    # or: sha256sum -c SHA256SUMS   (every file tracked in git)
 sh known-knowns/biggest-graphs/verify-it-yourself/run_checks.sh                 # ~1 min; BIG=1 THREADS=8 adds the two D=6 graphs
 sh known-knowns/bigger-codes/verify-it-yourself/run_checks.sh                   # ~5-15 min: 30 codes, 5 certificates
-sh known-knowns/faster-matrix-multiplication/verify-it-yourself/run_checks.sh   # ~6 min: Brent equations (exact), ranks, controls
+sh known-knowns/faster-matrix-multiplication/verify-it-yourself/run_checks.sh   # ~6-8 min: 7 scheme files, Brent equations (exact), ranks, controls
 sh known-knowns/lehmer-past-10-to-the-50/verify-it-yourself/run_checks.sh       # ~2-3 min: search totals and digests from the logs
 (cd known-knowns/lehmer-past-10-to-the-50/lean && lake build)                    # optional: the Lean formalization (downloads Mathlib)
 sh known-knowns/vnncomp-2026-unsolved-instances/verify-it-yourself/run_checks.sh      # seconds: downloads the benchmark files (pinned commit); OFFICIAL=1 adds the competition's validator

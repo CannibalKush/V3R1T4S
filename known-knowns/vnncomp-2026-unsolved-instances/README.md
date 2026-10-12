@@ -42,10 +42,13 @@ at the time of this release.
 The traffic-sign networks of this benchmark are binarized: weights in {−1, +1}, sign activations, integer pixel
 inputs. Gradient attacks get no useful signal from them, which may be one reason no tool resolved these instances. Our agents
 wrote an exact integer model of the 3_30_30 network (checked against onnxruntime: maximum deviation 0.0) and searched
-with the CP-SAT constraint solver of Google OR-Tools over pixel perturbations of ±(1 − 2^-10), so that every
-coordinate stays strictly inside its interval and is exact in float32, maximising the gap between a wrong class and
-the true class. The gap closed from −950 to +10 (idx 1703, 73 s) and from −940 to +4 (idx 178, 351 s) on 4 CPU cores.
-The search code is not part of this release; the claim rests on the two witness files and the checkers.
+with the CP-SAT constraint solver of Google OR-Tools over pixel perturbations of ±(1 − 2^-10) (idx 1703; for idx 178
+±(1 − 2^-9), plus a 2^-10 offset on the 315 coordinates whose box is clipped at 255), so that every coordinate stays
+strictly inside its interval and is exact in float32, maximising the gap between a wrong class and the true class. The
+gap closed from −950 to +10 (idx 1703, 73 s) and from −940 to +4 (idx 178, 351 s) on 4 CPU cores.
+The search code is in [`how-we-built-it/`](how-we-built-it/README.md) (it regenerates both witness files byte for
+byte from the saved solver solutions); the story is in [`HOW_WE_FOUND_IT.md`](HOW_WE_FOUND_IT.md). The claim rests on
+the two witness files and the checkers.
 
 ## Credits (please cite)
 
@@ -65,8 +68,9 @@ The search code is not part of this release; the claim rests on the two witness 
 - "Unsolved" means that no tool resolved the instance within the competition's 480-second limit. It is not a
   long-standing open problem. These are 2 of the 127 such instances; 7 more traffic-sign instances (on the larger
   48×48 and 64×64 networks) remain unresolved.
-- The witnesses move pixels by fractional amounts (±(1 − 2^-10)), so they are not integer-valued images. VNN-LIB uses
-  real-valued boxes and the official validator accepts them; they are not claimed as integer-pixel adversarial images.
+- The witnesses move pixels by fractional amounts (±(1 − 2^-10), or ±(1 − 2^-9) and 2^-10 offsets for idx 178), so
+  they are not integer-valued images. VNN-LIB uses real-valued boxes and the official validator accepts them; they are
+  not claimed as integer-pixel adversarial images.
 - Our onnxruntime (1.31.0) is newer than the competition's pin (1.26.0). The reference evaluator gives identical
   outputs and the margins are about 1, so a version-dependent change is implausible but has not been tested on 1.26.0.
 - Internal verification only; the organisers have not seen these witnesses.
@@ -80,6 +84,8 @@ witnesses/model_30_idx_178_eps_1/    the same for the second instance
 verify-it-yourself/  vnncheck.py (standalone checker), mutate.py (negative controls), official_validate.py (runs the
                      competition's validator unmodified), run_checks.sh, RECEIPTS.md
 the-record-we-beat/  sources_2026-10-12T03-36-49Z.json (fetch times, HTTP headers, sha256, extracted rows), parse_results.py
+how-we-built-it/     the generating code: exact integer model, CP-SAT search, witness writer, saved solutions, SMOKE.md
+HOW_WE_FOUND_IT.md   how the search went
 ```
 
 The ONNX model and the VNN-LIB properties are **not** redistributed here; the checkers download them from the

@@ -1,0 +1,112 @@
+[c134] start N=6614 free=350 from valid_p134_13_4_N6614_pruned.edges
+[c134] pruned 0 edges at start -> free=350
+[c134] N->6615 seed 13001: init 46 best 0 acc 59 full 129 screened 42541 2566s
+[c134] VALID N=6615 diam=4 maxdeg=13 free=295 -> valid_c134_13_4_N6615.edges
+[c134] pruned 12 edges -> free=319
+[c134] N->6616 seed 13002: init 46 best 0 acc 56 full 75 screened 25639 2124s
+[c134] VALID N=6616 diam=4 maxdeg=13 free=262 -> valid_c134_13_4_N6616.edges
+[c134] pruned 15 edges -> free=292
+[c134] N->6617 seed 13003: init 40 best 0 acc 48 full 75 screened 22915 2108s
+[c134] VALID N=6617 diam=4 maxdeg=13 free=237 -> valid_c134_13_4_N6617.edges
+[c134] pruned 10 edges -> free=257
+[c134] N->6618 seed 13004: init 53 best 0 acc 64 full 66 screened 31935 1394s
+[c134] VALID N=6618 diam=4 maxdeg=13 free=174 -> valid_c134_13_4_N6618.edges
+[c134] pruned 15 edges -> free=204
+[c134] N->6619 seed 13005: init 36 best 0 acc 50 full 114 screened 51338 2968s
+[c134] VALID N=6619 diam=4 maxdeg=13 free=169 -> valid_c134_13_4_N6619.edges
+[c134] pruned 10 edges -> free=189
+[c134] N->6620 seed 13006: init 59 best 0 acc 88 full 199 screened 82058 4707s
+[c134] VALID N=6620 diam=4 maxdeg=13 free=140 -> valid_c134_13_4_N6620.edges
+[c134] pruned 19 edges -> free=178
+[c134] N->6621 seed 13007: init 26 best 0 acc 31 full 76 screened 32262 1784s
+[c134] VALID N=6621 diam=4 maxdeg=13 free=151 -> valid_c134_13_4_N6621.edges
+[c134] pruned 4 edges -> free=159
+[c134] N->6622 seed 13008: init 54 best 0 acc 54 full 105 screened 42917 2728s
+[c134] VALID N=6622 diam=4 maxdeg=13 free=122 -> valid_c134_13_4_N6622.edges
+[c134] pruned 4 edges -> free=130
+[c134] N->6623 seed 13009: init 73 best 0 acc 38 full 51 screened 24852 1344s
+[c134] VALID N=6623 diam=4 maxdeg=13 free=89 -> valid_c134_13_4_N6623.edges
+[c134] pruned 10 edges -> free=109
+[c134] N->6624 seed 13010: init 62 best 0 acc 94 full 220 screened 109758 6175s
+[c134] VALID N=6624 diam=4 maxdeg=13 free=68 -> valid_c134_13_4_N6624.edges
+[c134] pruned 11 edges -> free=90
+[c134] N->6625 seed 13011: init 57 best 0 acc 80 full 227 screened 120578 5653s
+[c134] VALID N=6625 diam=4 maxdeg=13 free=65 -> valid_c134_13_4_N6625.edges
+[c134] pruned 9 edges -> free=83
+[c134] N->6626 seed 13012: init 41 best 0 acc 82 full 249 screened 139336 4062s
+[c134] VALID N=6626 diam=4 maxdeg=13 free=60 -> valid_c134_13_4_N6626.edges
+[c134] pruned 4 edges -> free=68
+[c134] N->6627 seed 13013: init 88 best 8 acc 105 full 297 screened 160093 3980s
+[c134] N->6627 seed 13014: init 88 best 0 acc 108 full 274 screened 136107 338s
+[c134] VALID N=6627 diam=4 maxdeg=13 free=37 -> valid_c134_13_4_N6627.edges
+[c134] pruned 5 edges -> free=47
+[c134] N->6628 seed 13015: init 150 best 14 acc 123 full 310 screened 159906 258s
+[c134] N->6628 seed 13016: init 150 best 54 acc 112 full 300 screened 160408 307s
+[c134] N->6628 seed 13017: init 150 best 9 acc 99 full 324 screened 159568 255s
+[c134] N->6628 seed 13018: init 150 best 23 acc 122 full 327 screened 159845 264s
+[c134] N->6628 seed 13019: init 150 best 22 acc 112 full 269 screened 159719 256s
+[c134] N->6628 seed 13020: init 150 best 2 acc 121 full 298 screened 159994 228s
+[c134] N->6628 seed 13021: init 150 best 15 acc 105 full 298 screened 160024 249s
+[c134] N->6628 seed 13022: init 150 best 4 acc 117 full 323 screened 159759 241s
+[c134] N->6628 seed 13023: init 150 best 4 acc 120 full 277 screened 160000 229s
+[c134] N->6628 seed 13024: init 150 best 33 acc 101 full 272 screened 159903 243s
+[c134] N->6628 seed 13025: init 150 best 6 acc 109 full 294 screened 159818 234s
+[c134] N->6628 seed 13026: init 150 best 13 acc 126 full 335 screened 160024 226s
+[c134] N->6628 seed 13027: init 150 best 22 acc 113 full 305 screened 159924 204s
+[c134] N->6628 seed 13028: init 150 best 31 acc 99 full 291 screened 160155 186s
+[c134] N->6628 seed 13029: init 150 best 18 acc 107 full 303 screened 159782 186s
+[c134] N->6628 seed 13030: init 150 best 38 acc 112 full 287 screened 160056 181s
+[c134] N->6628 seed 13031: init 150 best 19 acc 123 full 310 screened 159896 180s
+[c134] N->6628 seed 13032: init 150 best 9 acc 127 full 312 screened 159867 181s
+[c134] N->6628 seed 13033: init 150 best 5 acc 118 full 310 screened 160247 173s
+[c134] N->6628 seed 13034: init 150 best 35 acc 98 full 285 screened 160027 140s
+[c134] N->6628 seed 13035: init 150 best 25 acc 140 full 330 screened 159986 139s
+[c134] N->6628 seed 13036: init 150 best 18 acc 98 full 283 screened 159796 138s
+[c134] N->6628 seed 13037: init 150 best 20 acc 116 full 295 screened 160043 139s
+[c134] N->6628 seed 13038: init 150 best 35 acc 117 full 307 screened 159952 142s
+[c134] N->6628 seed 13039: init 150 best 13 acc 89 full 314 screened 159831 143s
+[c134] N->6628 seed 13040: init 150 best 0 acc 89 full 245 screened 148350 137s
+[c134] VALID N=6628 diam=4 maxdeg=13 free=26 -> valid_c134_13_4_N6628.edges
+[c134] pruned 10 edges -> free=46
+[c134] N->6629 seed 13041: init 96 best 11 acc 120 full 334 screened 159921 154s
+[c134] N->6629 seed 13042: init 96 best 39 acc 83 full 281 screened 159801 158s
+[c134] N->6629 seed 13043: init 96 best 21 acc 104 full 282 screened 160128 168s
+[c134] N->6629 seed 13044: init 96 best 34 acc 104 full 283 screened 159814 167s
+[c134] N->6629 seed 13045: init 96 best 10 acc 83 full 271 screened 160230 171s
+[c134] N->6629 seed 13046: init 96 best 31 acc 100 full 272 screened 160375 188s
+[c134] N->6629 seed 13047: init 96 best 23 acc 103 full 292 screened 160040 189s
+[c134] N->6629 seed 13048: init 96 best 8 acc 81 full 282 screened 160079 193s
+[c134] N->6629 seed 13049: init 96 best 0 acc 98 full 270 screened 141972 165s
+[c134] VALID N=6629 diam=4 maxdeg=13 free=27 -> valid_c134_13_4_N6629.edges
+[c134] pruned 5 edges -> free=37
+[c134] N->6630 seed 13050: init 126 best 39 acc 106 full 301 screened 160244 190s
+[c134] N->6630 seed 13051: init 126 best 23 acc 92 full 270 screened 159781 187s
+[c134] N->6630 seed 13052: init 126 best 35 acc 91 full 279 screened 159848 185s
+[c134] N->6630 seed 13053: init 126 best 25 acc 82 full 285 screened 160083 188s
+[c134] N->6630 seed 13054: init 126 best 30 acc 85 full 306 screened 160089 188s
+[c134] N->6630 seed 13055: init 126 best 33 acc 83 full 285 screened 160038 186s
+[c134] N->6630 seed 13056: init 126 best 21 acc 94 full 288 screened 159732 185s
+[c134] N->6630 seed 13057: init 126 best 15 acc 101 full 307 screened 160041 188s
+[c134] N->6630 seed 13058: init 126 best 32 acc 114 full 308 screened 159988 169s
+[c134] N->6630 seed 13059: init 126 best 44 acc 110 full 327 screened 159969 141s
+[c134] N->6630 seed 13060: init 126 best 27 acc 109 full 288 screened 159933 158s
+[c134] N->6630 seed 13061: init 126 best 21 acc 107 full 297 screened 160110 242s
+[c134] N->6630 seed 13062: init 126 best 18 acc 103 full 301 screened 159573 198s
+[c134] N->6630 seed 13063: init 126 best 33 acc 125 full 309 screened 160264 143s
+[c134] N->6630 seed 13064: init 126 best 2 acc 94 full 273 screened 159655 144s
+[c134] N->6630 seed 13065: init 126 best 34 acc 102 full 299 screened 160304 152s
+[c134] N->6630 seed 13066: init 126 best 31 acc 86 full 310 screened 160185 172s
+[c134] N->6630 seed 13067: init 126 best 29 acc 112 full 305 screened 160300 141s
+[c134] N->6630 seed 13068: init 126 best 10 acc 107 full 301 screened 160088 142s
+[c134] N->6630 seed 13069: init 126 best 20 acc 106 full 296 screened 159967 141s
+[c134] N->6630 seed 13070: init 126 best 23 acc 110 full 310 screened 159881 141s
+[c134] N->6630 seed 13071: init 126 best 6 acc 104 full 287 screened 160150 141s
+[c134] N->6630 seed 13072: init 126 best 46 acc 100 full 288 screened 160149 142s
+[c134] N->6630 seed 13073: init 126 best 37 acc 105 full 295 screened 160233 141s
+[c134] N->6630 seed 13074: init 126 best 26 acc 102 full 302 screened 159909 140s
+[c134] N->6630 seed 13075: init 126 best 27 acc 112 full 320 screened 160069 140s
+[c134] N->6630 seed 13076: init 126 best 23 acc 74 full 253 screened 159850 140s
+[c134] N->6630 seed 13077: init 126 best 47 acc 103 full 324 screened 160296 144s
+[c134] N->6630 seed 13078: init 126 best 41 acc 100 full 271 screened 159819 153s
+[c134] N->6630 seed 13079: init 126 best 26 acc 112 full 289 screened 160281 200s
+[c134] STUCK at N=6629 after 30 consecutive failures

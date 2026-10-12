@@ -86,6 +86,18 @@ python3 ../../verify-it-yourself/lbb2_aggregate.py .                            
 Positive controls described in the README (companion equation N + 1 = 2φ(N) with SIGMA = −1 and PMIN = 3 for lcrt5 /
 vlrt2; `-fake -R` planted mode for lbb2) are documented in the engine headers and in `engines/SPEC_LCRT5.md` §5.
 
+## Regenerate the shipped objects
+
+[`how-we-built-it/README.md`](how-we-built-it/README.md) gives the exact commands and runtimes that produced every file in
+`branch_logs/` and `certificates/`, including the engine revision of the certified LCRT-4 run (a patch to
+`engines/lcrt5.c`) and the steps that assembled `vlrt2_full50_union.tasks.jsonl.gz` from its two runs. The main command
+(certified run, then summary and certificate; ~25 min on 8 workers, needs sympy):
+```sh
+mkdir -p scratch/job && cd scratch/job
+sh ../../how-we-built-it/run_lcrt5_job.sh ../../engines/lcrt5_v1 ../v1/engines 50   # build lcrt5_v1 first: how-we-built-it/README.md §0
+```
+A tiny version of the whole pipeline (X = 10^30, seconds) is in `how-we-built-it/SMOKE.md`.
+
 ## What a different result would mean
 
 Any `SOLUTION` event, any Euler pass, any integral two-prime completion, a digest mismatch between engines, or a

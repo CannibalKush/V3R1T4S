@@ -1,0 +1,8 @@
+[p134] start N=6612 free=318 from G_13_4_n6612.edges
+[p134] pruned 61 edges at start -> free=440
+[p134] N->6613 seed 9001: init 57 best 0 acc 58 full 89 screened 18214 545s
+[p134] VALID N=6613 diam=4 maxdeg=13 free=365 -> valid_p134_13_4_N6613.edges
+[p134] pruned 14 edges -> free=393
+[p134] N->6614 seed 9002: init 50 best 0 acc 57 full 56 screened 16085 519s
+[p134] VALID N=6614 diam=4 maxdeg=13 free=314 -> valid_p134_13_4_N6614.edges
+[p134] pruned 18 edges -> free=350

@@ -1,5 +1,56 @@
 # Check results (fast matrix multiplication)
 
+## 2026-10-12: the two new records
+
+`python3 verify-it-yourself/fmmcheck.py` was run on the two new files from 2026-10-12T18:07:55Z to 18:08:33Z on the build
+machine (macOS, python3 3.9.6, numpy 2.0.2). Both exit 0; both sha256 equal `INDEX.csv`.
+
+| scheme | Brent equations checked | primes (p < 2^20) | log2 ∏p | log2 2L(S+1) | violations | rank (nonzero terms) | sha256 = INDEX.csv | verdict |
+|---|---|---|---|---|---|---|---|---|
+| <14,15,15> `14x15x15_r1842_Q.json` | 9 922 500 | 4 | 80.0 | 32.9 | 0 | 1842 | yes | PASS |
+| <15,16,16> `15x16x16_r2180_Q.json` | 14 745 600 | 4 | 80.0 | 39.4 | 0 | 2180 | yes | PASS |
+
+Comparison with the criterion sources as re-checked on 2026-10-12 (`the-record-we-beat/live_recheck_2026-10-12.json`):
+1842 is 6 below the minimum 1848 for <14,15,15>, and 2180 is 43 below the minimum 2223 for <15,16,16>. The earlier
+files `14x15x15_r1843_Q.json` and `15x16x16_r2196_Q.json` stay in `schemes/` (they are the parents of the new
+schemes, and 1843 is also the parent of the <14,14,15>:1716); their release-time check is below. `run_checks.sh` now
+checks all seven files.
+
+Before release each new scheme was also checked by three separate reviewers with their own code (exact float64 or
+int64 on the integer-scaled tensor, CRT over other primes, exact Fraction evaluation on random matrices), and its
+derivation from the parent was certified in exact arithmetic (see `../HOW_WE_FOUND_IT.md`).
+
+```
+2026-10-12T18:07:55Z
+Python 3.9.6
+numpy 2.0.2
+== schemes/14x15x15_r1842_Q.json
+  mod 1048573: violated Brent equations = 0
+  mod 1048571: violated Brent equations = 0
+  mod 1048559: violated Brent equations = 0
+  mod 1048549: violated Brent equations = 0
+  checked 210*225*210 = 9922500 Brent equations modulo 4 primes; log2(prod primes) = 80.0 > log2(2 L (S+1)) = 32.9
+FMMCHECK PASS file=14x15x15_r1842_Q.json format=<14,15,15> sorted=<14,15,15> terms=1842 rank_nonzero_terms=1842 sha256=bb313b876ef9a14b57e72f4deafdae9085bcdad1d1f43d70067788f7e375c6b5
+real 11.11
+user 10.38
+sys 0.15
+exit 0
+== schemes/15x16x16_r2180_Q.json
+  mod 1048573: violated Brent equations = 0
+  mod 1048571: violated Brent equations = 0
+  mod 1048559: violated Brent equations = 0
+  mod 1048549: violated Brent equations = 0
+  checked 240*256*240 = 14745600 Brent equations modulo 4 primes; log2(prod primes) = 80.0 > log2(2 L (S+1)) = 39.4
+FMMCHECK PASS file=15x16x16_r2180_Q.json format=<15,16,16> sorted=<15,16,16> terms=2180 rank_nonzero_terms=2180 sha256=8365355f0f3ae6bc3efd445517fbd473c91477cd1c2b2aeb08c0b3b85182fd1d
+real 27.19
+user 25.83
+sys 0.33
+exit 0
+2026-10-12T18:08:33Z
+```
+
+## 2026-10-10: release-time run (five schemes)
+
 `sh verify-it-yourself/run_checks.sh` was run on the shipped files from 2026-10-10T19:30:51Z to 19:37:03Z on the build machine
 (macOS, python3 3.9, numpy 2.0.2, load average about 80–100 from other jobs). Exit code 0, last line
 `ALL CHECKS PASSED`.

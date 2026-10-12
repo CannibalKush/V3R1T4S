@@ -5,11 +5,11 @@ Two licenses apply, by path. When in doubt: **source code is AGPL-3.0, everythin
 | Path | What it is | License |
 |---|---|---|
 | `known-knowns/*/verify-it-yourself/*.py`, `known-knowns/*/verify-it-yourself/*.c`, `known-knowns/*/verify-it-yourself/*.sh` | checkers, check scripts | AGPL-3.0 (`LICENSE`) |
-| `known-knowns/biggest-graphs/how-we-built-it/**/*.py`, `known-knowns/biggest-graphs/the-record-we-beat/*.py` | rebuild scripts, table parser | AGPL-3.0 |
+| `known-knowns/*/how-we-built-it/**` source code (`*.py`, `*.c`, `*.h`, `*.sh`, `*.patch`, `requirements*.txt`), `known-knowns/biggest-graphs/the-record-we-beat/*.py` | generating code (searches, constructions, rebuild scripts), table parser | AGPL-3.0 |
 | `known-knowns/bigger-codes/the-record-we-beat/*.py`, `known-knowns/faster-matrix-multiplication/the-record-we-beat/*.py`, `known-knowns/vnncomp-2026-unsolved-instances/the-record-we-beat/*.py` | table parsers | AGPL-3.0 |
 | `known-knowns/lehmer-past-10-to-the-50/engines/*.c`, `known-knowns/lehmer-past-10-to-the-50/engines/*.py` | search engines and tools | AGPL-3.0 |
 | `known-knowns/lehmer-past-10-to-the-50/lean/**` (`*.lean`, `lakefile.toml`, `lean-toolchain`, `lake-manifest.json`) | Lean formalization | AGPL-3.0 |
-| `known-knowns/biggest-graphs/graphs/`, `known-knowns/biggest-graphs/how-we-built-it/**` (non-code: parameters, certificates, cut sets, near-miss) | graphs and construction data | CC BY 4.0 (`LICENSE-DATA`) + third-party attribution below |
+| `known-knowns/biggest-graphs/graphs/`, `known-knowns/*/how-we-built-it/**` (non-code: parameters, certificates, cut sets, near-miss, seeds lists) | graphs and construction data | CC BY 4.0 (`LICENSE-DATA`) + third-party attribution below |
 | `known-knowns/bigger-codes/codes/`, `certificates/` | codes and LP certificates | CC BY 4.0 + attribution below |
 | `known-knowns/faster-matrix-multiplication/schemes/` | matrix multiplication schemes | CC BY 4.0 + attribution below |
 | `known-knowns/vnncomp-2026-unsolved-instances/witnesses/` | VNN-COMP counterexample inputs | CC BY 4.0 + attribution below |
@@ -36,7 +36,10 @@ underlying works keep their own terms, and their authors must be credited whenev
   graph Q9(T4)++. Required attribution: *R. Rajiv, "Large graphs of given degree and diameter from compounds of
   generalized hexagons" dataset, Zenodo, doi:10.5281/zenodo.23052995, licensed CC BY 4.0; modified by the V3R1T4S
   agents (cut sets, surgery vertices, shortcuts, vertex insertion and edge switches).* His base graphs are not
-  redistributed; the construction files rebuild our graphs from his published files.
+  redistributed; the construction files rebuild our graphs from his published files. The (13,4) search intermediate
+  `known-knowns/biggest-graphs/how-we-built-it/13_4/valid_c134_13_4_N6629_pruned.edges.gz` (6 629 vertices) also
+  descends from his Q9(T4)++ and carries the same attribution; the search starts from his published file (URL and
+  sha256 in `known-knowns/biggest-graphs/how-we-built-it/13_4/README.md`), which is not redistributed.
 - **Nishant Bhakar.** `known-knowns/biggest-graphs/how-we-built-it/14_4/G_14_4_n8424.params.json` contains his (4,4) graph on 104
   vertices ("Bhakar_104", F. Comellas' table, 27 Aug 2026), reproduced only because the lift cannot be rebuilt
   without it. Credit him for that graph.
@@ -46,10 +49,13 @@ underlying works keep their own terms, and their authors must be credited whenev
   (https://aeb.win.tue.nl/codes/Andw.html) or of a Graham–Sloane code; the seed of every cell is named in
   `known-knowns/bigger-codes/INDEX.csv` (Jordan Boisclair, Daniel Gangl, Alfonso Gippini (doi:10.5281/zenodo.23075336),
   Christian Lysenstøen (arXiv:2607.19550), William Echols (arXiv:2608.13906), unlabelled archive codes). Most words of
-  each code are the seed author's words; credit them.
+  each code are the seed author's words; credit them. The seed files are not redistributed:
+  `known-knowns/bigger-codes/how-we-built-it/fetch_seeds.sh` downloads them from Brouwer's archive and checks their sha256.
 - **LITA** (Kirill Khoruzhii, Luzian Serafin, Patrick Gelß, Sebastian Pokutta, github.com/khoruzhii/lita):
-  our five schemes in `known-knowns/faster-matrix-multiplication/schemes/` are derived from (restrictions of) their public square schemes.
+  all scheme files in `known-knowns/faster-matrix-multiplication/schemes/` are derived from their public square schemes (restrictions, and for the 1842 and 2180 a further absorption step).
   Their repository has no license; we will remove or relicense the derived schemes on request. Cite LITA with the BibTeX under "Please cite" in `known-knowns/faster-matrix-multiplication/README.md`.
+  The generating code in `known-knowns/faster-matrix-multiplication/how-we-built-it/` contains no LITA code and does not
+  ship their scheme files: `fetch_lita.sh` downloads them at a pinned commit and checks their sha256.
 - **VNN-COMP 2026** (github.com/VNN-COMP/vnncomp2026_benchmarks, vnncomp2026_results): the benchmark files (ONNX
   networks, VNN-LIB properties), the results table and the official validator are **not redistributed**; the checkers
   download them from a pinned commit and check their sha256. We publish only our two witnesses. Each witness lies within
@@ -66,6 +72,15 @@ underlying works keep their own terms, and their authors must be credited whenev
   should follow the CIFAR-100 terms and cite Krizhevsky (2009). The model weights (S. Addepalli, S. Jain, R. Venkatesh
   Babu, NeurIPS 2022) and RobustBench's code and tables are **not redistributed**; the checker downloads them through
   RobustBench. We will remove or relicense the tensor on request.
+- **Third-party code and tools used by `how-we-built-it/`.** No third-party source code is vendored. The RobustBench
+  attack code (`known-knowns/robustbench-cifar100-stronger-attack/how-we-built-it/apgd_lib.py` and `multistart.py`)
+  re-implements APGD following fra31/auto-attack (F. Croce and M. Hein; MIT licence, Copyright (c) 2020 Francesco
+  Croce); credit them. The CR Attack repository it also uses has no licence, so it is not redistributed:
+  `make_cr_attack.py` downloads it at run time, applies our line edits and checks the sha256 of the result. The small
+  arrays in `known-knowns/robustbench-cifar100-stronger-attack/how-we-built-it/stage6-inputs/` are perturbed CIFAR-100
+  test images and fall under the CIFAR-100 note above. The scripts call, without modifying or shipping them,
+  RobustBench and PyTorch, OR-Tools (Apache-2.0), onnx/onnxruntime, python-sat, galois, numba, numpy, sympy and GMP,
+  each under its own licence; pinned versions are in each `requirements.txt`.
 - **Reference tables and catalogues** (F. Comellas' degree-diameter table, A. E. Brouwer's constant-weight table, the
   fast-matrix-multiplication catalogues, J.-F. Bouchaudy's challenge pages, the VNN-COMP results table, RobustBench's
   model_info files) are **never redistributed**. `the-record-we-beat/`

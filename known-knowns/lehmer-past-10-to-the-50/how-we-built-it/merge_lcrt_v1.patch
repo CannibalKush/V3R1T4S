@@ -1,0 +1,21 @@
+--- a/engines/merge_lcrt.py	2026-10-11 22:07:20
++++ b/engines/merge_lcrt.py	2026-10-11 22:07:20
+@@ -16,7 +16,7 @@
+     d = sys.argv[1]
+     m = json.load(open(os.path.join(d, 'master.json')))
+     nt = m['ntasks']
+-    KEYS = ('nodes', 'pruned', 'c2p', 'c2a', 'c2i', 'live', 'small', 'cand', 'sqhit', 'kfilt', 'eclosed', 'epass', 'c2k')
++    KEYS = ('nodes', 'pruned', 'c2p', 'c2a', 'c2i', 'live', 'small', 'cand', 'sqhit', 'kfilt', 'eclosed', 'epass')
+     tot = {k: [] for k in KEYS}
+     dig = int(m['master']['digest'], 16)
+     digl = int(m['master'].get('digest_live', '0'), 16)
+@@ -49,8 +49,7 @@
+         "live_total": sum(tot['live']), "live_by_depth": tot['live'], "digest_live": "%016x" % digl,
+         "small_total": sum(tot['small']), "cand_total": sum(tot['cand']), "sqhit_total": sum(tot['sqhit']),
+         "kfilt_total": sum(tot['kfilt']), "euler_closed_total": sum(tot['eclosed']), "euler_pass_total": sum(tot['epass']),
+-        "cqmode": m.get("cqmode", 0), "euler": m.get("euler", 0), "c2cand": m.get("c2cand", 0),
+-        "c2k_total": sum(tot['c2k']), "c2k_by_depth": tot['c2k'],
++        "cqmode": m.get("cqmode", 0), "euler": m.get("euler", 0),
+         "nodes_total": sum(tot['nodes']), "nodes_by_depth": tot['nodes'], "pruned_total": sum(tot['pruned']),
+         "pruned_by_depth": tot['pruned'], "digest": "%016x" % dig,
+         "c2_primes": sum(tot['c2p']), "c2_adm": sum(tot['c2a']), "c2_int": sum(tot['c2i']),

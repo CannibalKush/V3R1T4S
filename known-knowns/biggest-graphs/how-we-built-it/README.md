@@ -1,0 +1,22 @@
+# How we built the seven graphs: index
+
+Two layers per cell. **Rebuild**: from the shipped parameters to the edge list (deterministic, byte-identical; commands
+in `../RUN_IT_YOURSELF.md`, section 3). **Search**: the code that found those parameters, in `<cell>/search/`, each
+with its own `README.md` and `requirements.txt` (exact commands, seeds, runtimes, expected hashes). All search code is
+the code the agents ran, cleaned of local paths; files written for this release are marked as such. Every search was
+run on one 10-core Apple-silicon laptop (Python 3.12.13, numpy 2.5.3, numba 0.68.0); seeded results are expected to be
+byte-identical only with these versions. `SMOKE.md` records the (13,4) reruns made for this release.
+
+| cell | rebuild (from the cell dir unless noted) | how the parameters were found (search code, seed) | rerun for this release | not recoverable / caveats |
+|---|---|---|---|---|
+| (15,4) | `gen_G_15_4_direct.py state_Z11x2Z30.json OUT` | `15_4/search/`: `exh_bip.py --group meta:11,30,2` (exhaustive generator scan, about 10 s), then `bip_proxy_search.py --gens '[3,35,195]' --seed 77` (annealing over the chart matrices, found at restart 0) | both steps; state byte-identical (25 s) | none known |
+| (15,3) | `rebuild_route_chart.py G_15_3_n1620.params.json OUT controller_own_k5_n60.adj` | `15_3/search/`: `vsa5.py --b 4 --group Z15 --k 5 --seed 5` (controller, annealing over Z_15 voltages), `k5sat.py` (route chart by exact SAT, python-sat/CaDiCaL), `make_params.py` | all steps; `.adj`, `.params.json` and edge list byte-identical (under 20 s) | the original conversion to the two published files was done by hand; `make_params.py` was written for the release and reproduces them exactly |
+| (14,4) | `rebuild_lift.py G_14_4_n8424.params.json OUT` | `14_4/search/`: `frame4.py adjD4_104c_d4D4.txt --seed 1 --tries 5` (random affine data + SAT for the transports); Bhakar's controller can be taken from the params file (`controller_from_params.py`, written for the release) or downloaded | yes; params and edge list byte-identical (12–32 s) | none known |
+| (9,4) | `rebuild_1700.py` | `9_4/search/`: `symsearch.py --q 7 --n 2 --seed 1 --steps 100000 --restarts 10` (symmetric WalkSAT over Z_2 voltages on W(7)), `lam.py` (edge list), `export_txt.py` | yes; `.npz`, edge list and the four `.txt` files byte-identical (47 s) | the script that wrote the `.txt` files was not kept; `export_txt.py` was written for the release and reproduces them exactly |
+| (13,4) | `13_4/apply_diff.py` (edge set from the near-miss and the 5-edge switch) | `13_4/search/`: the whole local-search chain from Rajiv's 6 611-vertex graph: `insert_step.py` (seed 1), `chain.py` with `specs/chain_p134.json` (seeds 9001–9002) and `specs/chain_c134.json` (seeds 13001–13079; near-miss at 13064), `sa2_resume.py` (seed 101) | first step, near-miss attempt and final step: byte-identical / identical edge lines (`SMOKE.md`) | the two chains (about 20 min and about 17 h) were not rerun as a whole; seeded, but numba/numpy versions may change the trajectory; the shipped near-miss and 6 629-vertex state let the last two steps be replayed |
+| (13,6) | `13_6/rebuild13.py` (Rajiv's files + certificate) | `13_6/search/`: `cutsets.py` (iterated local search for strict cut sets, seed 77, warm starts in `inputs/`), `relax_greedy.py` (rng 7), `relaxed13.py --seed 1 --t 4055` (surgery), `xchk.c` (far pairs), `exact_sc.py` (2 643 shortcuts, rng 1); `run_search.sh` runs all | from the shipped strict cut sets: relax, surgery and shortcuts, final graph byte-identical (`4ed4fc62…`, about 2 min); the seed-77 cut-set searches (20–25 min each) not rerun | `--stall` values of the H(9) cut-set runs not logged; the far-pair dump order depends on thread scheduling, so the original list is shipped (`inputs/far_pairs_t4055.txt`) for a byte-identical result |
+| (15,6) | `15_6/rebuild.py` (Rajiv's files + cut sets + shortcuts) | `15_6/search/`: `cutsets.py --side points --seed 5` / `--side lines --seed 1` (10 and 34 min), `../compound.py --t 7648 --seed 1`, `assign_generic.py --seed 1` (9 shortcuts); `run_search.sh` | no (needs Rajiv's 1.4 M-vertex graph; py_compile only) | the lines search started just before the last edit of `cutsets.py`; whether that edit changed the kernel is not recorded |
+
+Inputs that are not redistributed: Rajiv's Zenodo dataset (record 23052995, `data-and-verification.zip`) for (13,4),
+(13,6) and (15,6), and his SageMath file on the table's description page for (13,4); file names and sha256 values are in
+the cell READMEs.

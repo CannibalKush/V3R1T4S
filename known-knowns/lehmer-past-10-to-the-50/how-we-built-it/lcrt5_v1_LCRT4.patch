@@ -1,0 +1,184 @@
+--- a/engines/lcrt5.c	2026-10-11 22:07:20
++++ b/engines/lcrt5.c	2026-10-11 22:07:20
+@@ -60,9 +60,6 @@
+     u64 nodes[MAXD], pruned[MAXD], c2p[MAXD], c2a[MAXD], c2i[MAXD];
+     u64 live[MAXD], small[MAXD], cand[MAXD], sqhit[MAXD], kfilt[MAXD], eclosed[MAXD], epass[MAXD];
+     u64 digest, digest_live, maxq, crt_tests, crt_skip;
+-    u64 tdrej[MAXD];               /* r2 LCRT-6: Euler-closure candidates rejected by trial division (prime < lo) */
+-    u64 c2k[MAXD];                 /* r2 LCRT-5: live large-regime nodes whose m = 2 part was done by the candidate
+-                                      closure instead of the C2 prime loop (their candidates/hits go to cand/sqhit) */
+     u64 seg_c2, seg_ch;            /* r2 diagnostics: primes delivered by the segmented sieve (beyond the main sieve)
+                                       to C2 ranges / to children scans */
+ } Stats;
+@@ -72,13 +69,6 @@
+ static int EULER = 1;              /* LCRT-4: small-regime nodes first Euler-test their K candidates N = P Q:
+                                       a genuine completion has N - sigma = 2 phi(N), so 2^((N-sigma)/2) == 1 (mod N);
+                                       if every candidate fails, the node is closed (all m >= 2) */
+-static u64 C2CAND = 0;             /* r2 LCRT-5 (argv[13], 0 = off = LCRT-4): at a live large-regime node with K candidates
+-                                      and C2 interval [qa, qb], if K * C2CAND < qb - qa + 1 the m = 2 completions are found
+-                                      by the perfect-square test on the K candidates instead of the C2 prime loop */
+-static u64 TDIV = 0;               /* r2 LCRT-6 (argv[14], 0 = off): before the Euler test, a candidate Q divisible by a
+-                                      prime p < min(lo, TDIV) is rejected (every prime factor of a genuine cofactor
+-                                      Q = r_1 ... r_m is >= r_1 >= lo) */
+-static u64 TDG[256]; static int TDGN = 0; static u32 TDP[256][16]; static int TDPN[256];   /* prime groups, product < 2^64 */
+ static int CQMODE = 0;             /* cross-check mode: reimplementation of LCAP-CQ (1) / LCAP-CQ2 (2)
+                                       from a separate formalization effort's spec; stats: pruned=DEAD, small=UNIQUE|MULTI, live=SCAN,
+                                       cand=#candidates Euler-tested, sqhit=#Euler passes */
+@@ -205,7 +195,6 @@
+ }
+ static inline void ps_ensure(PStream *s, int64_t look) { while (s->n - s->pos < look) ps_refill(s); }
+ 
+-static const char *EVVIA = "c2";    /* r2: which closure produced an event (reported only when C2CAND != 0) */
+ static void record_event_z(int j, const mpz_t qz, const mpz_t r, const mpz_t P) {
+     const char *reason;
+     if (mpz_cmp(r, qz) <= 0) reason = "r<=q";
+@@ -226,8 +215,7 @@
+     evlen += sprintf(evbuf + evlen, "%s{\"prefix\":[", nev ? "," : "");
+     for (int i = 0; i < j; i++) evlen += sprintf(evbuf + evlen, "%s%llu", i ? "," : "", (unsigned long long)pre[i]);
+     char *qs = mpz_get_str(0, 10, qz);
+-    if (C2CAND) evlen += sprintf(evbuf + evlen, "],\"q\":%s,\"r\":%s,\"reason\":\"%s\",\"via\":\"%s\"}", qs, rs, reason, EVVIA);
+-    else evlen += sprintf(evbuf + evlen, "],\"q\":%s,\"r\":%s,\"reason\":\"%s\"}", qs, rs, reason);
++    evlen += sprintf(evbuf + evlen, "],\"q\":%s,\"r\":%s,\"reason\":\"%s\"}", qs, rs, reason);
+     free(rs); free(qs); nev++;
+ }
+ static void record_event(int j, u64 q, const mpz_t r, const mpz_t P) {
+@@ -277,43 +265,6 @@
+     mpz_clear(r);
+ }
+ 
+-/* r2 LCRT-5: m = 2 completions of live node j through its K candidates Q = Q1 + k*8Phi (0 <= k < K).
+- * A completion (q, r) (q prime >= lo, r > q, P q r <= X, P q r - 2 Phi (q-1)(r-1) = sigma; r is odd because
+- * n = 2 Phi (q-1) - sigma is odd) has Q = q r == sigma P^{-1} (mod 8 Phi) (Lemma CRT, m = 2) and lo(lo+2) <= Q <= X/P,
+- * so Q is a candidate; then Psi = (P Q - sigma)/(2 Phi) = (q-1)(r-1), q + r = Q - Psi + 1 and (q, r) are the roots of
+- * t^2 - (Q - Psi + 1) t + Q.  Same events as the C2 prime loop over [qa, qb]. */
+-static mpz_t QC, MC;
+-static void c2_cand(int j, const mpz_t P, const mpz_t Phi) {
+-    u64 K = CK[j];
+-    u64 plast = j ? pre[j - 1] : PMIN - 1;
+-    S.c2k[j]++;
+-    mpz_mul_2exp(TPH, Phi, 1);
+-    mpz_mul_2exp(MC, Phi, 3);
+-    mpz_set(QC, CQ1[j]);
+-    for (u64 k = 0; k < K; k++) {
+-        if (k) mpz_add(QC, QC, MC);
+-        S.cand[j]++;
+-        mpz_mul(PSI, P, QC); mpz_sub(PSI, PSI, SIG);
+-        if (!mpz_divisible_p(PSI, TPH)) die("candidate not congruent (c2_cand)");
+-        mpz_divexact(PSI, PSI, TPH);
+-        mpz_sub(WW, QC, PSI); mpz_add_ui(WW, WW, 1);              /* r1 + r2 */
+-        mpz_mul(DISC, WW, WW); mpz_submul_ui(DISC, QC, 4);        /* (r2 - r1)^2 */
+-        if (mpz_sgn(DISC) <= 0 || !mpz_perfect_square_p(DISC)) continue;
+-        mpz_sqrt(SQ, DISC);
+-        mpz_sub(R1, WW, SQ);
+-        if (mpz_odd_p(R1)) continue;
+-        mpz_tdiv_q_2exp(R1, R1, 1); mpz_add(R2, WW, SQ); mpz_tdiv_q_2exp(R2, R2, 1);
+-        S.sqhit[j]++;
+-        if (mpz_cmp(R1, LOZ_J[j]) < 0 || mpz_cmp_ui(R1, plast) <= 0) continue;
+-        if (!is_prime_z(R1)) continue;
+-        int ok = 1; mpz_sub_ui(T5, R1, 1);
+-        for (int i = 0; i < j && ok; i++) if (mpz_divisible_ui_p(T5, pre[i])) ok = 0;
+-        if (!ok) continue;
+-        S.c2i[j]++;
+-        EVVIA = "c2cand"; record_event_z(j, R1, R2, P); EVVIA = "c2";
+-    }
+-}
+-
+ static void c2(int j, const mpz_t P, const mpz_t Phi, const mpz_t A, u64 lo, u64 qmax0) {
+     if (!hneg(lo, A, Phi)) return;
+     /* qb = largest q in [lo, qmax0] with h(q) < 0; estimate q+ = (2 Phi + sqrt(D))/A, D = 4 Phi^2 - A (2 Phi + SIGMA) */
+@@ -345,8 +296,6 @@
+         qa = good;
+     }
+     if (qb > S.maxq) S.maxq = qb;
+-    if (C2CAND && CRT && FILT && !CQMODE && CK[j] < ((u64)1 << 62) &&
+-        (unsigned __int128)CK[j] * C2CAND < (unsigned __int128)(qb - qa) + 1) { c2_cand(j, P, Phi); return; }
+     /* r2: primes of [qa, qb] inside the main sieve from PR, the rest (if any) from the exact segmented sieve */
+     u64 last = (u64)PR[NPR - 1];
+     u64 qbs = qb < last ? qb : last;
+@@ -389,22 +338,12 @@
+ /* small regime: K candidates Q (all Q == SIGMA P^{-1} mod 8 Phi in [lo(lo+2), X/P]) stored in CAND[j][0..K-1].
+  * m = 2 completions: Q = r1 r2, Psi = (P Q - SIGMA)/(2 Phi) = (r1-1)(r2-1) => r1 + r2 = Q - Psi + 1 => perfect square.
+  * m >= 3 completions: first remaining prime q is an LCAP-1 child dividing its candidate Q (push-down filter). */
+-static int small_factor(const mpz_t Q, u64 lo) {       /* 1 iff some prime p < min(lo, TDIV) divides Q */
+-    for (int g = 0; g < TDGN; g++) {
+-        if (TDP[g][0] >= lo) return 0;
+-        u64 r = mpz_fdiv_ui(Q, TDG[g]);
+-        for (int i = 0; i < TDPN[g]; i++) { u64 p = TDP[g][i]; if (p >= lo) return 0; if (r % p == 0) return 1; }
+-    }
+-    return 0;
+-}
+ static void small_closure(int j, int K) {
+     mpz_t *P = &PP[j], *Phi = &FF[j];
+     u64 plast = j ? pre[j - 1] : PMIN - 1;
+     if (EULER) {
+         int pass = 0;
+-        u64 lo64 = TDIV ? mpz_get_ui(LOZ_J[j]) : 0;
+         for (int k = 0; k < K; k++) {
+-            if (TDIV && small_factor(CAND[j][k], lo64)) { S.tdrej[j]++; continue; }
+             mpz_mul(T3, *P, CAND[j][k]);                       /* N */
+             mpz_sub(T4, T3, SIG); mpz_tdiv_q_2exp(T4, T4, 1);  /* (N - sigma)/2  (N - sigma even: N == sigma mod 8 Phi) */
+             mpz_set_ui(T5, 2); mpz_powm(T5, T5, T4, T3);
+@@ -432,7 +371,7 @@
+         for (int i = 0; i < j && ok; i++) if (mpz_divisible_ui_p(T5, pre[i])) ok = 0;
+         if (!ok) continue;
+         S.c2i[j]++;
+-        EVVIA = "small"; record_event_z(j, R1, R2, *P); EVVIA = "c2";
++        record_event_z(j, R1, R2, *P);
+     }
+     /* m >= 3 */
+     mpz_add_ui(T1, LOZ_J[j], 2); mpz_mul(T1, T1, LOZ_J[j]); mpz_add_ui(T2, LOZ_J[j], 4); mpz_mul(T1, T1, T2); mpz_mul(T1, T1, *P);
+@@ -671,8 +610,6 @@
+     arr(f, "c2p", s->c2p, md); arr(f, "c2a", s->c2a, md); arr(f, "c2i", s->c2i, md);
+     arr(f, "live", s->live, md); arr(f, "small", s->small, md); arr(f, "cand", s->cand, md);
+     arr(f, "sqhit", s->sqhit, md); arr(f, "kfilt", s->kfilt, md); arr(f, "eclosed", s->eclosed, md); arr(f, "epass", s->epass, md);
+-    if (C2CAND) arr(f, "c2k", s->c2k, md);
+-    if (TDIV) arr(f, "tdrej", s->tdrej, md);
+     fprintf(f, ",\"digest\":\"%016llx\",\"digest_live\":\"%016llx\",\"crt_tests\":%llu,\"crt_skip\":%llu,\"maxq\":%llu,\"seg_c2\":%llu,\"seg_ch\":%llu,\"events\":[%.*s]}\n",
+             (unsigned long long)s->digest, (unsigned long long)s->digest_live, (unsigned long long)s->crt_tests,
+             (unsigned long long)s->crt_skip, (unsigned long long)s->maxq, (unsigned long long)s->seg_c2,
+@@ -703,9 +640,6 @@
+     if (argc > 10) FILT = atoi(argv[10]);
+     if (argc > 11) CQMODE = atoi(argv[11]);
+     if (argc > 12) EULER = atoi(argv[12]);
+-    if (argc > 13) C2CAND = strtoull(argv[13], 0, 10);
+-    if (argc > 14) TDIV = strtoull(argv[14], 0, 10);
+-    if (TDIV > 3000) die("TDIV must be <= 3000");
+     if (!CRT || KMAX == 0) EULER = 0;
+     if (KMAX < 0 || KMAX >= KMAXMAX) die("KMAX out of range");
+     if (!CRT) { KMAX = 0; FILT = 0; }
+@@ -713,7 +647,7 @@
+     if (PMIN != 3 && PMIN != 5 && PMIN != 7) die("PMIN must be 3, 5 or 7");
+     for (int d = 0; d < MAXD; d++) { mpz_init(PP[d]); mpz_init(FF[d]); mpz_init(AA[d]); mpz_init(LOZ_J[d]); mpz_init(CQ1[d]);
+         for (int k = 0; k < KMAXMAX; k++) mpz_init(CAND[d][k]); }
+-    mpz_inits(PSI, WW, DISC, SQ, R1, R2, TPH, QC, MC, NULL);
++    mpz_inits(PSI, WW, DISC, SQ, R1, R2, TPH, NULL);
+     mpz_inits(T1, T2, T3, T4, T5, T6, QLO, QHI, MM, Q0, TWOPHI, LOZ, QMZ, NULL);
+     mkdir(out, 0755);
+     SEGB = malloc(SEGW); C2BUF = malloc(SEGW * sizeof(u64));
+@@ -722,15 +656,6 @@
+     sieve(L);
+     fprintf(stderr, "X=%s sigma=%s pmin=%llu crt=%d sieve: %lld primes >= 3 up to %llu (%lds)\n", argv[1], argc > 6 ? argv[6] : "1",
+             (unsigned long long)PMIN, CRT, (long long)NPR, (unsigned long long)L, (long)(time(0) - t0));
+-    if (TDIV) {                                     /* odd primes < TDIV in increasing order, grouped: product < 2^64 */
+-        u64 prodg = 1; TDGN = 0; TDPN[0] = 0;
+-        for (int64_t i = 0; i < NPR && PR[i] < TDIV; i++) {
+-            u64 p = PR[i];
+-            if (TDPN[TDGN] == 16 || prodg > UINT64_MAX / p) { TDG[TDGN++] = prodg; prodg = 1; TDPN[TDGN] = 0; }
+-            TDP[TDGN][TDPN[TDGN]++] = (u32)p; prodg *= p;
+-        }
+-        if (TDPN[TDGN]) TDG[TDGN++] = prodg;
+-    }
+     memset(&S, 0, sizeof S);
+     mpz_set_ui(PP[0], 1); mpz_set_ui(FF[0], 1);
+     node(0);
+@@ -738,8 +663,8 @@
+     char path[4096];
+     snprintf(path, sizeof path, "%s/master.json", out);
+     FILE *f = fopen(path, "w");
+-    fprintf(f, "{\"X\":\"%s\",\"sigma\":%s,\"pmin\":%llu,\"crt\":%d,\"kmax\":%d,\"filt\":%d,\"cqmode\":%d,\"euler\":%d,\"c2cand\":%llu,\"tdiv\":%llu,\"sieve\":%llu,\"D0\":%d,\"ntasks\":%lld,\"master\":",
+-            argv[1], argc > 6 ? argv[6] : "1", (unsigned long long)PMIN, CRT, KMAX, FILT, CQMODE, EULER, (unsigned long long)C2CAND, (unsigned long long)TDIV, (unsigned long long)L, D0, (long long)ntasks);
++    fprintf(f, "{\"X\":\"%s\",\"sigma\":%s,\"pmin\":%llu,\"crt\":%d,\"kmax\":%d,\"filt\":%d,\"cqmode\":%d,\"euler\":%d,\"sieve\":%llu,\"D0\":%d,\"ntasks\":%lld,\"master\":",
++            argv[1], argc > 6 ? argv[6] : "1", (unsigned long long)PMIN, CRT, KMAX, FILT, CQMODE, EULER, (unsigned long long)L, D0, (long long)ntasks);
+     write_stats(f, &S, -1, 0);
+     fprintf(f, "}\n"); fclose(f);
+     unsigned char *done = calloc(ntasks + 1, 1);

@@ -70,7 +70,10 @@ two large graphs). The (13,4) file starts with one `#` comment line, which both 
 All seven were found by our agents between 5 and 8 Oct 2026. For six of them the rebuild scripts and parameters in
 `how-we-built-it/` regenerate each edge list byte for byte (see `RUN_IT_YOURSELF.md`; the five rebuilds other than (15,6) were
 rerun on 2026-10-09 and matched); the (13,4) graph comes from a local search and `how-we-built-it/13_4/` gives its
-near-miss parent and the 5-edge switch that closes it; the all-pairs check is the proof, the descriptions below only explain where the graphs come
+near-miss parent, the 5-edge switch that closes it and the insertion/annealing code of the whole chain (its final step
+reproduces the shipped file byte for byte). The code that searched for the construction parameters of the other cells
+is in `how-we-built-it/<cell>/search/`; `how-we-built-it/README.md` is the index, and `HOW_WE_FOUND_IT.md` tells the
+story. The all-pairs check is the proof, the descriptions below only explain where the graphs come
 from.
 
 **(15,4), N = 13 365 — polarity quotient of a bipartite route-chart lift.**
@@ -89,8 +92,8 @@ github.com/rmizuno42/ddp). The table entry it exceeds is Rishabh Rajiv's (Zenodo
 Starting from Rishabh Rajiv's (13,4) graph Q9(T4)++ on 6 611 vertices, our agents repeatedly inserted a vertex joined
 to vertices with free degree and annealed over 2-switches and edge rewires to remove the pairs at distance 5, reaching
 a valid 6 629-vertex graph; one more insertion gave a 6 630-vertex near-miss with exactly 2 far pairs, and a
-low-temperature resume of the annealer closed it with a 5-edge switch (`how-we-built-it/13_4/`: the near-miss, the switch
-and `apply_diff.py`, which rebuilds the edge set). Degrees {11: 4, 12: 10, 13: 6 616}. The diameter rests on the
+low-temperature resume of the annealer closed it with a 5-edge switch (`how-we-built-it/13_4/`: the near-miss, the switch,
+`apply_diff.py`, which rebuilds the edge set, and in `search/` the annealing code with the seeds of every step). Degrees {11: 4, 12: 10, 13: 6 616}. The diameter rests on the
 exhaustive BFS alone. *Credits:* the seed graph and its compound/surgery construction are Rishabh Rajiv's
 (Zenodo 10.5281/zenodo.23052995, CC BY 4.0); the compound family goes back to Gómez and Fiol. The entry exceeded is
 Dharunish Yugeswardeenoo's 6 615 (Oct 2026), itself above Rajiv's 6 611.
@@ -164,12 +167,13 @@ The entry exceeded is Yugeswardeenoo's 1 424 474 (former entry Rajiv's 1 424 472
 ## Files
 
 ```
-README.md, RUN_IT_YOURSELF.md, INDEX.csv
+README.md, RUN_IT_YOURSELF.md, INDEX.csv, HOW_WE_FOUND_IT.md
 graphs/              the seven edge lists (two gzip-compressed)
 verify-it-yourself/  ddcheck.c, ddcheck.py, run_checks.sh; RECEIPTS.md: output of the release checkers on the shipped files
 the-record-we-beat/  HTTP headers and sha256 of the table page (2026-10-08 and 2026-10-10 fetches) and three description
                      pages (2026-10-08), parsed values of our cells (live_cells_*.json), the parser
-how-we-built-it/     per cell: construction parameters / certificates and the rebuild scripts
+how-we-built-it/     per cell: construction parameters / certificates and the rebuild scripts; search/ subfolders: the code
+                     that found the parameters (and for (13,4) the whole local-search chain); README.md: index; SMOKE.md
 ```
 
 ## References

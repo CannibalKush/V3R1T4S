@@ -105,6 +105,21 @@ python3 how-we-built-it/13_4/apply_diff.py how-we-built-it/13_4/near_miss_N6630_
         how-we-built-it/13_4/G_13_4_n6630.diff_vs_near_miss.txt graphs/G_13_4_n6630.edges      # EDGE SETS IDENTICAL
 ```
 
+## Regenerate (the searches that produced the parameters and the (13,4) graph)
+
+Section 3 rebuilds the graphs from their parameters. The code that *found* those parameters, and the local-search
+chain behind the (13,4) graph, is in `how-we-built-it/<cell>/search/`; `how-we-built-it/README.md` lists, per cell,
+the command, seed, runtime and what could not be recovered (python3 with numpy and numba; some cells also need
+python-sat, galois or networkx, see each `requirements.txt`). The main (13,4) step, deterministic, about 3 minutes:
+
+```sh
+cd how-we-built-it/13_4 && mkdir -p rebuilt
+cp near_miss_N6630_cost2.edges rebuilt/near_c134_N6630_s13064_c2.edges
+python3 search/sa2_resume.py rebuilt/near_c134_N6630_s13064_c2.edges 13 4 rebuilt/sa2c2 --iters 250000 --T0 0.12 --T1 0.02 --seeds 101
+cmp rebuilt/sa2c2_s101_c0.edges ../../graphs/G_13_4_n6630.edges && echo IDENTICAL
+cd ../..
+```
+
 ## 4. Compare with today's table
 
 ```sh

@@ -1,0 +1,3 @@
+# Python 3.12.13 (versions present in the environment that produced and re-ran the search)
+numpy==2.5.3
+python-sat==1.9.dev15

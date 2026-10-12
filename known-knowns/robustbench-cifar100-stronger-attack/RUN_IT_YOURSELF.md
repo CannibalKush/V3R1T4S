@@ -49,3 +49,17 @@ curl -sS -A "your-name-or-project (single GET)" \
 On 2026-10-12T03:36:53Z: `"clean_acc": "65.45"`, `"autoattack_acc": "27.67"`, `"reported": "27.69"`, no `external`
 field. If an `external` value of 27.57 or lower has since appeared, the result is no longer an improvement (see
 Corrections in `READ_BEFORE_CITING.md` at the repository root).
+
+## 4. Regenerate
+
+The generating code and the exact commands of every stage are in `how-we-built-it/README.md`. The last step (merging
+the three multi-start results onto the stage-5 tensor) can be redone exactly, on CPU in about a minute, from the
+small inputs stored in `how-we-built-it/stage6-inputs/`:
+```sh
+DATA_DIR=data MODEL_DIR=models sh how-we-built-it/regenerate_final_step.sh regenerated
+```
+Expected last line: `regenerated/x_adv.npy sha256 4eea7cd6de71c6fc0646adeab2d1a2f3705ded97004ea93f972a7dceef67decb:
+BIT-IDENTICAL to the published tensor`. The full pipeline from the clean images (`stage1_apgdce.py` ... `assemble.py`,
+about 9 hours on an Apple M5 GPU) gives a tensor of the same kind but not the same bytes, because GPU kernels and random
+streams differ between machines; `sh how-we-built-it/smoke_pipeline.sh OUT` runs every stage on 100 images with tiny
+budgets.

@@ -57,3 +57,18 @@ Expected (2026-10-12): 3618 `Row:` lines, 127 all-tool-unsolved, and both of our
 `[..., 'timeout', '-', 'timeout'] -> all-tool-unsolved`. If a row has since changed, or a counterexample file for
 either instance has appeared in the results repository, record it as described under Corrections in
 `READ_BEFORE_CITING.md` at the repository root.
+
+## 5. Regenerate
+
+The generating code is in `how-we-built-it/` (see [how-we-built-it/README.md](how-we-built-it/README.md); requirements
+in `how-we-built-it/requirements.txt`, including `ortools`). After step 2 has filled `downloads/`, this rebuilds both
+witness files from the saved CP-SAT solutions and compares them with the published ones (a few seconds):
+```sh
+sh how-we-built-it/regenerate_from_checkpoints.sh downloads regenerated     # expect: REGENERATED: all four witness files byte-identical
+```
+To re-run the search itself (minutes; CP-SAT finds *a* counterexample, usually not the same one):
+```sh
+python3 -I how-we-built-it/cpsat_bnn30.py --cls 22 --pw 10 --time 900 --workers 4 \
+  --vnnlib downloads/benchmarks/traffic_signs_recognition_2023/2.0/vnnlib/model_30_idx_1703_eps_1.00000.vnnlib.gz \
+  --hint how-we-built-it/checkpoints/hint_idx_1703_cls22.json --out ckpt_1703.json
+```

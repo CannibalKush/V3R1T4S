@@ -1,0 +1,38 @@
+{
+ "what": "Re-check of the public minimum for the two formats with new records (<14,15,15> rank 1842 and <15,16,16> rank 2180), 2026-10-12. Values only; the source files are not redistributed. The 2026-10-10 snapshot of all four criterion sources is in sources_2026-10-10T19-25-52Z.json.",
+ "formats": {
+  "14x15x15": {
+   "ours": 1842,
+   "superseded_own": 1843,
+   "public_minimum_rechecked_utc": "2026-10-12T10:22Z",
+   "public_minimum": 1848,
+   "values_seen_2026-10-12T09:17:57Z": {
+    "fmm_sota.json": 1848,
+    "fmm_sota_createdAt": "2026-10-09T11:45:48",
+    "lille_page_14x15x15.html (context, not a criterion source)": 1890,
+    "perminov_ZT_Z_Q": [1905, 1895, 1848],
+    "merlijnw70": null,
+    "matmulcatalog_F2_RQZ": [1895, 1890]
+   },
+   "margin": -6
+  },
+  "15x16x16": {
+   "ours": 2180,
+   "superseded_own": 2196,
+   "public_minimum_rechecked_utc": "2026-10-12T12:41Z",
+   "public_minimum": 2223,
+   "values_seen": {
+    "fmm_sota.json": 2223,
+    "fmm_sota_createdAt": "2026-10-09T11:45:48",
+    "lille_page_15x16x16.html (context, not a criterion source)": 2262,
+    "perminov_Q": 2223,
+    "perminov_ZT_Z_Q": [2302, 2302, 2223],
+    "merlijnw70": null,
+    "matmulcatalog_F2_RQZ": [2302, 2302]
+   },
+   "margin": -43
+  }
+ },
+ "unchanged_since_2026-10-10": "The same-day fetches of 2026-10-12T09:17:57Z and 2026-10-12T11:43:20Z returned fmm_sota.json (sha256 d0da2c36...44c1), Perminov's README.md (7b0761ec...8341), MerlijnW70's SHA256SUMS (de848328...a3fd) and matmulcatalog's COVERAGE.md (c2a9bd92...54b7) with the same sha256 as the 2026-10-10T19:25:52Z snapshot, so the 2026-10-10 bars of all five formats still applied on 2026-10-12.",
+ "method": "one plain GET per URL with an honest User-Agent, no retries, no cookies"
+}

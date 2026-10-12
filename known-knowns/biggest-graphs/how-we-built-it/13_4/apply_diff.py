@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """apply_diff.py NEAR_MISS DIFF GRAPH -- apply the 5-edge switch in DIFF to the near-miss edge list and check that the
 resulting edge SET equals the edge set of GRAPH (the shipped G_13_4_n6630.edges).  python3 only.
-The byte order of the shipped file comes from the annealing program and is not reproduced; the edge set is."""
+The byte order of the shipped file comes from the annealing program and is not reproduced here; the edge set is
+(search/sa2_resume.py reruns the annealing step itself and reproduces the shipped file byte for byte)."""
 import sys
 
 def edges(path):

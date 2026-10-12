@@ -101,8 +101,12 @@ another prime factor q (otherwise p | φ(N) | N − 1 and p | N); also N/φ(N) =
 
 ## Files
 
+How the shipped logs and certificates were generated, step by step (engine build, runs, merge, union, certificates,
+tarballs), is in [`how-we-built-it/README.md`](how-we-built-it/README.md); how the search was found and what failed
+along the way is in [`HOW_WE_FOUND_IT.md`](HOW_WE_FOUND_IT.md).
+
 ```
-README.md, RUN_IT_YOURSELF.md
+README.md, RUN_IT_YOURSELF.md, HOW_WE_FOUND_IT.md
 engines/
   lcrt5.c                 author engine (C + GMP); SPEC_LCAP1.md, SPEC_LCRT_r1.md, SPEC_LCRT5.md define its tree, modes and output
   merge_lcrt.py           sums an lcrt5 run directory into a summary JSON (the author's tool)
@@ -127,6 +131,11 @@ lean/                     Lean 4 formalization of the reduction and of each prun
 verify-it-yourself/
   closures.py, recompute_summary.py, diff_runs.py, lbb2_aggregate.py, run_checks.sh   (python3 only, no dependencies)
   RECEIPTS.md             output of the checks (2026-10-10 run)
+how-we-built-it/
+  README.md               end-to-end pipeline with the recorded commands and runtimes; SMOKE.md (tiny rerun)
+  run_lcrt5_job.sh, run_lbb2_parallel.sh   drivers of the certified LCRT-4 run and of the lbb2 run
+  lcrt5_v1_LCRT4.patch, merge_lcrt_v1.patch   the engine/merge revision that produced the LCRT-4 log and summary
+  vlrt2_union.py          task-list, merge and union steps that assembled the vlrt2 log
 ```
 
 ## References
