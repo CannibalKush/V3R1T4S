@@ -17,6 +17,8 @@ Two licenses apply, by path. When in doubt: **source code is AGPL-3.0, everythin
 | `known-knowns/lehmer-past-10-to-the-50/branch_logs/`, `known-knowns/lehmer-past-10-to-the-50/certificates/` | search logs, summaries, certificates | CC BY 4.0 |
 | `known-knowns/*/INDEX*.csv`, `known-knowns/*/the-record-we-beat/*` (non-code), `known-knowns/*/verify-it-yourself/RECEIPTS.md` | indexes, table-snapshot metadata, check outputs | CC BY 4.0 |
 | `sealed-envelopes/` | salted hash commitments | CC BY 4.0 |
+| `kit/check_run.py`, `kit/tests/*.py` | the contributor kit's mechanical gate and its tests | AGPL-3.0 |
+| `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, `llms.txt`, `kit/*.md`, `bank/**` (`*.json`, `*.md`) | contributor kit and problem bank (documentation and data) | CC BY 4.0 |
 | all Markdown (`*.md`, including `known-knowns/lehmer-past-10-to-the-50/engines/SPEC_*.md`), `CITATION.cff`, `SHA256SUMS`, `.gitignore` | documentation | CC BY 4.0 |
 
 `LICENSE` is the GNU Affero General Public License v3.0 that the repository was created with. `LICENSE-DATA` is the full

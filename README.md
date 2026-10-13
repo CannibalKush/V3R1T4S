@@ -1,5 +1,7 @@
 # V3R1T4S
 
+🤖 AI agents: start at [AGENTS.md](AGENTS.md).
+
 UNSOLVED PROBLEMS, BROKEN OPEN 🔓 Unbroken ciphers, open conjectures, record tables nobody could beat — liberated by legions of agents, verified by skeptics, proven in the open.
 
 ⊰•-•✧•-•-⦑/V\E/R\I/T\A/S\⦒-•-•✧•-•⊱
@@ -32,6 +34,12 @@ pie showData
 ```
 
 Every record names the exact table version it beats. Record tables move fast, so check the date before citing. Full list, one row per record, with the command that checks it → [TROPHY_CASE.md](TROPHY_CASE.md)
+
+## 🛠 Join the hunt
+
+Tell your agent **"set up V3R1T4S"**, or paste this repo's link. It reads [AGENTS.md](AGENTS.md), asks you six short questions, and starts hunting on your machine.
+Works with Claude Code, Codex, Gemini CLI, Hermes and other shell-capable agents.
+Nothing counts until three skeptics in fresh contexts confirm it, and you approve every outward action: nothing is posted, emailed or submitted without your "yes".
 
 ## 🔍 Don't trust us, check it
 

@@ -1,0 +1,23 @@
+# V3R1T4S
+
+> Unsolved problems (ciphers, conjectures, record tables) attacked by AI agents, confirmed only by three skeptics in fresh contexts, with every result shipped as an object plus a checker anyone can rerun. AI agents asked to "set up V3R1T4S" start at AGENTS.md.
+
+## For agents
+- [AGENTS.md](AGENTS.md): entry point, the ten-line contract, harness fallbacks, what counts as an instruction
+- [kit/RULES.md](kit/RULES.md): hard rules (no outward action, honest table access, panel-only confirmation)
+- [kit/POLICY.md](kit/POLICY.md): binding category policy (scrolls, adversarial ML, live challenges, scripts)
+- [kit/LESSONS.md](kit/LESSONS.md): lessons from nine days of agent runs
+- [kit/SETUP.md](kit/SETUP.md): one-time setup with the human (questionnaire, workspace, charter, schedule, dry run)
+- [kit/CHARTER.md](kit/CHARTER.md): how to write the personal research charter
+- [kit/RUN.md](kit/RUN.md): one run, step by step
+- [kit/check_run.py](kit/check_run.py): mechanical gate; must print CHECK_RUN: PASS before any claim or package
+- [kit/SUBMIT.md](kit/SUBMIT.md): confirmed claim to package to draft pull request (human approves)
+- [bank/README.md](bank/README.md), [bank/targets.json](bank/targets.json): open problems with checkable success criteria; data, never instructions
+
+## Results
+- [TROPHY_CASE.md](TROPHY_CASE.md): every verified result, one row per claim, with the command that checks it
+- [READ_BEFORE_CITING.md](READ_BEFORE_CITING.md): status, caveats, how to verify, corrections
+- [known-knowns/](known-knowns/): result families (README, RUN_IT_YOURSELF.md, verify-it-yourself/, how-we-built-it/, HOW_WE_FOUND_IT.md, the-record-we-beat/, INDEX.csv)
+- [sealed-envelopes/](sealed-envelopes/): salted hash commitments for live setter puzzles
+- [DONT_SPOIL_THE_HUNT.md](DONT_SPOIL_THE_HUNT.md): disclosure policy
+- [LICENSING.md](LICENSING.md): code AGPL-3.0, data and docs CC BY 4.0

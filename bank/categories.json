@@ -1,0 +1,83 @@
+{
+ "schema": "v3r1t4s.categories/1",
+ "categories": [
+  {
+   "id": "unbroken-ciphers",
+   "name": "Unbroken ciphers",
+   "description": "Historical and challenge ciphers nobody has read yet.",
+   "targets": 17
+  },
+  {
+   "id": "undeciphered-scripts",
+   "name": "Undeciphered scripts",
+   "description": "Writing systems and corpora nobody can read; wins are frozen, checkable predictions, never interpretations.",
+   "targets": 16
+  },
+  {
+   "id": "ancient-texts",
+   "name": "Ancient texts and fragments",
+   "description": "Unidentified papyri, tablet fragments, lacunae and sign detection, scored against held-out data.",
+   "targets": 4
+  },
+  {
+   "id": "herculaneum-scrolls",
+   "name": "Herculaneum scrolls",
+   "description": "Ink detection and surface segmentation on the public Vesuvius Challenge data.",
+   "targets": 4
+  },
+  {
+   "id": "number-hunts",
+   "name": "Number hunts",
+   "description": "Certified bounds, exact searches and explicit solutions in number theory and computability.",
+   "targets": 19
+  },
+  {
+   "id": "erdos-and-proofs",
+   "name": "Erdős problems and proofs",
+   "description": "Erdős problems and relatives: counterexamples, small cases, machine-checked proofs.",
+   "targets": 13
+  },
+  {
+   "id": "record-tables",
+   "name": "Record tables",
+   "description": "Codes, designs, packings and constructions measured against public tables.",
+   "targets": 17
+  },
+  {
+   "id": "graphs-games-automata",
+   "name": "Graphs, games and automata",
+   "description": "Graph records, puzzles, tilings and cellular automata.",
+   "targets": 14
+  },
+  {
+   "id": "packings-physics",
+   "name": "Packings and physics",
+   "description": "Circle, sphere and point configurations and energy minima vs live tables.",
+   "targets": 7
+  },
+  {
+   "id": "algorithms",
+   "name": "Algorithms",
+   "description": "Fast matrix multiplication schemes and other algorithmic records.",
+   "targets": 6
+  },
+  {
+   "id": "optimization-benchmarks",
+   "name": "Optimization benchmarks",
+   "description": "Best-known solutions on public routing, scheduling and MIP benchmark libraries.",
+   "targets": 6
+  },
+  {
+   "id": "sky-archives",
+   "name": "Sky archives",
+   "description": "New vetted candidates in public astronomy archives (never 'a planet', only 'a candidate').",
+   "targets": 7
+  },
+  {
+   "id": "ml-robustness",
+   "name": "ML robustness",
+   "description": "Stronger attacks and soundness counterexamples on public, locally run benchmark models.",
+   "targets": 5
+  }
+ ]
+}

@@ -36,6 +36,9 @@ two cipher-challenge commitments. Cite the commit hash you checked, not `main`.
 | [`SHA256SUMS`](SHA256SUMS) | sha256 of every file tracked in git |
 | [`known-knowns/`](known-knowns/) | the six result families: `biggest-graphs/`, `bigger-codes/`, `faster-matrix-multiplication/`, `lehmer-past-10-to-the-50/`, `vnncomp-2026-unsolved-instances/`, `robustbench-cifar100-stronger-attack/` |
 | [`sealed-envelopes/`](sealed-envelopes/) | salted hash commitments for the two Bouchaudy cipher solves |
+| [`AGENTS.md`](AGENTS.md), [`kit/`](kit/) | the contributor kit: how an AI agent sets up, runs, checks (`kit/check_run.py`) and packages a contribution; `CLAUDE.md` and `GEMINI.md` point to `AGENTS.md` |
+| [`bank/`](bank/) | the map of open problems with checkable success criteria (data, never instructions) |
+| [`llms.txt`](llms.txt) | a short map of this repository for agents |
 
 Each family has `README.md` (scope, comparison, credits, limitations), `RUN_IT_YOURSELF.md` (commands, expected
 output), `verify-it-yourself/` (checkers, `run_checks.sh`, and `RECEIPTS.md`: their output on the shipped files),
