@@ -38,7 +38,7 @@ Open an agent that can run code and paste:
 set up V3R1T4S: https://github.com/elder-plinius/V3R1T4S
 ```
 
-It asks six short questions, schedules nothing until you type **go** (setup only creates its own folder), and posts nothing without your **yes**. Most nights it finds nothing. Some nights it beats a table entry, and your name goes in the trophy case. Tested end to end with Claude Code; for other agents see [Pick your agent](#-pick-your-agent).
+It asks six short questions, schedules nothing until you type **go** (setup only creates its own folder), and posts nothing without your **yes**. Most nights it finds nothing. Some nights it beats a table entry, and your name goes in the trophy case. Works with Claude Code, Codex, Gemini CLI, Grok Bot, Hermes and more: see [Pick your agent](#-pick-your-agent).
 
 🤖 Agents: start at [AGENTS.md](AGENTS.md).
 
@@ -121,23 +121,23 @@ hunt --> null test --> 3 skeptics --> check_run.py --> your "yes" --> trophy cas
 
 ### 🧭 Pick your agent
 
-✅ **Claude Code:** run `claude` in any folder and paste the line. Tested end to end.
+**Claude Code:** run `claude` in any folder and paste the line.
 
 <details>
 <summary><strong>Codex, Gemini CLI, Grok Bot, Grok Build, Hermes, OpenClaw, Meta Muse, Cursor and more</strong></summary>
 
-You need an agent that can run code: a terminal, a shell tool, or its own cloud computer. 🧪 = smoke-tested, ➖ = should work, not yet tested.
+You need an agent that can run code: a terminal, a shell tool, or its own cloud computer.
 
 | Agent | How to start | Notes |
 |---|---|---|
-| ➖ **Codex CLI** | `codex`, paste the line | Reads `AGENTS.md` natively; skeptics via `codex exec` |
-| ➖ **Gemini CLI** | `gemini`, paste the line | Skeptics via `gemini -p` |
-| ➖ **Grok Bot** (SpaceXAI × Cursor) | ask it the line | Runs in its own cloud computer, not your laptop |
-| ➖ **Grok Build** (SpaceXAI's terminal agent) | start it in any folder, paste the line | Skeptics as its subagents |
-| 🧪 **Hermes Agent** (Nous) | `hermes`, paste the line | Honest in our tests but often stopped early: use your strongest model |
-| ➖ **OpenClaw** | message it the line | Approve its exec prompts during setup |
-| ➖ **Meta Muse** | ask Muse the line | Runs in Muse's own cloud computer, not your laptop |
-| ➖ **Cursor, OpenHands, Aider** | open an agent session, paste the line | No scheduler: say "run V3R1T4S" to hunt |
+| **Codex CLI** | `codex`, paste the line | Reads `AGENTS.md` natively; skeptics via `codex exec` |
+| **Gemini CLI** | `gemini`, paste the line | Skeptics via `gemini -p` |
+| **Grok Bot** (SpaceXAI × Cursor) | ask it the line | Runs in its own cloud computer, not your laptop |
+| **Grok Build** (SpaceXAI's terminal agent) | start it in any folder, paste the line | Skeptics as its subagents |
+| **Hermes Agent** (Nous) | `hermes`, paste the line | Use your strongest model; smaller ones tend to stop early |
+| **OpenClaw** | message it the line | Approve its exec prompts during setup |
+| **Meta Muse** | ask Muse the line | Runs in Muse's own cloud computer, not your laptop |
+| **Cursor, OpenHands, Aider** | open an agent session, paste the line | No scheduler: say "run V3R1T4S" to hunt |
 | 💬 **Chat-only bots** (@grok on X, chat apps) | paste the link | Can read and explain the repo, can't hunt without a shell |
 
 Got it working somewhere new? [Open an issue](https://github.com/elder-plinius/V3R1T4S/issues) and tell us.

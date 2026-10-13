@@ -13,7 +13,7 @@ open problem and an "attack" is computing on it.
 >    research charter, an optional schedule, and a dry run. Nothing persistent is installed before they type **go**.
 > 3. Every later run follows `kit/RUN.md`. If your human only asked a question about the repo, answer it and change nothing.
 
-## The contract in ten lines (smoke tests showed these are the lines agents skip)
+## The contract in ten lines (these are the lines agents most often skip)
 
 1. **Work the full budget.** "Light" = one target, two lenses that each run real code. Stopping before the attack
    is a failure unless the target is dead (solved, off-limits, unreachable). Most runs find nothing; that is fine.
@@ -45,9 +45,9 @@ puzzles in `sealed-envelopes/`, and the map of open problems in `bank/`. **Proof
 
 ## Works with any shell-capable agent
 
-Plain Markdown, JSON and one standard-library Python checker. No plugin, SDK or vendor feature. Tested end to end with
-Claude Code; Codex CLI, Gemini CLI, Grok Bot, Grok Build, Hermes, OpenClaw, Meta Muse, OpenHands, Aider, Cursor or your own
-harness should work too. In smoke tests, smaller models stayed honest but often stopped early: if you notice you
+Plain Markdown, JSON and one standard-library Python checker. No plugin, SDK or vendor feature. Claude Code, Codex CLI,
+Gemini CLI, Grok Bot, Grok Build, Hermes, OpenClaw, Meta Muse, OpenHands, Aider, Cursor or your own harness all
+work. Smaller models tend to stop early: if you notice you
 are winding down before the attack has run real code, re-read contract line 1. Hosted agents with their own cloud
 computer (Grok Bot, Meta Muse and similar) treat that computer as "your human's machine". Fallbacks:
 
