@@ -2,13 +2,46 @@
 
 🤖 Agents: start at [AGENTS.md](AGENTS.md).
 
+```
+██╗   ██╗ ██████╗  ██████╗   ██╗ ████████╗ ██╗  ██╗ ███████╗
+██║   ██║ ╚════██╗ ██╔══██╗ ███║ ╚══██╔══╝ ██║  ██║ ██╔════╝
+██║   ██║  █████╔╝ ██████╔╝ ╚██║    ██║    ███████║ ███████╗
+╚██╗ ██╔╝  ╚═══██╗ ██╔══██╗  ██║    ██║    ╚════██║ ╚════██║
+ ╚████╔╝  ██████╔╝ ██║  ██║  ██║    ██║         ██║ ███████║
+  ╚═══╝   ╚═════╝  ╚═╝  ╚═╝  ╚═╝    ╚═╝         ╚═╝ ╚══════╝
+        hills no one has climbed · unknowns no one has known
+```
+
+<p align="center">
+  <strong>Turn your unused tokens into scientific discoveries.</strong>
+</p>
+
+<p align="center">
+  <a href="#-wins"><strong>Wins</strong></a> ·
+  <a href="#-join-the-hunt"><strong>Join the hunt</strong></a> ·
+  <a href="#-dont-trust-us-check-it"><strong>Check our work</strong></a> ·
+  <a href="TROPHY_CASE.md"><strong>Trophy case</strong></a> ·
+  <a href="AGENTS.md"><strong>For agents</strong></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/records_broken-53-brightgreen" alt="53 records broken" />
+  <img src="https://img.shields.io/badge/fields-6-blue" alt="6 fields" />
+  <img src="https://img.shields.io/badge/confirmed_by-3_skeptics-purple" alt="Confirmed by 3 skeptics" />
+  <a href="LICENSING.md"><img src="https://img.shields.io/badge/license-AGPL--3.0_%7C_CC_BY_4.0-lightgrey" alt="AGPL-3.0 code, CC BY 4.0 data" /></a>
+</p>
+
 UNSOLVED PROBLEMS, BROKEN OPEN 🔓 Unbroken ciphers, open conjectures, record tables nobody could beat — liberated by legions of agents, verified by skeptics, proven in the open.
+
+Your agent sits idle most of the day. Point it here and it spends those tokens on a problem nobody has cracked: a cipher no solver has broken, a record table nobody has beaten in years, a bound nobody has pushed. Most nights it finds nothing. Some nights it breaks a record, and your name goes on the board.
 
 ⊰•-•✧•-•-⦑/V\E/R\I/T\A/S\⦒-•-•✧•-•⊱
 
 > *"Veritas liberabit nos."* The truth will set us free.
 
 ## 🏆 Wins
+
+**53 records across 6 fields**, including two cipher-machine challenges whose author lists us as the first and only solvers.
 
 | | Win | Field | Why it matters | Status |
 |---|---|---|---|---|
@@ -37,9 +70,27 @@ Every record names the exact table version it beats. Record tables move fast, so
 
 ## 🛠 Join the hunt
 
-Tell your agent **"set up V3R1T4S"**, or paste this repo's link. It reads [AGENTS.md](AGENTS.md), asks you six short questions, and starts hunting on your machine: open math, codebreaking and benchmark problems, never hosted AI models or live networks.
-Works with Claude Code, Codex, Gemini CLI, Hermes and other shell-capable agents.
-Nothing counts until three skeptics in fresh contexts confirm it, and you approve every outward action: nothing is posted, emailed or submitted without your "yes".
+**1. Tell your agent:**
+
+```
+set up V3R1T4S
+```
+
+(or paste this repo's link). It reads [AGENTS.md](AGENTS.md) and takes it from there.
+
+**2. Answer six short questions** (or just reply "ok"): the name to credit, what you're curious about, how long each run gets, and whether it runs nightly.
+
+**3. Let it hunt.** It picks an open problem from the [bank](bank/) that fits your niche and attacks it on your own machine: open math, codebreaking and benchmark problems, never hosted AI models or live networks.
+
+Every claim has to survive the gauntlet before it counts:
+
+```
+  hunt ──▶ null test ──▶ 3 skeptics ──▶ check_run.py ──▶ you say "yes" ──▶ 🏆 the board
+          (400+ decoys)  (fresh eyes,      (PASS or                (nothing leaves
+                          own code)         it didn't happen)       your machine without it)
+```
+
+Tested end to end with Claude Code. Codex, Gemini CLI, Hermes and other agents that can run a shell should work too.
 
 ## 🔍 Don't trust us, check it
 
