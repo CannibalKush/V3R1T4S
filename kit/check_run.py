@@ -12,7 +12,7 @@ a PASS means the paperwork is honest and complete, not that the result is true.
 
 Last line: "CHECK_RUN: PASS" or "CHECK_RUN: FAIL (<n> problems)". Exit status 0 or 1.
 """
-import argparse, csv, hashlib, io, json, os, re, shutil, subprocess, sys, tempfile
+import argparse, calendar, csv, hashlib, io, json, os, re, shutil, subprocess, sys, tempfile
 
 TEXT_EXT = {".md", ".txt", ".json", ".csv", ".log", ".tsv", ".yaml", ".yml", ""}
 CODE_EXT = {".py", ".sh", ".c", ".h", ".js", ".ipynb", ".rs", ".go", ".java", ".jl", ".r", ".cpp", ".hpp"}
@@ -564,6 +564,20 @@ def mentions_dir(text, d):
     return False
 
 
+def frozen_time(pre):
+    """When PREREG.md was frozen: its file time, or the first UTC time written in it (date -u) if earlier,
+    so that a later format-only fix does not move the freeze."""
+    t = os.path.getmtime(pre)
+    m = re.search(r"(\d{4})-(\d\d)-(\d\d)[T ](\d\d):(\d\d)(?::(\d\d))?(?:Z| ?UTC)", read(pre))
+    if m:
+        y, mo, d, h, mi, sec = (int(x or 0) for x in m.groups())
+        try:
+            t = min(t, calendar.timegm((y, mo, d, h, mi, sec, 0, 0, 0)))
+        except (OverflowError, ValueError):
+            pass
+    return t
+
+
 def packaged(workdir, tid):
     ob = os.path.join(workdir, "outbox")
     if not os.path.isdir(ob):
@@ -699,11 +713,11 @@ def check_run_dir(c, workdir, run, bank, dry):
     if has_claim and null_required:
         null_ok = check_null(c, os.path.join(run, "null_test.md"), label)
         if os.path.isfile(pre) and os.path.isfile(os.path.join(run, "null_test.md")) and \
-                os.path.getmtime(pre) > os.path.getmtime(os.path.join(run, "null_test.md")) + 1:
+                frozen_time(pre) > os.path.getmtime(os.path.join(run, "null_test.md")) + 1:
             c.fail("%s: PREREG.md was written after null_test.md (freeze before you measure)" % label)
     if os.path.isfile(pre):
         later = [p for d in (os.path.join(run, "claim"), os.path.join(workdir, "private", tid or "-", "claim"))
-                 if os.path.isdir(d) for p in walk(d) if os.path.getmtime(p) + 1 < os.path.getmtime(pre)]
+                 if os.path.isdir(d) for p in walk(d) if os.path.getmtime(p) + 1 < frozen_time(pre)]
         if later:
             c.fail("%s: PREREG.md was written after the claim was built (%s); freeze before you measure" % (label, rel(later[0], workdir)))
     # status words

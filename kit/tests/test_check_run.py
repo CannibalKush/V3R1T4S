@@ -224,6 +224,16 @@ class BadFixtures(Base):
         panel(os.path.join(self.R, "panel"))
         self.assertFail("outbox/ has no package for it", self.W)
 
+    def test_prereg_freeze_time_from_its_own_utc_line(self):
+        w(os.path.join(self.R, "target.md"), "id: toy-cipher\n")
+        self.attack(levels=("solution_claim", "negative"), null="required")
+        w(os.path.join(self.R, "null_test.md"), "controls: 400\nbest_control: 0.4\nreal: 0.9\nreal_beats_all_controls: yes\ncommand: x\n")
+        import time
+        later = time.time() + 120
+        os.utime(os.path.join(self.R, "PREREG.md"), (later, later))   # format fix after the null test
+        self.run_check(self.W)
+        self.assertNotIn("written after null_test.md", self.out)       # frozen: line (03:01Z) is earlier
+
     def test_one_lens_only(self):
         self.attack(levels=("negative",))
         self.assertFail("only one lens", self.W)
