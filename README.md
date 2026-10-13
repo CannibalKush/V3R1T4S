@@ -10,7 +10,6 @@
 
 <p align="center">
   <strong>Turn your unused tokens into scientific discoveries.</strong><br>
-  <em>Proof or it didn't happen.</em>
 </p>
 
 <p align="center">
