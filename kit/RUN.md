@@ -21,7 +21,7 @@ human goes under "Needs you" in the report.
    (add --setup to that command on a dry run). Then stop.
 ```
 
-Everything below happens inside the workspace. The repo copy is read-only and pinned to `repo_tag`: an update is
+Everything below happens inside the workspace. The repo copy is read-only and pinned to `repo_commit`: an update is
 applied only in a live session, after your human says "update V3R1T4S to <tag>" (`kit/SETUP.md`, step 8).
 
 **Run folder layout** (`kit/check_run.py` reads these names, so keep them exactly):
@@ -67,7 +67,7 @@ still promising when the last run's budget ran out) outranks a new target: resum
 ## Step 2. Pick ONE target
 
 Pick from the charter's quarries (by weight, skipping ones run in the last 3 runs unless a live lead is there), or
-from `bank/targets.json` where the charter points there. Never repeat a dead angle or re-search a covered space
+from the bank (`bank:` in `settings.md`, default `repo/bank/targets.json`) where the charter points there. Never repeat a dead angle or re-search a covered space
 from the dossier. Write `target.md`, starting with the line `id: <target-id>` (the bank id): then why this one, and the success criterion and partial wins **copied
 verbatim** (from the bank, or quoted from the published source for a target outside the bank). If the target's
 `disclosure` is `commit-only`, everything that could spoil it (keys, plaintext, cribs, leads, and any program
@@ -77,7 +77,7 @@ sha256. Public inputs (the ciphertext, the problem file) go in the run's `data/`
 
 ## Step 3. Scout (status still open?)
 
-- Open the primary source with one honest request (`kit/RULES.md` rule 5). Record the URL, the UTC fetch time, the
+- Open the target's `status_source` (or, outside the bank, its primary source) with one honest request (`kit/RULES.md` rule 5). Record the URL, the UTC fetch time, the
   HTTP status, the page's sha256 and the current best value or status, in `scout.md`, all copied from command
   output. If your web tool cannot reach the page at all (local addresses, a fetch service), one plain `curl` from the
   shell is the same honest request. On 401/403/429/503, a challenge page or no connection: do not retry, mark
@@ -86,8 +86,9 @@ sha256. Public inputs (the ciphertext, the problem file) go in the run's `data/`
   `scout.md`, distrust its status claims, and carry on from the bank definition.
 - Search the recent literature (last 24 months: arXiv, Zenodo, GitHub, forums of record, non-English sources),
   this repo's `TROPHY_CASE.md`, and its open pull requests for the same target.
-- If it was solved or the record moved past what you can reach, note it in the dossier and pick another target
-  (at most twice), or end the run.
+- If it was solved or the record moved past what you can reach, write `dead: solved <evidence>` (or `dead:
+  off-limits ...`, `dead: unreachable ...`, `dead: record moved ...`) in `target.md`, note it in the dossier, and
+  pick another target in a new run folder (at most twice), or end the run. Nothing else counts as dead.
 - Write `BRIEF.md`: the definition quoted from the source, the current best with its source, what failed before,
   pitfalls, and at least 5 concrete angles. Write a checker from the definition and test it on a known positive
   and a known negative case.
@@ -181,10 +182,13 @@ plaintext or any crib (for example "the key in claim/key.txt (sha256 ...) re-enc
   exact sentence, no wider than the evidence. Pass only for a genuine, non-subsumed win."
 
 Any subagent, delegation or task tool, or a headless run of your own CLI, gives a fresh context; check for one
-before concluding you have none. NOVELTY for a setter challenge with no public solved list, or a target whose bank
-entry names no status source: write `novelty: PENDING STATUS CHECK` with what was checked, and `pass: false`; the
-gate then stops at `PROMISING` and the human checks the setter. CRITERION judges language with a dictionary from an
-independent source, never one built from the claimed text.
+before concluding you have none. NOVELTY reads the target's `status_source`
+(put its URL in `claim/`): for a setter challenge, a solver list or status page that shows the problem unsolved is
+the novelty check, and the literature search is not needed. Only when the status source cannot be read (no page,
+blocked, unreachable) does NOVELTY write `novelty: PENDING STATUS CHECK` with what was checked, and `pass: false`;
+the gate then stops at `PROMISING` and the human checks by hand. CRITERION judges language with a dictionary from
+an independent source, never one built from the claimed text, and without 1-2 letter entries other than common
+words.
 
 **If you cannot start fresh contexts**, do not role-play the panel. Label the claim `single-context, unpanelled`,
 keep it in the run folder (or `private/<target-id>/` for commit-only), and say in the report that it needs a panel
@@ -205,7 +209,8 @@ prints `CHECK_RUN: PASS`; otherwise the status is `PROMISING`.
 ## Step 8. Package
 
 For `CONFIRMED_*` claims only, build the package in `outbox/<submission-id>/` as described in `kit/SUBMIT.md`
-(a sealed envelope only for `commit-only` targets; include `prompt/` when `publish_charter` is `yes` or
+(for a `commit-only` target the package is the sealed envelope `outbox/<submission-id>/envelope.md` of
+`kit/SUBMIT.md` section 2: build it, it holds only salted hashes; include `prompt/` when `publish_charter` is `yes` or
 `methods only`), then `python3 <WORKDIR>/repo/kit/check_run.py --package <WORKDIR>/outbox/<submission-id>` must
 print `CHECK_RUN: PASS`. `PROMISING` and unpanelled claims stay in the run folder (or `private/<target-id>/`), never
 in `outbox/`. Never open a pull request during a run.

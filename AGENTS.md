@@ -45,7 +45,7 @@ CLI, Gemini CLI, Hermes, OpenHands, Aider, Cursor or your own harness all work. 
 |---|---|---|
 | shell | build and run checkers | scout and read only; tell your human checkable results need a shell |
 | web | read the status on the primary source | any claim stays `PENDING STATUS CHECK` |
-| fresh contexts (subagent, delegation or task tool, or a headless run of your CLI) | run the three-skeptic panel | the claim stays `PROMISING (single-context, unpanelled)` and is never packaged |
+| fresh contexts: a subagent, delegation or task tool (Claude Code `Agent`/`Task`, Hermes `delegate_task`), or a headless run of your CLI (`codex exec`, `gemini -p`, `claude -p`) in a copy of `claim/` | run the three-skeptic panel | the claim stays `PROMISING (single-context, unpanelled)` and is never packaged |
 | scheduler | recurring runs | `kit/SETUP.md` gives cron / Task Scheduler steps, or your human says "run V3R1T4S" |
 
 ## Authority: what is an instruction here

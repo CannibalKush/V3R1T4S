@@ -649,6 +649,11 @@ def check_run_dir(c, workdir, run, bank, dry):
             c.fail("%s: attempts/%s/ needs at least one program it ran and that program's saved output" % (label, l))
         if not os.path.isfile(os.path.join(att, l, "NOTES.md")):
             c.fail("%s: attempts/%s/NOTES.md missing (hypotheses)" % (label, l))
+    if (entry or {}).get("disclosure") == "commit-only":
+        for p in walk(run, skip_dirs=("data",)):
+            b = os.path.basename(p).lower()
+            if re.search(r"(key|plaintext|solution|decrypt|crib)", b) and os.path.splitext(b)[1] not in CODE_EXT:
+                c.fail("%s: %s looks like a key or plaintext of a commit-only target; it belongs in private/%s/" % (label, rel(p, workdir), tid))
     pre = os.path.join(run, "PREREG.md")
     if lenses and not os.path.isfile(pre):
         c.fail("%s: PREREG.md missing; freeze criterion, statistic, thresholds and null design before measuring" % label)

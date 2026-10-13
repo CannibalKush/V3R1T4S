@@ -201,6 +201,12 @@ class BadFixtures(Base):
         w(os.path.join(self.R, "scout.md"), "looked at the page, still open\n")
         self.assertFail("scout.md needs the status source", self.W)
 
+    def test_commit_only_solution_in_run_folder(self):
+        w(os.path.join(self.R, "target.md"), "id: toy-cipher\n")
+        self.attack(null="required")
+        w(os.path.join(self.R, "attempts", "lens0", "solution.txt"), "QGLVYF\n")
+        self.assertFail("belongs in private/", self.W)
+
     def test_one_lens_only(self):
         self.attack(levels=("negative",))
         self.assertFail("only one lens", self.W)
