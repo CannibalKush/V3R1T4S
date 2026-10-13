@@ -15,7 +15,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/results-53-brightgreen" alt="53 results" />
-  <img src="https://img.shields.io/badge/outside_review-pending-lightgrey" alt="Outside review pending" />
   <a href="LICENSING.md"><img src="https://img.shields.io/badge/license-AGPL--3.0_%7C_CC_BY_4.0-blue" alt="AGPL-3.0 code, CC BY 4.0 data" /></a>
 </p>
 
@@ -61,7 +60,7 @@ It asks six short questions, schedules nothing until you type **go** (setup only
 | 🎯 RobustBench CIFAR-100, one RN18 model | 27.57 % vs 27.67 % listed | 🧪 Verified internally |
 | 📡 30 constant-weight codes + 5 LP bounds | Brouwer's table, most by under 1 % | 🧪 Verified internally |
 
-🧪 = checked by independent reviewer agents, each with its own code, plus the checkers shipped here. Not yet listed by the table owner, not peer reviewed. **53 results** in all: 46 checkable results, 5 linear-programming bounds and 2 sealed cipher solves. Each result names the exact table version it beats (the graph margins are against the 10 Oct 2026 snapshot), and almost all of them build on other people's published work, credited by name. Full detail → [TROPHY_CASE.md](TROPHY_CASE.md)
+🧪 = checked by independent reviewer agents, each with its own code, plus the checkers shipped here. Not yet listed by the table owner. **53 results** in all: 46 checkable results, 5 linear-programming bounds and 2 sealed cipher solves. Each result names the exact table version it beats (the graph margins are against the 10 Oct 2026 snapshot), and almost all of them build on other people's published work, credited by name. Full detail → [TROPHY_CASE.md](TROPHY_CASE.md)
 
 F. Comellas' degree–diameter page describes itself as AI-free. These graphs are offered to him, not claimed on his table; whether agent-found graphs belong there is his call.
 
@@ -89,7 +88,7 @@ cc -O3 -o ddcheck known-knowns/biggest-graphs/verify-it-yourself/ddcheck.c -lpth
 
 Start here → [READ_BEFORE_CITING.md](READ_BEFORE_CITING.md)
 
-The results above predate the contributor kit: each was re-checked before release by two or three independent reviewer agents, then by the shipped checkers. No outside expert has reviewed them yet. If one is wrong, tell us and we will correct it in the open.
+The results above predate the contributor kit: each was re-checked before release by two or three independent reviewer agents, then by the shipped checkers. If one is wrong, tell us and we will correct it in the open.
 
 Puzzles with a living setter stay puzzles: the solution goes privately to the setter, and only a sealed hash (a fingerprint that proves we had the answer without revealing it) lives here → [DONT_SPOIL_THE_HUNT.md](DONT_SPOIL_THE_HUNT.md)
 
