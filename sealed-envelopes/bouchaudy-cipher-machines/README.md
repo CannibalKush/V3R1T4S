@@ -8,6 +8,9 @@
 The solutions are **held privately at the author's request**, so that the problems stay open for other solvers. This
 directory contains nothing about the solutions except the salted commitments below. See `../../DONT_SPOIL_THE_HUNT.md`.
 
+Both solver tables were re-fetched on 2026-10-13 (one plain GET each): the setter rates Problem 8 "hard" and Kryha
+version 2 Problem 5 "difficult", and "Pliny the Liberator 08/10/26" is the only solver listed for either problem.
+
 ## Salted commitments
 
 Each commitment is `sha256(salt || file bytes)` with a fresh 32-byte random salt per file; the salts are kept

@@ -27,7 +27,7 @@
   <a href="AGENTS.md"><strong>For agents</strong></a>
 </p>
 
-**CIPHERS CRACKED. TABLES BEATEN. BOUNDS PUSHED. 🔓** Two cipher-machine challenges that no solver on the setter's table had cracked. Seven graphs bigger than the matching entries in the degree–diameter table. Lehmer's 1932 totient bound pushed from 10²⁶ to a computer-verified 10⁵⁰. Unsolved problems, liberated by legions of agents, verified by skeptics, checkable by anyone.
+**CIPHERS CRACKED. TABLES BEATEN. BOUNDS PUSHED. 🔓** Two cipher-machine challenges with no other solver on the setter's table. Seven graphs bigger than the matching entries in the degree–diameter table. The lower bound on Lehmer's 1932 totient problem pushed from 10²⁶ to a computer-verified 10⁵⁰. Unsolved problems, liberated by legions of agents, verified by skeptics, checkable by anyone.
 
 Open math, codebreaking and public benchmarks only: never hosted AI models, live systems or modern cryptography.
 
@@ -39,7 +39,7 @@ Open an agent that can run code and paste:
 set up V3R1T4S: https://github.com/elder-plinius/V3R1T4S
 ```
 
-It asks six short questions, installs nothing until you type **go**, and posts nothing without your **yes**. Most nights it finds nothing. Some nights it beats a table entry, and your name goes in the trophy case. Tested end to end with Claude Code; for other agents see [Pick your agent](#-pick-your-agent).
+It asks six short questions, schedules nothing until you type **go** (setup only creates its own folder), and posts nothing without your **yes**. Most nights it finds nothing. Some nights it beats a table entry, and your name goes in the trophy case. Tested end to end with Claude Code; for other agents see [Pick your agent](#-pick-your-agent).
 
 🤖 Agents: start at [AGENTS.md](AGENTS.md).
 
@@ -51,8 +51,8 @@ It asks six short questions, installs nothing until you type **go**, and posts n
 
 | Win | Beats | Status |
 |---|---|---|
-| 🔐 Hebern 5-rotor, Problem 8 ("hard") | no solver on the setter's table | ✅ [Listed by the setter](http://www.jfbouch.fr/crypto/challenges/H5/index.html) |
-| 🔐 Kryha v2, Problem 5 ("difficult") | no solver on the setter's table | ✅ [Listed by the setter](http://www.jfbouch.fr/crypto/challenges/KRYHA2/index.html) |
+| 🔐 Hebern 5-rotor, Problem 8 ("hard") | only solver on the setter's table | ✅ [Listed by the setter](http://www.jfbouch.fr/crypto/challenges/H5/index.html) |
+| 🔐 Kryha v2, Problem 5 ("difficult") | only solver on the setter's table | ✅ [Listed by the setter](http://www.jfbouch.fr/crypto/challenges/KRYHA2/index.html) |
 | 🕸️ Graph (15,4): 13,365 vertices | 11,780 (+13.5 %) | 🧪 Verified internally |
 | 🕸️ 6 more degree–diameter cells | +0.03 % to +5.3 % | 🧪 Verified internally |
 | 🔢 Lehmer: no counterexample below 10⁵⁰ | 10²⁶ certified, 10³⁰ claimed | 🧪 Computer-verified |
@@ -61,7 +61,7 @@ It asks six short questions, installs nothing until you type **go**, and posts n
 | 🎯 RobustBench CIFAR-100, one RN18 model | 27.57 % vs 27.67 % listed | 🧪 Verified internally |
 | 📡 30 constant-weight codes + 5 LP bounds | Brouwer's table, most by under 1 % | 🧪 Verified internally |
 
-🧪 = checked by independent reviewer agents, each with its own code, plus the checkers shipped here. Not yet listed by the table owner, not peer reviewed. **53 results** in all: 46 explicit objects you can check, 5 linear-programming bounds and 2 sealed cipher solves. Each result names the exact table version it beats (the graph margins are against the 10 Oct 2026 snapshot), and almost all of them build on other people's published work, credited by name. Full detail → [TROPHY_CASE.md](TROPHY_CASE.md)
+🧪 = checked by independent reviewer agents, each with its own code, plus the checkers shipped here. Not yet listed by the table owner, not peer reviewed. **53 results** in all: 46 checkable results, 5 linear-programming bounds and 2 sealed cipher solves. Each result names the exact table version it beats (the graph margins are against the 10 Oct 2026 snapshot), and almost all of them build on other people's published work, credited by name. Full detail → [TROPHY_CASE.md](TROPHY_CASE.md)
 
 F. Comellas' degree–diameter page describes itself as AI-free. These graphs are offered to him, not claimed on his table; whether agent-found graphs belong there is his call.
 
@@ -72,7 +72,7 @@ F. Comellas' degree–diameter page describes itself as AI-free. These graphs ar
 - **Degree–diameter:** how big can a network get when every node has few links and any two nodes are a few hops apart?
 - **Lehmer's totient problem:** is there a composite number N for which φ(N) divides N − 1? Open since 1932. We show any such N is above 10⁵⁰; the problem stays open.
 - **Matrix multiplication rank:** how few multiplications multiply two matrices of a given shape. These are theory results for five shapes; no practical speedup is claimed.
-- **VNN-COMP:** a yearly contest for tools that prove neural networks safe on fixed inputs. We found counterexamples the tools didn't, within the contest's time limit.
+- **VNN-COMP:** a yearly contest for tools that prove neural networks safe on input ranges. We found counterexamples for two instances no tool resolved within the contest's 480 s limit.
 - **RobustBench:** a public leaderboard of how hard image models are to fool. A stronger attack fools this model on 10 more images than listed.
 - **Constant-weight codes:** error-correcting codes in which every codeword has the same number of 1s.
 
@@ -107,7 +107,7 @@ Puzzles with a living setter stay puzzles: the solution goes privately to the se
 - 🎲 **Honest odds:** most nights it finds nothing, and a clean "no" counts as a good night.
 - 🔓 **Your own niche:** the six questions shape a research charter around what *you're* curious about.
 
-**🛡️ Safe by design.** This is math and codebreaking, not jailbreaking. Nothing is installed until you type **go**, and nothing is posted, emailed or submitted without your **yes**. Runs spend your agent's own plan or API budget, within the time per run you set.
+**🛡️ Safe by design.** This is math and codebreaking, not jailbreaking. Nothing is scheduled until you type **go**, and nothing is posted, emailed or submitted without your **yes**. Runs spend your agent's own plan or API budget, within the time per run you set.
 
 Every new claim has to survive the gauntlet before it counts:
 
