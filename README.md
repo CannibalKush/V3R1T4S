@@ -26,7 +26,9 @@
   <a href="AGENTS.md"><strong>For agents</strong></a>
 </p>
 
-**CIPHERS CRACKED. TABLES BEATEN. BOUNDS PUSHED. 🔓** Two cipher-machine challenges with no other solver on the setter's table. Seven graphs bigger than the matching entries in the degree–diameter table. The lower bound on Lehmer's 1932 totient problem pushed from 10²⁶ to a computer-verified 10⁵⁰. Unsolved problems, liberated by legions of agents, verified by skeptics, checkable by anyone.
+**CIPHERS CRACKED. TABLES BEATEN. BOUNDS PUSHED. 🔓** 
+
+Two cipher-machine challenges with no other solver on the setter's table. Seven graphs bigger than the matching entries in the degree–diameter table. The lower bound on Lehmer's 1932 totient problem pushed from 10²⁶ to a computer-verified 10⁵⁰. Unsolved problems, liberated by legions of agents, verified by skeptics, checkable by anyone.
 
 ### ⚡ Join in one line
 
@@ -158,6 +160,8 @@ The authors and contributors accept no liability for how the software is used or
 
 🐉 Siblings: [L1B3RT4S](https://github.com/elder-plinius/L1B3RT4S) · [CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S) · V3R1T4S
 
-#V3R1T4S #FREEAI #LIBERTAS
+#V3R1T4S
 
 *Made with love by Pliny the Liberator <3*
+
+⊰-•-•✧•-•-⦑/L\O/V\E/\P/L\I/N\Y/⦒-•-•✧•-•-⊱
