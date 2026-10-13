@@ -25,7 +25,7 @@ were added on 2026-10-12; rows 44 and 46 were updated on 2026-10-12 from 1843 an
 ## How to check
 
 "machine-verified" means: the object is in this repository, a checker written for the release passes on it (output in
-`known-knowns/<family>/verify-it-yourself/RECEIPTS.md`), and before that it was re-checked by three separate reviewers,
+`known-knowns/<family>/verify-it-yourself/RECEIPTS.md`), and before that it was re-checked by two or three separate reviewers,
 each with their own code.
 
 "Regenerate" (rather than only check) means rerunning the code that produced the object: every family has a

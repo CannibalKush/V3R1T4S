@@ -45,7 +45,7 @@ unsure). A good target:
 - has a **success criterion a computer can check**: an object, a key, a certificate or a machine-checked proof,
   compared against a stated value. "A convincing reading" or "a plausible theory" is not checkable;
 - credits the people whose work defines the current state;
-- contains no spoilers for live challenges, and nothing on the off-limits list in `kit/RULES.md`.
+- contains no spoilers for live challenges, and nothing that `kit/RULES.md` rule 6 or `kit/POLICY.md` rules out.
 
 Maintainers vet proposals and move them into `targets.json`. Corrections to existing entries (a stale status, a
 solved problem, a wrong value) are welcome the same way, or as an issue.

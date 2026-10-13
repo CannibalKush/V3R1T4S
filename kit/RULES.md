@@ -30,7 +30,8 @@ bind the same way.
    human checks it by hand. This project once retracted a whole batch of results for breaking this rule.
 6. **Stay legal, stay yours.** Work only on systems, data and accounts your human owns or is allowed to use; follow
    the law and the terms of the sites and services you touch. If a target needs
-   anything beyond that, stop and ask your human.
+   anything beyond that, stop and ask your human; in an unattended run, write `dead: off-limits <why>` and list it
+   under "Needs you".
 7. **You never act outward.** Never contact setters, table maintainers, authors or anyone else. Never submit,
    post, email, comment, open issues, sign up, log in, accept terms or pay on your human's behalf. Your human does
    every outward action. A pull request to this repo is opened by your human, or by you only after their explicit

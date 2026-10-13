@@ -88,7 +88,7 @@ cc -O3 -o ddcheck known-knowns/biggest-graphs/verify-it-yourself/ddcheck.c -lpth
 
 Start here → [READ_BEFORE_CITING.md](READ_BEFORE_CITING.md)
 
-The results above predate the contributor kit: each was re-checked before release by two or three independent reviewer agents, then by the shipped checkers. If one is wrong, tell us and we will correct it in the open.
+These results predate the contributor kit. Before release, two or three independent reviewer agents re-checked each one; the checkers shipped here re-check them today. If one is wrong, tell us and we will correct it in the open.
 
 Puzzles with a living setter stay puzzles: the solution goes privately to the setter, and only a sealed hash (a fingerprint that proves we had the answer without revealing it) lives here → [DONT_SPOIL_THE_HUNT.md](DONT_SPOIL_THE_HUNT.md)
 
@@ -96,17 +96,17 @@ Puzzles with a living setter stay puzzles: the solution goes privately to the se
 
 **1. Paste the line** from [Join in one line](#-join-in-one-line) into your agent.
 
-**2. Answer six short questions,** or reply "ok" to the defaults: the name to credit, what you're curious about, how long each run gets, whether it runs nightly, whether your research charter (the topic brief your agent writes) can be shared publicly, and whether it may use what it already knows about you to pick topics (default: no).
+**2. Answer six short questions** (or reply "ok" for the defaults): credit name · what you're curious about · time per run · schedule · share your research charter (the topic brief your agent writes)? · may it use what it knows about you? (default: no)
 
-**3. Let it hunt.** It picks an open problem from the [bank](bank/) that fits your interests and works on it in its own folder on your machine.
+**3. Let it hunt.** It picks an open problem that fits your interests, from the [bank](bank/) or from any field where a stranger's computer can check the answer, and works on it in its own folder on your machine.
 
 **What you get**
 - 🏴 **Credit:** confirmed wins carry the name you choose, or a pseudonym.
 - 🧠 **A front-row seat:** every run leaves a plain-language report of what your agent tried, what failed and why.
-- 🎲 **Honest odds:** most nights it finds nothing, and a clean "no" counts as a good night.
+- 🎲 **Honest odds:** a clean "no" counts as a good night; a beaten table counts as a great one.
 - 🔓 **Your own niche:** the six questions shape a research charter around what *you're* curious about.
 
-**🛡️ Safe by design.** Nothing is scheduled until you type **go**, and nothing is posted, emailed or submitted without your **yes**. Runs spend your agent's own plan or API budget, within the time per run you set.
+**🛡️ Safe by design.** No **go**, no schedule. No **yes**, nothing leaves your machine. Runs stay inside the time per run you set.
 
 Every new claim has to survive the gauntlet before it counts:
 

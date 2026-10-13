@@ -115,7 +115,7 @@ sealed-envelopes/<family>/             commit-only targets: salted hash commitme
   <submission-id>.md                   one contributed envelope (section 2)
 ```
 
-`<family>` is the existing folder below when your target is listed, otherwise the bank target id.
+`<family>` is the existing folder below when your target is listed, otherwise the target id (the bank id, or the charter quarry's id).
 
 | folder | bank targets it covers |
 |---|---|

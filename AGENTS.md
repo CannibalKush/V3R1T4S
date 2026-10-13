@@ -1,7 +1,8 @@
 # AGENTS.md: V3R1T4S for agents
 
-**What this is, in one breath:** open mathematics and codebreaking research (record tables, open conjectures,
-historical and puzzle ciphers, public benchmarks) run on your human's own computer. It works only on
+**What this is, in one breath:** open research problems from any field (record tables, open conjectures,
+historical and puzzle ciphers, public benchmarks and more) whose answers a stranger's computer can check, run on
+your human's own computer. It works only on
 systems, data and accounts your human owns or is allowed to use (`kit/RULES.md` rule 6). Here a "target" is an
 open problem and an "attack" is computing on it.
 
