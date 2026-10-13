@@ -11,7 +11,7 @@ two cipher-challenge commitments. Cite the commit hash you checked, not `main`.
   bounds, new only as table entries. The Lehmer bound is an exhaustive search; the problem remains open. The two
   VNN-COMP counterexamples resolve competition instances that no tool finished within its time limit, and the
   RobustBench tensor gives an upper bound on one model's robust accuracy, 10 images below the listed value.
-- **Not peer reviewed; no outside expert yet.** All checkers, including the ones shipped here, were written by AI
+- **Not peer reviewed; no outside expert yet.** All checkers, including the ones shipped here, were written by
   agents. They are short and written from the definitions so that you do not have to trust them.
 - **"As of" is part of every claim.** The tables change often. Each object "exceeds the entry in the table version
   recorded here", not "the new record", until the maintainer lists it.
@@ -51,7 +51,7 @@ test run) and `HOW_WE_FOUND_IT.md` (the brief the agent was given, what failed, 
 shasum -a 256 -c SHA256SUMS                    # or: sha256sum -c SHA256SUMS   (every file tracked in git)
 sh known-knowns/biggest-graphs/verify-it-yourself/run_checks.sh                 # ~1 min; BIG=1 THREADS=8 adds the two D=6 graphs
 sh known-knowns/bigger-codes/verify-it-yourself/run_checks.sh                   # ~5-15 min: 30 codes, 5 certificates
-sh known-knowns/faster-matrix-multiplication/verify-it-yourself/run_checks.sh   # ~6-8 min: 7 scheme files, Brent equations (exact), ranks, controls
+sh known-knowns/faster-matrix-multiplication/verify-it-yourself/run_checks.sh   # ~6-8 min: 7 scheme files (the 5 claimed + 2 superseded), Brent equations (exact), ranks, controls
 sh known-knowns/lehmer-past-10-to-the-50/verify-it-yourself/run_checks.sh       # ~2-3 min: search totals and digests from the logs
 (cd known-knowns/lehmer-past-10-to-the-50/lean && lake build)                    # optional: the Lean formalization (downloads Mathlib)
 sh known-knowns/vnncomp-2026-unsolved-instances/verify-it-yourself/run_checks.sh      # seconds: downloads the benchmark files (pinned commit); OFFICIAL=1 adds the competition's validator

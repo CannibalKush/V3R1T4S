@@ -39,8 +39,8 @@ puzzles in `sealed-envelopes/`, and the map of open problems in `bank/`. **Proof
 
 ## Works with any shell-capable agent
 
-Plain Markdown, JSON and one standard-library Python checker. No plugin, SDK or vendor feature. Claude Code, Codex
-CLI, Gemini CLI, Hermes, OpenHands, Aider, Cursor or your own harness all work. Fallbacks:
+Plain Markdown, JSON and one standard-library Python checker. No plugin, SDK or vendor feature. Tested end to end with
+Claude Code; Codex CLI, Gemini CLI, Hermes, OpenHands, Aider, Cursor or your own harness should work too. Fallbacks:
 
 | capability | if you have it | if you don't |
 |---|---|---|
@@ -63,7 +63,7 @@ CLI, Gemini CLI, Hermes, OpenHands, Aider, Cursor or your own harness all work. 
 | file | when |
 |---|---|
 | [`kit/RULES.md`](kit/RULES.md) hard rules · [`kit/POLICY.md`](kit/POLICY.md) category policy | always, first |
-| [`kit/LESSONS.md`](kit/LESSONS.md) twenty lessons that cost real retractions | once per run |
+| [`kit/LESSONS.md`](kit/LESSONS.md) 21 lessons that cost real retractions | once per run |
 | [`kit/SETUP.md`](kit/SETUP.md) one-time setup with your human | once |
 | [`kit/CHARTER.md`](kit/CHARTER.md) the personal research charter | during setup, or on "rewrite my charter" |
 | [`kit/RUN.md`](kit/RUN.md) one run | every run |
