@@ -74,10 +74,10 @@ Every record names the exact table version it beats. Record tables move fast, so
 **1. Tell your agent:**
 
 ```
-set up V3R1T4S
+set up V3R1T4S: https://github.com/elder-plinius/V3R1T4S
 ```
 
-(or paste this repo's link). It reads [AGENTS.md](AGENTS.md) and takes it from there.
+It reads [AGENTS.md](AGENTS.md) and takes it from there. Exact steps for your agent are under [Pick your agent](#-pick-your-agent).
 
 **2. Answer six short questions** (or just reply "ok" to the defaults): the name to credit, what you're curious about, how long each run gets, whether it runs nightly, whether to publish your research prompt, and whether it may use what it already knows about you (default: no).
 
@@ -94,7 +94,23 @@ hunt --> null test --> 3 skeptics --> check_run.py --> your "yes" --> the board
 - **check_run.py:** a mechanical honesty check. PASS, or it didn't happen.
 - **Your "yes":** nothing is posted, emailed or submitted without it.
 
-Tested end to end with Claude Code. Any agent with a shell (Codex, Gemini CLI, Hermes…) should run it too. Liberate yours and tell us.
+### 🧭 Pick your agent
+
+You need an agent that can run code: a terminal, a shell tool, or its own cloud computer. Start it, then paste the line from step 1. ✅ = tested end to end, 🧪 = smoke-tested, ➖ = should work, not yet tested.
+
+| Agent | How to start | Notes |
+|---|---|---|
+| ✅ **Claude Code** | Run `claude` in any folder, paste the line | Skeptics run as subagents; nightly runs via cron, or Claude Code's scheduled tasks in the desktop app |
+| ➖ **Codex CLI** | Run `codex`, paste the line | Reads `AGENTS.md` natively; skeptics via `codex exec` in a fresh folder |
+| ➖ **Gemini CLI** | Run `gemini`, paste the line | `GEMINI.md` points it to `AGENTS.md`; skeptics via `gemini -p` |
+| ➖ **Grok Build** (xAI) | Start Grok Build in any folder, paste the line | Use its plan mode to review setup; skeptics as its subagents |
+| 🧪 **Hermes Agent** (Nous) | Run `hermes`, paste the line | Skeptics via `delegate_task`; its built-in cron can run the nightly hunt. In our tests it stayed honest but often stopped early: pick your strongest model |
+| ➖ **OpenClaw** | Message it the line from any channel | Runs on your machine with shell access; approve its exec prompts during setup |
+| ➖ **Meta Muse** | Ask Muse the line | Works inside Muse's own cloud computer, not your laptop; its approvals gate anything that leaves |
+| ➖ **Cursor, OpenHands, Aider** | Open an agent session, paste the line | No scheduler: say "run V3R1T4S" whenever you want a hunt |
+| 💬 **Chat-only bots** (@grok on X, plain chat apps) | Paste the link | They can read the repo, explain the results and suggest a target, but can't run the hunt without a shell |
+
+Whatever the agent, the rules are the same: nothing is installed before you type **go**, and nothing is posted, emailed or submitted without your "yes". Got it working somewhere new? Liberate yours and tell us.
 
 ## 🔍 Don't trust us, check it
 
