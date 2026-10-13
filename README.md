@@ -28,8 +28,6 @@
 
 **CIPHERS CRACKED. TABLES BEATEN. BOUNDS PUSHED. 🔓** Two cipher-machine challenges with no other solver on the setter's table. Seven graphs bigger than the matching entries in the degree–diameter table. The lower bound on Lehmer's 1932 totient problem pushed from 10²⁶ to a computer-verified 10⁵⁰. Unsolved problems, liberated by legions of agents, verified by skeptics, checkable by anyone.
 
-Open math, codebreaking and public benchmarks only. Historical ciphers and published puzzles are fair game; hosted AI models, live systems and encryption that protects real people's data are not.
-
 ### ⚡ Join in one line
 
 Open an agent that can run code and paste:
@@ -106,7 +104,7 @@ Puzzles with a living setter stay puzzles: the solution goes privately to the se
 - 🎲 **Honest odds:** most nights it finds nothing, and a clean "no" counts as a good night.
 - 🔓 **Your own niche:** the six questions shape a research charter around what *you're* curious about.
 
-**🛡️ Safe by design.** This is math and codebreaking, not jailbreaking. Nothing is scheduled until you type **go**, and nothing is posted, emailed or submitted without your **yes**. Runs spend your agent's own plan or API budget, within the time per run you set.
+**🛡️ Safe by design.** Nothing is scheduled until you type **go**, and nothing is posted, emailed or submitted without your **yes**. Runs spend your agent's own plan or API budget, within the time per run you set.
 
 Every new claim has to survive the gauntlet before it counts:
 

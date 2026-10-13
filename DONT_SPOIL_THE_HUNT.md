@@ -24,8 +24,8 @@ are never published anywhere; they go only through the official prize process.
 organiser's protocol.
 
 **Historical ciphers with no living setter.** Published only after review by an outside expert, and never anything on
-the off-limits list: modern cryptosystems in use, crypto wallets or puzzle keys, password hashes, private
-communications of living people, open criminal or death investigations.
+the off-limits list: encryption protecting real people's data, crypto wallets or puzzle keys, password hashes,
+private communications of living people, or naming living people as suspects in crimes.
 
 **Corrections and takedown requests** from setters, maintainers and authors are honoured promptly (see `READ_BEFORE_CITING.md`,
 Corrections).
