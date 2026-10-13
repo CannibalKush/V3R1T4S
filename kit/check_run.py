@@ -41,6 +41,9 @@ LEAK_RES = [
 ]
 EMAIL_RE = re.compile(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b")
 EMAIL_OK = re.compile(r"(?i)@(users\.noreply\.github\.com|example\.(com|org|net))$")
+SETTLED_RE = re.compile(r"(?i)\b(settles?|settled|exhaustive(ly)?|proof|proved|proves|complete search)\b")
+DEAD_OK = re.compile(r"(?i)\W*(solved|off-limits|off limits|unreachable|overtaken|record moved|out of reach|withdrawn|closed)")
+DEAD_BAD = re.compile(r"(?i)budget|time|early|smoke|test|light|commit-only|effort|skip|harness|constraint")
 ENVELOPE_LABELS = "key|settings|decryption|plaintext|verification output|other"
 
 
@@ -540,12 +543,25 @@ def check_setup(c, workdir, settings, dry):
             c.fail("RUN_PROMPT.txt still contains the placeholder %s" % m.group(0))
         if re.search(r"(?i)read\s+\S*RUN_PROMPT\.txt", rp):
             c.fail("RUN_PROMPT.txt tells the reader to read RUN_PROMPT.txt (copy the numbered block, not the scheduler line)")
-        if workdir not in rp and os.path.realpath(workdir) not in rp:
+        if not mentions_dir(rp, workdir):
             c.fail("RUN_PROMPT.txt does not contain this workspace's absolute path")
     if not os.path.isfile(os.path.join(workdir, "private", "never_publish.txt")):
         c.fail("private/never_publish.txt missing (kit/SETUP.md step 3)")
     if not os.path.isdir(os.path.join(workdir, "repo", "kit")):
         c.fail("repo/ (the pinned copy of the repository) is missing")
+
+
+def mentions_dir(text, d):
+    if d in text or os.path.realpath(d) in text:
+        return True
+    for m in re.finditer(r"(?:[A-Za-z]:)?[/\\][^\s`'\"<>]+", text):
+        cand = m.group(0).rstrip(".,;:)")
+        try:
+            if os.path.isdir(cand) and os.path.samefile(cand, d):
+                return True
+        except OSError:
+            pass
+    return False
 
 
 def latest_run(workdir):
@@ -578,11 +594,25 @@ def check_run_dir(c, workdir, run, bank, dry):
         c.fail("%s: target.md has no 'id: <target-id>' line" % label)
     entry = bank.get(tid) if bank else None
     if tid and bank and entry is None:
-        c.warn("%s: target %s is not in the bank (fine for a charter target with a published definition)" % (label, tid))
+        if tid in read(os.path.join(workdir, "charter.md")):
+            c.warn("%s: target %s is not in the bank; fine for a charter quarry with a published definition" % (label, tid))
+        else:
+            c.fail("%s: target %s is neither in the bank nor a quarry of charter.md" % (label, tid))
+    scout = read(os.path.join(run, "scout.md"))
+    if scout and not re.search(r"PENDING (STATUS|TABLE) CHECK", scout) and not (
+            re.search(r"https?://", scout) and re.search(r"\b[1-5]\d\d\b", scout) and re.search(r"\b[0-9a-f]{64}\b", scout)):
+        c.fail("%s: scout.md needs the status source's URL, HTTP status and page sha256 (from command output), "
+               "or 'PENDING STATUS CHECK'" % label)
     for f in ("scout.md", "BRIEF.md"):
         if not os.path.isfile(os.path.join(run, f)):
             c.fail("%s: %s missing (kit/RUN.md step 3)" % (label, f))
     dead = tgt.get("dead") or kv(read(os.path.join(run, "scout.md"))).get("dead")
+    if dead and re.fullmatch(r"(?i)\W*(no|false|none|n/?a|not dead|open)\W*", dead):
+        dead = None
+    if dead and (not DEAD_OK.match(dead) or DEAD_BAD.search(dead)):
+        c.fail("%s: 'dead: %s' is not a dead target. Only solved, off-limits or unreachable targets (or a record "
+               "moved out of reach) end a run before the attack; time, effort, tests and commit-only never do" % (label, dead[:60]))
+        dead = None
     att = os.path.join(run, "attempts")
     lenses = sorted(d for d in os.listdir(att) if os.path.isdir(os.path.join(att, d))) if os.path.isdir(att) else []
     if dry:
@@ -601,6 +631,24 @@ def check_run_dir(c, workdir, run, bank, dry):
             c.fail("%s: attempts/%s/report.md has no 'claim level:' line" % (label, l))
         else:
             claim_levels.append(m.group(1))
+            if m.group(1) not in ("partial_win_claim", "solution_claim"):
+                dl = re.search(r"(?im)^[ \t#*>-]*dead[ _]lines[ \t*`]*:?[ \t]*$", r)
+                bullets = re.findall(r"(?m)^\s*(?:[-*+]|\d+[.)])\s+(\S.{10,})", r[dl.end():]) if dl else []
+                settled = any(SETTLED_RE.search(b) for b in bullets)
+                if len(bullets) < 3 and not (bullets and settled):
+                    c.fail("%s: attempts/%s/report.md needs 'dead lines:' with at least 3 bullets (what was tried, "
+                           "the real result, why it died), or one bullet that settles the question; found %d" % (label, l, len(bullets)))
+        files = [p for p in walk(os.path.join(att, l))]
+        code = [p for p in files if os.path.splitext(p)[1].lower() in CODE_EXT]
+        outs = [p for p in files if os.path.splitext(p)[1].lower() not in CODE_EXT
+                and os.path.basename(p) not in ("NOTES.md", "report.md", "REPRODUCE.md")]
+        commit_only = (entry or {}).get("disclosure") == "commit-only"
+        if not outs and commit_only and tid and os.path.isdir(os.path.join(workdir, "private", tid)):
+            outs = [p for p in walk(os.path.join(workdir, "private", tid)) if os.path.splitext(p)[1].lower() not in CODE_EXT]
+        if not code or not outs:
+            c.fail("%s: attempts/%s/ needs at least one program it ran and that program's saved output" % (label, l))
+        if not os.path.isfile(os.path.join(att, l, "NOTES.md")):
+            c.fail("%s: attempts/%s/NOTES.md missing (hypotheses)" % (label, l))
     pre = os.path.join(run, "PREREG.md")
     if lenses and not os.path.isfile(pre):
         c.fail("%s: PREREG.md missing; freeze criterion, statistic, thresholds and null design before measuring" % label)
@@ -621,6 +669,11 @@ def check_run_dir(c, workdir, run, bank, dry):
         if os.path.isfile(pre) and os.path.isfile(os.path.join(run, "null_test.md")) and \
                 os.path.getmtime(pre) > os.path.getmtime(os.path.join(run, "null_test.md")) + 1:
             c.fail("%s: PREREG.md was written after null_test.md (freeze before you measure)" % label)
+    if os.path.isfile(pre):
+        later = [p for d in (os.path.join(run, "claim"), os.path.join(workdir, "private", tid or "-", "claim"))
+                 if os.path.isdir(d) for p in walk(d) if os.path.getmtime(p) + 1 < os.path.getmtime(pre)]
+        if later:
+            c.fail("%s: PREREG.md was written after the claim was built (%s); freeze before you measure" % (label, rel(later[0], workdir)))
     # status words
     mentions = []
     scan = [os.path.join(workdir, "REPORT.md")]

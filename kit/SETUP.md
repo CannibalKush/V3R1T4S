@@ -55,8 +55,8 @@ branch and pin that exact commit instead (`repo_tag: none`):
 ```sh
 URL=https://github.com/elder-plinius/V3R1T4S        # or the local copy / mirror your human gave you
 TAG=$(git ls-remote --tags --refs --sort=-v:refname "$URL" 'v*' | head -1 | sed 's|.*refs/tags/||')
-if [ -n "$TAG" ]; then git -c advice.detachedHead=false clone --depth 1 --branch "$TAG" "$URL" repo
-else TAG=none; git clone --depth 1 "$URL" repo; fi
+if [ -n "$TAG" ]; then git -c advice.detachedHead=false clone --depth 1 --filter=blob:limit=1m --branch "$TAG" "$URL" repo
+else TAG=none; git clone --depth 1 --filter=blob:limit=1m "$URL" repo; fi
 git -C repo rev-parse HEAD          # record as repo_commit; record $TAG as repo_tag
 ```
 

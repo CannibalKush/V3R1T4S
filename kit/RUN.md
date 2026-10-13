@@ -137,11 +137,15 @@ exactly where and why, then take the next one. Stop only with a result or at lea
 the next test is, and where the checkpoint lives, so the next run resumes it. A clean negative result, with the
 space it covers stated honestly, is a good day.
 
-Each attempt ends with `NOTES.md`, `report.md`, `code/` with captured output, the null-test output if `PREREG.md`
-calls for one, and a claim level: `nothing`,
-`negative`, `progress`, `partial_win_claim` (names one enumerated partial win) or `solution_claim`. Any win claim
-also has `result/` (the object, key, certificate or frozen predictions, machine-readable) and `REPRODUCE.md` (exact
-commands that verify it in a fresh shell).
+Each attempt (`attempts/<lens>/`) ends with `NOTES.md` (the hypotheses), `code/` (at least one program you ran)
+with its captured output saved as a file, the null-test output if `PREREG.md` calls for one, and `report.md` with:
+- a line `claim level: nothing | negative | progress | partial_win_claim | solution_claim` (a partial win claim names
+  one enumerated partial win);
+- unless it is a win claim, a line `dead lines:` followed by at least 3 bullets, each saying what was tried, the
+  real result, and why the line is dead (or where a live lead stands and its next test). One bullet is enough only
+  when it settles the question (an exhaustive search or a proof, saying so).
+Any win claim also has `result/` (the object, key, certificate or frozen predictions, machine-readable) and
+`REPRODUCE.md` (exact commands that verify it in a fresh shell). `kit/check_run.py` checks all of this.
 
 ## Step 5. Try to break it yourself
 
@@ -155,13 +159,16 @@ REFUTED. If FLAWED and the budget allows a repair round, fix it in a new folder 
 ## Step 6. Three-skeptic panel
 
 Build `claim/`: a one-sentence claim, the target id, the criterion verbatim, the object files, `REPRODUCE.md`, and
-the scout's table record. No notes, no reasoning, no verdict. Then start **three fresh contexts** (subagents, or
+the scout's table record, plus copies of every input the check needs (simulators, data files): a skeptic sees
+nothing else. No notes, no reasoning, no verdict. Then start **three fresh contexts** (subagents, or
 your CLI run headlessly inside a copy of `claim/`), each given only `claim/` and its own instruction below. Each
 writes `panel/reproduce.md`, `panel/novelty.md` or `panel/criterion.md` in the run folder, with a line
 `context: <how this skeptic was started, e.g. "subagent", "hermes delegation", "codex exec">` and a last line
-`pass: true` or `pass: false`. Default to false unless it can genuinely confirm. For a commit-only target, `claim/`
+`pass: true` or `pass: false`. Default to false unless it can genuinely confirm. Panel files may be published: they name
+files relative to `claim/` and never contain absolute paths. For a commit-only target, `claim/`
 lives in `private/<target-id>/claim/` and the panel files go in `private/<target-id>/panel/`; the run folder's
-`panel/` then holds only `gate.md`.
+`panel/` then holds only `gate.md`, and the CRITERION skeptic writes its `confirmed_scope` without the key,
+plaintext or any crib (for example "the key in claim/key.txt (sha256 ...) re-encrypts the message exactly").
 
 - **REPRODUCE.** "Before reading the author's code, write your own checker from the definition (quote it). Verify
   every property and the claimed value from the saved files; re-derive every proof step. For an exhaustive search,

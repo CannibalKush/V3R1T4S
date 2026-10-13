@@ -56,7 +56,7 @@ class Base(unittest.TestCase):
         self.R = os.path.join(W, "runs", "2026-10-12-0300")
         R = self.R
         w(os.path.join(R, "target.md"), "id: toy-record\nwhy: practice\n")
-        w(os.path.join(R, "scout.md"), "url: http://example.org/table\nstatus: 200\n")
+        w(os.path.join(R, "scout.md"), "url: http://example.org/table\nstatus: 200\nsha256: %s\n" % HEX)
         w(os.path.join(R, "BRIEF.md"), "definition quoted\n")
 
     def tearDown(self):
@@ -65,7 +65,13 @@ class Base(unittest.TestCase):
     def attack(self, levels=("nothing", "negative"), null="not needed because a deterministic checker decides"):
         w(os.path.join(self.R, "PREREG.md"), "frozen: 2026-10-12T03:01:00Z\nnull_test: %s\n" % null)
         for i, lv in enumerate(levels):
-            w(os.path.join(self.R, "attempts", "lens%d" % i, "report.md"), "claim level: %s\n" % lv)
+            A = os.path.join(self.R, "attempts", "lens%d" % i)
+            dead = "" if lv.endswith("_claim") else "dead lines:\n" + "".join(
+                "- tried idea %d: real output said no; dead because the bound is tight\n" % k for k in range(3))
+            w(os.path.join(A, "report.md"), "claim level: %s\n%s" % (lv, dead))
+            w(os.path.join(A, "NOTES.md"), "hypotheses\n")
+            w(os.path.join(A, "code", "try.py"), "print(1)\n")
+            w(os.path.join(A, "code", "try.out"), "1\n")
 
     def run_check(self, *argv):
         out = io.StringIO()
@@ -166,6 +172,34 @@ class BadFixtures(Base):
 
     def test_stopped_before_attack(self):
         self.assertFail("stopped before the attack", self.W)
+
+    def test_dead_excuse_rejected(self):
+        w(os.path.join(self.R, "target.md"), "id: toy-record\ndead: run ended before attack step (smoke-test early stop)\n")
+        self.assertFail("is not a dead target", self.W)
+
+    def test_dead_target_allowed(self):
+        w(os.path.join(self.R, "target.md"), "id: toy-record\ndead: solved by someone else on 2026-10-11 (status page)\n")
+        self.assertPass(self.W)
+
+    def test_empty_lens_report(self):
+        self.attack()
+        w(os.path.join(self.R, "attempts", "lens0", "report.md"), "claim level: negative\n")
+        self.assertFail("needs 'dead lines:'", self.W)
+
+    def test_lens_without_code(self):
+        self.attack()
+        shutil.rmtree(os.path.join(self.R, "attempts", "lens1", "code"))
+        self.assertFail("at least one program", self.W)
+
+    def test_unknown_target(self):
+        self.attack()
+        w(os.path.join(self.R, "target.md"), "id: made-up-quarry\n")
+        self.assertFail("neither in the bank nor a quarry", self.W)
+
+    def test_scout_without_status_record(self):
+        self.attack()
+        w(os.path.join(self.R, "scout.md"), "looked at the page, still open\n")
+        self.assertFail("scout.md needs the status source", self.W)
 
     def test_one_lens_only(self):
         self.attack(levels=("negative",))

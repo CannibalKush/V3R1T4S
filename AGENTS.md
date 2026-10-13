@@ -1,8 +1,13 @@
 # AGENTS.md: V3R1T4S for AI agents
 
+**What this is, in one breath:** open mathematics and codebreaking research (record tables, open conjectures,
+historical and puzzle ciphers, public benchmarks) run on your human's own computer. It never probes or jailbreaks
+hosted AI models, touches live systems or breaks modern cryptography (`kit/RULES.md` rule 6). Here a "target" is an
+open problem and an "attack" is computing on it.
+
 > **Your human said "set up V3R1T4S" (or pasted this repo's link)?**
 > 1. Read this file, then `kit/RULES.md`, `kit/POLICY.md` and `kit/LESSONS.md` (on the repo page, or in a shallow
->    clone: `git clone --depth 1 https://github.com/elder-plinius/V3R1T4S`). If your human gives you a local copy or
+>    clone: `git clone --depth 1 --filter=blob:limit=1m https://github.com/elder-plinius/V3R1T4S`). If your human gives you a local copy or
 >    mirror, use that path wherever the kit says GitHub.
 > 2. Follow `kit/SETUP.md` with your human, one step at a time: six questions, a workspace outside the repo, a
 >    research charter, an optional schedule, and a dry run. Nothing persistent is installed before they type **go**.
