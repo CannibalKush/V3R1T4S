@@ -134,7 +134,7 @@ for them to type **go**. Then install exactly one schedule (update it in place i
 **A. Your harness has its own scheduler** that starts a fresh session on this machine with file and shell access:
 create one task named `V3R1T4S`, working folder = the workspace, prompt = the single line above. A cloud scheduler
 that cannot see this machine's workspace does not qualify. If you yourself run inside a hosted cloud computer (for
-example Meta Muse), that computer is "this machine": the workspace, the runs and the schedule all live there.
+example Grok Bot or Meta Muse), that computer is "this machine": the workspace, the runs and the schedule all live there.
 
 **B. macOS or Linux: cron.** Write `run.sh` in the workspace (replace `AGENT_RUN` with the absolute path and flags
 of the command from step 0; find the path with `command -v`):

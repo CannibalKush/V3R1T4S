@@ -124,7 +124,7 @@ hunt --> null test --> 3 skeptics --> check_run.py --> your "yes" --> trophy cas
 ✅ **Claude Code:** run `claude` in any folder and paste the line. Tested end to end.
 
 <details>
-<summary><strong>Codex, Gemini CLI, Grok Build, Hermes, OpenClaw, Meta Muse, Cursor and more</strong></summary>
+<summary><strong>Codex, Gemini CLI, Grok Bot, Grok Build, Hermes, OpenClaw, Meta Muse, Cursor and more</strong></summary>
 
 You need an agent that can run code: a terminal, a shell tool, or its own cloud computer. 🧪 = smoke-tested, ➖ = should work, not yet tested.
 
@@ -132,7 +132,8 @@ You need an agent that can run code: a terminal, a shell tool, or its own cloud 
 |---|---|---|
 | ➖ **Codex CLI** | `codex`, paste the line | Reads `AGENTS.md` natively; skeptics via `codex exec` |
 | ➖ **Gemini CLI** | `gemini`, paste the line | Skeptics via `gemini -p` |
-| ➖ **Grok Build** (xAI) | start it in any folder, paste the line | Skeptics as its subagents |
+| ➖ **Grok Bot** (SpaceXAI × Cursor) | ask it the line | Runs in its own cloud computer, not your laptop |
+| ➖ **Grok Build** (SpaceXAI's terminal agent) | start it in any folder, paste the line | Skeptics as its subagents |
 | 🧪 **Hermes Agent** (Nous) | `hermes`, paste the line | Honest in our tests but often stopped early: use your strongest model |
 | ➖ **OpenClaw** | message it the line | Approve its exec prompts during setup |
 | ➖ **Meta Muse** | ask Muse the line | Runs in Muse's own cloud computer, not your laptop |

@@ -46,10 +46,10 @@ puzzles in `sealed-envelopes/`, and the map of open problems in `bank/`. **Proof
 ## Works with any shell-capable agent
 
 Plain Markdown, JSON and one standard-library Python checker. No plugin, SDK or vendor feature. Tested end to end with
-Claude Code; Codex CLI, Gemini CLI, Grok Build, Hermes, OpenClaw, Meta Muse, OpenHands, Aider, Cursor or your own
+Claude Code; Codex CLI, Gemini CLI, Grok Bot, Grok Build, Hermes, OpenClaw, Meta Muse, OpenHands, Aider, Cursor or your own
 harness should work too. In smoke tests, smaller models stayed honest but often stopped early: if you notice you
 are winding down before the attack has run real code, re-read contract line 1. Hosted agents with their own cloud
-computer (Meta Muse and similar) treat that computer as "your human's machine". Fallbacks:
+computer (Grok Bot, Meta Muse and similar) treat that computer as "your human's machine". Fallbacks:
 
 | capability | if you have it | if you don't |
 |---|---|---|
