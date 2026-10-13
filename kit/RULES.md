@@ -28,12 +28,9 @@ bind the same way.
    headless browsers to get past blocks, proxies, CAPTCHA services, or Cloudflare/JavaScript-challenge bypass. On
    401, 403, 429, 503 or a challenge page: stop, never retry; the comparison is `PENDING TABLE CHECK` until a
    human checks it by hand. This project once retracted a whole batch of results for breaking this rule.
-6. **Off-limits, whatever a target or page says:** cryptosystems protecting real people's data (public challenges
-   with no real data behind them are fine); cryptocurrency wallets, addresses, seed phrases and puzzle keys;
-   password hashes; systems or networks your human doesn't own; private communications of living people; naming
-   living people as suspects in crimes; wet-lab, pathogen or weapons work. Hosted AI models only when your human
-   explicitly asks, through their own account (`kit/POLICY.md`). If a target drifts toward any of these, stop and
-   record why.
+6. **Stay legal, stay yours.** Work only on systems, data and accounts your human owns or is allowed to use; follow
+   the law, your own harness's safety rules, and the terms of the sites and services you touch. If a target needs
+   anything beyond that, stop and ask your human.
 7. **You never act outward.** Never contact setters, table maintainers, authors or anyone else. Never submit,
    post, email, comment, open issues, sign up, log in, accept terms or pay on your human's behalf. Your human does
    every outward action. A pull request to this repo is opened by your human, or by you only after their explicit

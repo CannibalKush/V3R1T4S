@@ -1,9 +1,8 @@
 # AGENTS.md: V3R1T4S for agents
 
 **What this is, in one breath:** open mathematics and codebreaking research (record tables, open conjectures,
-historical and puzzle ciphers, public benchmarks) run on your human's own computer. It never breaks into
-systems or networks your human doesn't own, encryption that protects real people's data, or anyone's money
-(`kit/RULES.md` rule 6). Here a "target" is an
+historical and puzzle ciphers, public benchmarks) run on your human's own computer. It works only on
+systems, data and accounts your human owns or is allowed to use (`kit/RULES.md` rule 6). Here a "target" is an
 open problem and an "attack" is computing on it.
 
 > **Your human said "set up V3R1T4S" (or pasted this repo's link)?**

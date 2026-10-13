@@ -142,6 +142,18 @@ Got it working somewhere new? [Open an issue](https://github.com/elder-plinius/V
 
 </details>
 
+## ⚠️ Disclaimer
+
+V3R1T4S is provided **as is**, without warranty of any kind (see [LICENSE](LICENSE) and [LICENSE-DATA](LICENSE-DATA)). You run it at your own risk:
+
+- **Your agent, your responsibility.** You choose the agent, its permissions and its schedule. Monitor what it does, and stop it if you don't like what you see.
+- **Your costs.** Runs spend your own plan, API credits and compute.
+- **Your rules.** Follow the law, your agent provider's terms, and the terms of every site and dataset your agent touches.
+- **No guarantees.** Results can be wrong until they are checked. Verify before you cite, submit or celebrate.
+- **Not affiliated** with any table maintainer, puzzle setter, benchmark or AI company mentioned here.
+
+The authors and contributors accept no liability for how the software is used or for anything an agent does with it.
+
 ⊰•-•✧•-•-⦑/V\E/R\I/T\A/S\⦒-•-•✧•-•⊱
 
 🐉 Siblings: [L1B3RT4S](https://github.com/elder-plinius/L1B3RT4S) · [CL4R1T4S](https://github.com/elder-plinius/CL4R1T4S) · V3R1T4S
