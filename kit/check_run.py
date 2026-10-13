@@ -471,7 +471,7 @@ def norm(t):
     return re.sub(r"[^A-Z0-9]", "", t.upper())
 
 
-def secret_windows(workdir, public_texts):
+def secret_windows(workdir, public_texts, bank=None):
     """16-char windows of commit-only secrets in private/<target-id>/ (non-code files), minus public data."""
     W = 16
     secrets = {}
@@ -485,7 +485,7 @@ def secret_windows(workdir, public_texts):
             public.add(n[i:i + W])
     for tid in sorted(os.listdir(priv)):
         d = os.path.join(priv, tid)
-        if not os.path.isdir(d):
+        if not os.path.isdir(d) or (bank and tid in bank and bank[tid].get("disclosure") != "commit-only"):
             continue
         for p in walk(d, skip_dirs=("panel", "claim")):
             if os.path.splitext(p)[1].lower() in CODE_EXT or not is_text(p):
@@ -564,6 +564,19 @@ def mentions_dir(text, d):
     return False
 
 
+def packaged(workdir, tid):
+    ob = os.path.join(workdir, "outbox")
+    if not os.path.isdir(ob):
+        return False
+    for p in walk(ob):
+        b = os.path.basename(p)
+        if b == "envelope.md" and re.search(r"(?m)^target: %s\s*$" % re.escape(tid), read(p)):
+            return True
+        if b == "INDEX.csv" and tid in read(p):
+            return True
+    return False
+
+
 def latest_run(workdir):
     rd = os.path.join(workdir, "runs")
     if not os.path.isdir(rd):
@@ -599,15 +612,28 @@ def check_run_dir(c, workdir, run, bank, dry):
         else:
             c.fail("%s: target %s is neither in the bank nor a quarry of charter.md" % (label, tid))
     scout = read(os.path.join(run, "scout.md"))
-    if scout and not re.search(r"PENDING (STATUS|TABLE) CHECK", scout) and not (
+    pending = bool(re.search(r"PENDING (STATUS|TABLE) CHECK", scout))
+    if scout and not pending and not (
             re.search(r"https?://", scout) and re.search(r"\b[1-5]\d\d\b", scout) and re.search(r"\b[0-9a-f]{64}\b", scout)):
         c.fail("%s: scout.md needs the status source's URL, HTTP status and page sha256 (from command output), "
                "or 'PENDING STATUS CHECK'" % label)
+    elif scout and not pending:
+        hashes = set(re.findall(r"\b[0-9a-f]{64}\b", scout))
+        data = os.path.join(run, "data")
+        have = {hashlib.sha256(rbytes(p)).hexdigest() for p in walk(data)} if os.path.isdir(data) else set()
+        if not hashes & have:
+            c.fail("%s: no sha256 in scout.md matches a file in data/; save the fetched status page in data/ exactly "
+                   "as fetched and record its real sha256" % label)
     for f in ("scout.md", "BRIEF.md"):
         if not os.path.isfile(os.path.join(run, f)):
             c.fail("%s: %s missing (kit/RUN.md step 3)" % (label, f))
     dead = tgt.get("dead") or kv(read(os.path.join(run, "scout.md"))).get("dead")
     if dead and re.fullmatch(r"(?i)\W*(no|false|none|n/?a|not dead|open)\W*", dead):
+        dead = None
+    if dead and re.match(r"(?i)\W*unreachable", dead) and not re.search(
+            r"PENDING (STATUS|TABLE) CHECK|\b(000|40[0-9]|429|5\d\d)\b", read(os.path.join(run, "scout.md"))):
+        c.fail("%s: 'dead: unreachable' but scout.md records neither a failed fetch (4xx/5xx/no connection) nor "
+               "PENDING STATUS CHECK" % label)
         dead = None
     if dead and (not DEAD_OK.match(dead) or DEAD_BAD.search(dead)):
         c.fail("%s: 'dead: %s' is not a dead target. Only solved, off-limits or unreachable targets (or a record "
@@ -652,7 +678,8 @@ def check_run_dir(c, workdir, run, bank, dry):
     if (entry or {}).get("disclosure") == "commit-only":
         for p in walk(run, skip_dirs=("data",)):
             b = os.path.basename(p).lower()
-            if re.search(r"(key|plaintext|solution|decrypt|crib)", b) and os.path.splitext(b)[1] not in CODE_EXT:
+            if re.search(r"(key|plaintext|solution|decrypt|crib)", b) and os.path.splitext(b)[1] not in CODE_EXT \
+                    and not re.search(r"(test|neg|pos|sibling|wrong|fake|sample|example|control|null)", b):
                 c.fail("%s: %s looks like a key or plaintext of a commit-only target; it belongs in private/%s/" % (label, rel(p, workdir), tid))
     pre = os.path.join(run, "PREREG.md")
     if lenses and not os.path.isfile(pre):
@@ -714,6 +741,10 @@ def check_run_dir(c, workdir, run, bank, dry):
             c.fail("%s: CONFIRMED_* without a passing null test" % label)
         if len(c.fails) == sub_fails:
             c.ok("%s: CONFIRMED status backed by three panel files and gate.md" % label)
+        if CONFIRMED_RE.search(gate.get("status", "")) and tid and not packaged(workdir, tid):
+            kind = "a sealed envelope outbox/<submission-id>/envelope.md" if (entry or {}).get("disclosure") == "commit-only" \
+                else "a package outbox/<submission-id>/ whose INDEX.csv names it"
+            c.fail("%s: %s is CONFIRMED but outbox/ has no package for it; build %s (kit/SUBMIT.md)" % (label, tid, kind))
     elif has_claim:
         c.ok("%s: claim present, not confirmed (PROMISING or lower)" % label)
     return tid, entry
@@ -753,7 +784,7 @@ def check_workspace(c, workdir, run=None, setup_only=False, execute=True):
             for p in walk(root):
                 if is_text(p) and os.path.getsize(p) < MAX_SCAN:
                     public_texts.append(read(p))
-    secrets = secret_windows(workdir, public_texts)
+    secrets = secret_windows(workdir, public_texts, bank)
     if secrets:
         leaked = {}
         targets = [os.path.join(workdir, f) for f in ("REPORT.md", "LOG.md")]

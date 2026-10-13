@@ -58,6 +58,9 @@ class Base(unittest.TestCase):
         w(os.path.join(R, "target.md"), "id: toy-record\nwhy: practice\n")
         w(os.path.join(R, "scout.md"), "url: http://example.org/table\nstatus: 200\nsha256: %s\n" % HEX)
         w(os.path.join(R, "BRIEF.md"), "definition quoted\n")
+        w(os.path.join(R, "data", "status.html"), "<p>open</p>\n")
+        w(os.path.join(R, "scout.md"), "url: http://example.org/table\nstatus: 200\nsha256: %s\n"
+          % hashlib.sha256(b"<p>open</p>\n").hexdigest())
 
     def tearDown(self):
         shutil.rmtree(self.tmp, ignore_errors=True)
@@ -206,6 +209,20 @@ class BadFixtures(Base):
         self.attack(null="required")
         w(os.path.join(self.R, "attempts", "lens0", "solution.txt"), "QGLVYF\n")
         self.assertFail("belongs in private/", self.W)
+
+    def test_scout_hash_not_from_data(self):
+        self.attack()
+        w(os.path.join(self.R, "scout.md"), "url: http://example.org/table\nstatus: 200\nsha256: %s (placeholder)\n" % ("5f8e4c2a" * 8))
+        self.assertFail("no sha256 in scout.md matches a file in data/", self.W)
+
+    def test_unreachable_needs_failed_fetch(self):
+        w(os.path.join(self.R, "target.md"), "id: toy-record\ndead: unreachable (files absent)\n")
+        self.assertFail("'dead: unreachable' but scout.md records", self.W)
+
+    def test_confirmed_but_not_packaged(self):
+        self.attack(levels=("partial_win_claim", "negative"))
+        panel(os.path.join(self.R, "panel"))
+        self.assertFail("outbox/ has no package for it", self.W)
 
     def test_one_lens_only(self):
         self.attack(levels=("negative",))
