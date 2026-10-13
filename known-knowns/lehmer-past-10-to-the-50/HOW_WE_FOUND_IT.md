@@ -1,7 +1,7 @@
 # How we found it: no Lehmer number up to 10^50
 
 ## The task
-An AI agent was asked to turn the best *claimed* lower bound for Lehmer's totient problem (Pinch's uncertified
+An agent was asked to turn the best *claimed* lower bound for Lehmer's totient problem (Pinch's uncertified
 N > 10^30) into a *certified* one and then push the cap: a capped, logged, exhaustive search over prime factor
 sequences for k = 2, with the cases 3 | N and k ≥ 3 closed separately, an exact two-prime closure at every node
 ("once two primes remain, q can be enumerated directly and r forced"), and every closure logged so that someone else
@@ -42,7 +42,7 @@ of wall clock on a 10-core laptop.
 - Problem: D. H. Lehmer (1932). Reductions and earlier bounds: Lieuwens (1970), Kishore (1977), Cohen and Hagis
   (1980), Hagis (1988), Renze (2004), Pinch (2006), Burcsi, Czirbusz and Farkas (2011); survey by Yamada; recent ω ≥ 16
   work by Mandal, Bhattacharjee and Bhattacharya (see README references).
-- Engines, specifications and certificates: an AI agent (author engine lcrt5 and its predecessors).
+- Engines, specifications and certificates: an agent (author engine lcrt5 and its predecessors).
 - Independent engines and reruns: independent reviewer agents (vlrt2 written from the spec only; the 62 061-subtree
   completion run; lbb2 with a different algorithm).
 - Libraries: GMP; sympy (certificate and side checks); Lean 4 + Mathlib (formalization).

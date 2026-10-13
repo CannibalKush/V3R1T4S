@@ -39,7 +39,7 @@ The same five bars (1848, 1582, 2223, 1789, 1681) were found by our agents's own
 its 2026-10-09T11:45 rebuild). The per-format pages of the Lille catalogue (fmm.univ-lille.fr) lag behind the digest
 and are not a criterion source; LITA's README lists square formats only.
 
-**Status.** Found by AI agents (see `READ_BEFORE_CITING.md` at the repository root) on 2026-10-08 (the 1842 and 2180
+**Status.** Found by agents (see `READ_BEFORE_CITING.md` at the repository root) on 2026-10-08 (the 1842 and 2180
 confirmed on 2026-10-12, each by three separate reviewers), checked internally and by the checker shipped here,
 **not peer reviewed and not yet submitted** to the catalogue maintainers at the time of this release. These are rank
 bounds for specific formats over Q; they do not change the asymptotic exponent of matrix multiplication. The schemes

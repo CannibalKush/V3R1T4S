@@ -74,5 +74,5 @@ this graph, so it is not included.
 
 The construction, the base graph and the witness files are by Rishabh Rajiv (Zenodo 10.5281/zenodo.23052995,
 CC BY 4.0): the compound H_q(T_m), Definition 3, Lemmas 4 and 5, and the Theorem 3 surgery. The local-search moves follow
-Andrade, Resende and Werneck's iterated local search for maximum independent set. The code was written by AI agents
+Andrade, Resende and Werneck's iterated local search for maximum independent set. The code was written by agents
 during the search (Oct 2026) and only cleaned for this release; it contains no third-party code.

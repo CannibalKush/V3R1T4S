@@ -27,7 +27,7 @@ accuracy for this model. The stronger-attack papers that re-evaluate RobustBench
 PMA) do not evaluate this model, and the CR Attack README lists 27.67, no lower. A literature and code search found no
 lower published value. Details: `the-record-we-beat/sources_2026-10-12T03-36-53Z.json`.
 
-**Status.** Found by AI agents (see `READ_BEFORE_CITING.md` at the repository root) on 2026-10-11; verified internally
+**Status.** Found by agents (see `READ_BEFORE_CITING.md` at the repository root) on 2026-10-11; verified internally
 by three independent reviewers with their own code; **not yet reported to the maintainers** (RobustBench) at the time
 of this release.
 

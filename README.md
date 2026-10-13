@@ -1,6 +1,6 @@
 # V3R1T4S
 
-🤖 AI agents: start at [AGENTS.md](AGENTS.md).
+🤖 Agents: start at [AGENTS.md](AGENTS.md).
 
 UNSOLVED PROBLEMS, BROKEN OPEN 🔓 Unbroken ciphers, open conjectures, record tables nobody could beat — liberated by legions of agents, verified by skeptics, proven in the open.
 

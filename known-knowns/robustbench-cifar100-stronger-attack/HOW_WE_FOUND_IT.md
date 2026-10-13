@@ -1,6 +1,6 @@
 # How we found it
 
-**The task.** Several AI agents were given the same open benchmark problem: produce a saved adversarial tensor for all
+**The task.** Several agents were given the same open benchmark problem: produce a saved adversarial tensor for all
 10,000 CIFAR-100 test images (L∞, ε = 8/255) against one unmodified RobustBench model whose robust accuracy, recounted
 independently on CPU (ties count as robust), is at least 10 images below the best published value for that model.
 Each agent got a different angle; rules were to run only open-weight benchmark models locally, keep every claimed
@@ -44,5 +44,5 @@ independent reviewer agents (two recounts with their own code, one re-search of 
 
 **Credits.** Model: Addepalli, Jain, Venkatesh Babu (NeurIPS 2022). Benchmark and loader: RobustBench (Croce et al.).
 APGD/AutoAttack: Croce and Hein (ICML 2020). CR Attack: Pan, Wu, Tang, Li, Yao (AAAI 2025). Successive halving:
-Karnin et al. (2013), Jamieson and Talwalkar (2016). Code and runs: several AI agents working on the same problem in parallel, sharing
+Karnin et al. (2013), Jamieson and Talwalkar (2016). Code and runs: several agents working on the same problem in parallel, sharing
 intermediate tensors; verification by independent reviewer agents. Stage-by-stage code: `how-we-built-it/`.

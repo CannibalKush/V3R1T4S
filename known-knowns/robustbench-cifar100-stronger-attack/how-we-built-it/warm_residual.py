@@ -7,7 +7,7 @@ first:
   crwarm    CR Attack's periodic relax/reset schedule (Pan et al., AAAI 2025: per 30-step cycle, 10 steps in radius
             eps + eps*scale, 10 at eps, a shrink to eps - eps*scale + uniform noise of +-eps*scale, then eps; scale halves
             every 30 steps, floor 0.05) WARM-STARTED at the incumbent with the untargeted CW margin (an independent
-            re-implementation of the schedule, first written by another AI agent of the same project).
+            re-implementation of the schedule, first written by another agent of the same project).
   crhop     basin hopping from the incumbent with CR's reset/relax/eps moves (same origin as crwarm).
   crwarm_t  crwarm on the TARGETED margin z_t - z_y for each of the top-K wrong classes at the incumbent (best tracked on
             the untargeted margin, i.e. any wrong class counts).

@@ -34,7 +34,7 @@ table update lists exactly those orders (independently, by D. Yugeswardeenoo), s
 A (14,3) graph on 1 107 vertices was overtaken by the live 1 116 and is not included either. Nothing is claimed for
 the Cayley-graph or bipartite special tables.
 
-**Status.** These graphs have been produced by AI agents (see `READ_BEFORE_CITING.md` at the repository root) and checked only
+**Status.** These graphs have been produced by agents (see `READ_BEFORE_CITING.md` at the repository root) and checked only
 internally. As of this release they have **not** been submitted to F. Comellas, whose page is the table of record
 (the page asks for new results by email), and no outside expert has examined them. The page states that it is
 "AI-free"; how AI-produced graphs should be credited there is for the maintainer to decide. The (9,4) entry would

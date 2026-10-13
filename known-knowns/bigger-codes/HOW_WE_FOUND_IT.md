@@ -1,6 +1,6 @@
 # How we found it: bigger constant-weight codes and five Delsarte bounds
 
-**The brief.** An AI agent was pointed at A. E. Brouwer's table of bounds for binary constant-weight codes, with a
+**The brief.** An agent was pointed at A. E. Brouwer's table of bounds for binary constant-weight codes, with a
 fresh copy of the table, all 713 explicit codes linked from it, the recent literature (Rosin, Lysenstøen, Echols,
 Gippini, Gangl, Boisclair) and a checker, and asked to beat a printed lower bound with an explicit, checkable code.
 Its assigned angle was, in short, an *exact large-neighbourhood search*: "remove r codewords, re-insert r+1 by an
@@ -47,5 +47,5 @@ command, seed and time is in `how-we-built-it/README.md`.
 **Credits.** The seed codes are the work of J. Boisclair, D. Gangl, A. Gippini, C. Lysenstøen, W. Echols and the
 contributors of Brouwer's archive; the table and archive are A. E. Brouwer's; the construction is Graham and Sloane's
 (1980) with Bose's S2 sets; the LP bound is Delsarte's (1973). The searches, engines and certificates were written
-and run by AI agents; independent reviewer agents re-checked every code with their own checkers, re-fetched the table
+and run by agents; independent reviewer agents re-checked every code with their own checkers, re-fetched the table
 and searched the literature before release.

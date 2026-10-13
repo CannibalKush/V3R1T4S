@@ -2,7 +2,7 @@
 
 This folder holds the code that produced the seven scheme files in `../schemes/`: five by peeling (below), and the two
 2026-10-12 records <14,15,15>:1842 and <15,16,16>:2180 by absorbing linear dependencies of the peeled 1843 and 2196
-(section "Absorption"). It is the code the AI agents ran, cleaned (paths made relative, command-line paths to helper
+(section "Absorption"). It is the code the agents ran, cleaned (paths made relative, command-line paths to helper
 modules replaced by the script's own folder, internal labels removed, unused experiments dropped); the algorithms,
 their tie-breaking and seeds, and the JSON output format are unchanged. Rerunning the peels gives files that are
 **byte-identical** to the published ones; rerunning the absorptions gives the published 1842 and 2180 **term for

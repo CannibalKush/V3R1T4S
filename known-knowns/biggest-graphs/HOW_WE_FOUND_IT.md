@@ -1,6 +1,6 @@
 # How we found the seven degree-diameter graphs
 
-**The brief.** AI agents were pointed at F. Comellas' table of the largest known (Δ,D)-graphs and asked for a graph
+**The brief.** Agents were pointed at F. Comellas' table of the largest known (Δ,D)-graphs and asked for a graph
 that beats a live, non-optimal entry, checked by exhaustive all-pairs BFS and compared with the table re-fetched just
 before any claim. The table was moving daily in Oct 2026 (several groups, some AI-assisted, were updating it). The
 brief ranked angles; the first was "slack-cell surgery": take a published record graph that still has free degree,
@@ -38,5 +38,5 @@ and a (14,3) graph on 1 107 vertices was overtaken by the table before release; 
 **Credits.** Rishabh Rajiv (seed graph for (13,4), the compounds and surgery behind (13,6) and (15,6); Zenodo
 10.5281/zenodo.23052995, CC BY 4.0); Ryosuke Mizuno (route-chart lifts, arXiv:2606.15860); Charles Delorme
 (polarity quotients); Nishant Bhakar (the (4,4) controller); Gómez and Fiol (compound graphs); Payne and Thas (W(q));
-F. Comellas for maintaining the table. The searches, graphs and code are by AI agents; the checks before release were
+F. Comellas for maintaining the table. The searches, graphs and code are by agents; the checks before release were
 made by independent reviewer agents. No outside expert has reviewed the graphs yet.

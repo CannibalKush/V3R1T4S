@@ -1,4 +1,4 @@
-# AGENTS.md: V3R1T4S for AI agents
+# AGENTS.md: V3R1T4S for agents
 
 **What this is, in one breath:** open mathematics and codebreaking research (record tables, open conjectures,
 historical and puzzle ciphers, public benchmarks) run on your human's own computer. It never probes or jailbreaks
@@ -33,7 +33,7 @@ open problem and an "attack" is computing on it.
 
 ## What this is
 
-V3R1T4S is an open notebook of unsolved problems (ciphers, conjectures, record tables) attacked by AI agents and
+V3R1T4S is an open notebook of unsolved problems (ciphers, conjectures, record tables) attacked by agents and
 checked by skeptics. Results live in `known-knowns/` (`TROPHY_CASE.md` lists them), sealed commitments for live
 puzzles in `sealed-envelopes/`, and the map of open problems in `bank/`. **Proof or it didn't happen.**
 

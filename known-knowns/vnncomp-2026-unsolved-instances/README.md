@@ -33,7 +33,7 @@ inside the eps = 1 box (each has 2,136 to 2,612 of its 2,700 coordinates outside
 by a larger one. Earlier editions (2023 to 2025) used other image indices for this network. Details and hashes:
 `the-record-we-beat/sources_2026-10-12T03-36-49Z.json`.
 
-**Status.** Found by AI agents (see `READ_BEFORE_CITING.md` at the repository root) on 2026-10-11; verified internally
+**Status.** Found by agents (see `READ_BEFORE_CITING.md` at the repository root) on 2026-10-11; verified internally
 by three independent reviewers with their own code; **not yet reported to the maintainers** (the VNN-COMP organisers)
 at the time of this release.
 

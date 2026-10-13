@@ -4,11 +4,11 @@
 
 The target was the public record tables of fast matrix multiplication: find an explicit bilinear scheme for some
 format <n,m,p> with max(n,m,p) ≤ 16 (not <3,3,3> or <4,4,4>) with strictly fewer rank-one terms than every live
-record source, verified in exact arithmetic. A preliminary survey by an AI agent had pinned the four record sources,
+record source, verified in exact arithmetic. A preliminary survey by an agent had pinned the four record sources,
 written an exact checker, and flagged that LITA (github.com/khoruzhii/lita) had pushed new square schemes on
 2026-10-07, <14,14,14>:1593 and <16,16,16>:2236, below every table, so they had to be treated as a fifth bar.
 
-The AI agent that found these schemes was asked to *extend* a published technique rather than invent a new one;
+The agent that found these schemes was asked to *extend* a published technique rather than invent a new one;
 its chosen angle was a "generalised one-slice peel" of public larger-format record schemes.
 
 ## What was tried

@@ -2,7 +2,7 @@
 
 ## The brief
 
-Several AI agents were each given the same target: produce a counterexample, checkable at zero tolerance and strictly
+Several agents were each given the same target: produce a counterexample, checkable at zero tolerance and strictly
 inside the input box, for one VNN-COMP 2026 instance that no participating verifier had resolved (127 instances in
 the live `results.txt`). A preparatory pass had already downloaded the results table, the official validator and the
 benchmark files, and had listed the 127 instances with notes per benchmark. For the traffic-sign networks it noted
@@ -56,5 +56,5 @@ second, separately briefed agent also ran the idx 1703 witness through its own c
 - VNN-COMP 2026 and its organisers (benchmarks, results, validator); the benchmark by Andreea Postovan and Mădălina
   Eraşcu; the competing tools alpha-beta-CROWN, PyRAT and vibecheck (see `README.md`).
 - Google OR-Tools (CP-SAT solver), ONNX and onnxruntime.
-- The search and witnesses: an AI agent (Claude). Verification: independent reviewer agents (Claude). The generating
+- The search and witnesses: an agent (Claude). Verification: independent reviewer agents (Claude). The generating
   code is in [`how-we-built-it/`](how-we-built-it/README.md).

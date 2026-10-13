@@ -3,7 +3,7 @@ message: >-
   If you use a result from this repository, cite this repository AND the original authors whose work the object
   builds on (named per result in TROPHY_CASE.md and LICENSING.md). Results are computer-verified, not peer reviewed;
   cite the "as of" table snapshot with any comparison.
-title: "V3R1T4S: verifiable results found by AI agents"
+title: "V3R1T4S: verifiable results found by agents"
 date-released: "2026-10-10"
 type: dataset
 authors:
@@ -23,7 +23,7 @@ keywords:
   - computer-assisted mathematics
   - AI agents
 abstract: >-
-  Explicit objects, standalone checkers and table snapshots for results found by AI agents, each
+  Explicit objects, standalone checkers and table snapshots for results found by agents, each
   re-checked by three separate reviewers with their own code: seven degree-diameter graphs above F. Comellas' table, 30 constant-weight codes and 5
   Delsarte LP bounds against A. E. Brouwer's table, a computer-verified bound N > 10^50 for Lehmer's totient problem
   with a partial Lean formalization, five matrix-multiplication schemes of record rank over Q, counterexamples for two
