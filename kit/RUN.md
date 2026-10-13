@@ -210,8 +210,8 @@ prints `CHECK_RUN: PASS`; otherwise the status is `PROMISING`.
 
 For `CONFIRMED_*` claims only, build the package in `outbox/<submission-id>/` as described in `kit/SUBMIT.md`
 (for a `commit-only` target the package is the sealed envelope `outbox/<submission-id>/envelope.md` of
-`kit/SUBMIT.md` section 2: build it, it holds only salted hashes; include `prompt/` when `publish_charter` is `yes` or
-`methods only`), then `python3 <WORKDIR>/repo/kit/check_run.py --package <WORKDIR>/outbox/<submission-id>` must
+`kit/SUBMIT.md` section 2: build it, it holds only salted hashes and nothing else; an open package includes `prompt/` when `publish_charter` is
+`yes` or `methods only`), then `python3 <WORKDIR>/repo/kit/check_run.py --package <WORKDIR>/outbox/<submission-id>` must
 print `CHECK_RUN: PASS`. `PROMISING` and unpanelled claims stay in the run folder (or `private/<target-id>/`), never
 in `outbox/`. Never open a pull request during a run.
 

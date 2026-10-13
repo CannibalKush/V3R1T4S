@@ -95,7 +95,7 @@ class Base(unittest.TestCase):
 
     def package(self, name="2026-10-12-tester-0123abcd", target="toy-record", corrupt_checker=False):
         P = os.path.join(self.W, "outbox", name)
-        w(os.path.join(P, "README.md"), "# Claim\n## What\none cell\n## Check it yourself\nsh verify-it-yourself/run_checks.sh\n"
+        w(os.path.join(P, "README.md"), "# Claim\n## What\none cell, exactly as reproduced.\n## Check it yourself\nsh verify-it-yourself/run_checks.sh\n"
           "## Compared to\ntable value 2\n## Not claimed\noptimality\n## Credits\nthe table's maintainer\n")
         w(os.path.join(P, "RUN_IT_YOURSELF.md"), "sh verify-it-yourself/run_checks.sh  -> PASS\n")
         w(os.path.join(P, "INDEX.csv"), "target_id,cell,value,table_value,table_fetched_utc,file,sha256\n"
@@ -294,6 +294,13 @@ class BadFixtures(Base):
     def test_package_checker_fails(self):
         P = self.package(corrupt_checker=True)
         self.assertFail("did not pass from a clean copy", "--package", P)
+
+    def test_package_readme_paraphrases_scope(self):
+        P = self.package()
+        w(os.path.join(P, "README.md"), "# Claim\n## What\na whole new record\n## Check it yourself\nx\n## Compared to\nx\n"
+          "## Not claimed\nx\n## Credits\nx\n")
+        self.sums(P)
+        self.assertFail("must quote panel/gate.md's confirmed_scope", "--package", P, "--no-exec")
 
     def test_package_sha_mismatch(self):
         P = self.package()

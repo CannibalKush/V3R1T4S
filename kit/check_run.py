@@ -353,6 +353,10 @@ def check_package(c, pkg, workdir=None, execute=True, timeout=900):
     for h in ("what", "check it yourself", "compared to", "not claimed", "credits"):
         if not re.search(r"(?im)^#+\s*%s\b" % re.escape(h), readme):
             c.fail("%s: README.md lacks a '## %s' section" % (label, h.title()))
+    scope = kv(read(os.path.join(pkg, "panel", "gate.md"))).get("confirmed_scope", "")
+    squash = lambda t: re.sub(r"[\s`*_>\"']+", " ", t).strip().lower()
+    if scope and squash(scope) not in squash(readme):
+        c.fail("%s: README.md must quote panel/gate.md's confirmed_scope word for word (under '## What')" % label)
     if "unverified" not in read(os.path.join(pkg, "HOW_WE_FOUND_IT.md")).lower():
         c.fail("%s: HOW_WE_FOUND_IT.md must be marked 'contributor text, unverified'" % label)
     target = None
