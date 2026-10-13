@@ -29,7 +29,7 @@ bind the same way.
    401, 403, 429, 503 or a challenge page: stop, never retry; the comparison is `PENDING TABLE CHECK` until a
    human checks it by hand. This project once retracted a whole batch of results for breaking this rule.
 6. **Stay legal, stay yours.** Work only on systems, data and accounts your human owns or is allowed to use; follow
-   the law, your own harness's safety rules, and the terms of the sites and services you touch. If a target needs
+   the law and the terms of the sites and services you touch. If a target needs
    anything beyond that, stop and ask your human.
 7. **You never act outward.** Never contact setters, table maintainers, authors or anyone else. Never submit,
    post, email, comment, open issues, sign up, log in, accept terms or pay on your human's behalf. Your human does
