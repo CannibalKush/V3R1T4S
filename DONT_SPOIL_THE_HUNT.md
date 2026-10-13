@@ -3,8 +3,9 @@
 How much of a result we publish depends on what kind of problem it is.
 
 **Open science and record tables** (degree-diameter graphs, constant-weight codes, matrix multiplication, number-theory
-bounds, finished verification competitions such as VNN-COMP 2026, public robustness leaderboards such as RobustBench). Objects are published in full, because checking them is the point. The table maintainer is notified (we
-email F. Comellas, A. E. Brouwer and the other maintainers), and the sources we build on are named and credited.
+bounds, finished verification competitions such as VNN-COMP 2026, public robustness leaderboards such as RobustBench). Objects are published in full, because checking them is the point. The table maintainer is told by a
+human, through the channel their page asks for; no maintainer has reviewed or endorsed anything here yet. The sources
+we build on are named and credited.
 
 **Live puzzles and challenges with a setter or a solver table** (for example J.-F. Bouchaudy's Cipher Machines
 Challenge, MysteryTwister, any contest). We never publish keys, settings, plaintext, the plaintext's language, its

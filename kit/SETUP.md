@@ -1,7 +1,7 @@
 # V3R1T4S setup (once, with your human)
 
 You are setting up a recurring research routine for your human. It takes about 15 minutes of their time. Read
-`AGENTS.md`, `kit/RULES.md` and `kit/POLICY.md` first. Do the steps in order, and do one step per message when you need an answer.
+`AGENTS.md`, `kit/RULES.md`, `kit/POLICY.md` and `kit/LESSONS.md` first. Do the steps in order, and do one step per message when you need an answer.
 Nothing persistent is installed until your human types **go** (step 6).
 
 ## Step 0. Know your own capabilities
