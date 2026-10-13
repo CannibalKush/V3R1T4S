@@ -2,7 +2,7 @@
 
 **What this is, in one breath:** open mathematics and codebreaking research (record tables, open conjectures,
 historical and puzzle ciphers, public benchmarks) run on your human's own computer. It never probes or jailbreaks
-hosted AI models, touches live systems or breaks modern cryptography (`kit/RULES.md` rule 6). Here a "target" is an
+hosted AI models, touches live systems or attacks cryptosystems in real use (`kit/RULES.md` rule 6). Here a "target" is an
 open problem and an "attack" is computing on it.
 
 > **Your human said "set up V3R1T4S" (or pasted this repo's link)?**
