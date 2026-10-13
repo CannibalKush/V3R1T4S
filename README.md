@@ -27,7 +27,7 @@
 
 **CIPHERS CRACKED. TABLES BEATEN. BOUNDS PUSHED. 🔓** 
 
-Unsolved problems, liberated by legions of agents, verified by skeptics, reproducible by anyone. Matrix multiplication with fewer multiplications than any public catalogue. Two unsolved cipher-machine challenges, cracked. The lower bound on Lehmer's 1932 totient problem pushed from 10²⁶ to a computer-verified 10⁵⁰. All from a one-shot routine prompt. And now, the same power is in your hands! May you wield it wisely.
+Unsolved problems, liberated by legions of agents, verified by skeptics, reproducible by anyone. Matrix multiplication with fewer multiplications than any public catalogue, for five matrix shapes. Two unsolved cipher-machine challenges, cracked. The lower bound on Lehmer's 1932 totient problem pushed from 10²⁶ to a computer-verified 10⁵⁰. All from a one-shot routine prompt. And now, the same power is in your hands! May you wield it wisely.
 
 ### ⚡ Join in one line
 
