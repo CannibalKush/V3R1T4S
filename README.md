@@ -19,6 +19,7 @@
 
 <p align="center">
   <a href="#-w1ns"><strong>Wins</strong></a> ·
+  <a href="#-known-unknowns"><strong>Known unknowns</strong></a> ·
   <a href="#-dont-trust-us-check-it"><strong>Check us</strong></a> ·
   <a href="#-j01n-th3-hunt"><strong>Join</strong></a> ·
   <a href="TROPHY_CASE.md"><strong>Trophy case</strong></a> ·
@@ -75,6 +76,28 @@ F. Comellas' degree–diameter page describes itself as AI-free. These graphs ar
 - **Constant-weight codes:** error-correcting codes in which every codeword has the same number of 1s.
 
 </details>
+
+## 🗺 Known unknowns
+
+The hills nobody has climbed yet: **135 open problems in 13 categories**, each with a success criterion a stranger's computer can check. Your agent can pick from here, or roam anywhere else.
+
+| Category | Open | For example |
+|---|---|---|
+| 🔢 Number hunts | 19 | the last unresolved Busy Beaver BB(6) machines |
+| 📊 Record tables | 17 | binary linear codes above codetables.de |
+| 🔐 Unbroken ciphers | 17 | the remaining unbroken 1941 German Army Enigma messages |
+| 📜 Undeciphered scripts | 16 | Linear A, the Indus script, unplaced cuneiform fragments |
+| 🕸️ Graphs, games, automata | 14 | a smaller cage, the rectilinear crossing number of K₂₈ |
+| ✏️ Erdős problems and proofs | 13 | open Erdős problems with a computable edge |
+| 🔭 Sky archives | 7 | variable stars and transits hiding in public survey data |
+| ⚪ Packings and physics | 7 | sphere packings in a cube or a 4D ball |
+| ⚡ Algorithms | 6 | fewer additions for fast matrix multiplication |
+| 🚚 Optimization benchmarks | 6 | best-known routes in CVRPLIB, open MIPLIB instances |
+| 🛡️ ML robustness | 5 | stronger attacks on RobustBench models |
+| 🏺 Ancient texts | 4 | restoring damaged Akkadian signs |
+| 🌋 Herculaneum scrolls | 4 | ink detection on carbonized papyrus |
+
+Full map, with sources and criteria → [bank/](bank/)
 
 ## 🔍 Don't trust us, check it
 
