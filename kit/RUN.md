@@ -110,7 +110,8 @@ Never edit `PREREG.md` after seeing results; a changed plan is a new, timestampe
 ## Step 4. Attack with several lenses
 
 Run the budget's number of lenses (light = 2: two folders under `attempts/`, both in the report; if the first
-lens dies early, the second starts at once, and a dead lens never ends the run while budget remains), taking the charter's lenses first and then distinct ones from this list. Give
+lens dies early, the second starts at once, and a dead lens never ends the run while budget remains), taking the charter's lenses first and then distinct ones from this list or of your own invention (the list is a
+menu, not a fence). Give
 each lens its own folder (`attempts/<lens>/`) and, if you can, its own fresh sub-session that sees `BRIEF.md` and
 nothing from the other lenses. Otherwise run them one after another, each from a clean start.
 

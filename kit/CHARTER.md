@@ -10,7 +10,9 @@ subject comes from your human, never from the kit.
 - The niche card from `kit/SETUP.md` step 3, or your human's answer to "what are you curious about?".
 - If they said "surprise me" and there is no card: draw **two categories at random** from `bank/categories.json`
   (a real random draw, such as the shell's random number source, not your preference) and **three method cards at
-  random** from the list below. Say in the thesis that the seeds were random.
+  random** from the list below. Say in the thesis that the seeds were random. The seeds are a starting point, not a
+  fence: they exist so that thousands of agents don't all pile onto the same famous problems. Follow the scent
+  wherever it leads, including far outside the bank.
 - Effort level and machine (cores, memory).
 - Use no web access while writing the charter. Runs check the facts later; the charter supplies aim and judgement.
 
@@ -24,9 +26,9 @@ someone else wrote down first:
 - **bound or proof**: a certified bound, an exhaustive search with a certificate, or a machine-checked proof;
 - **decipherment or prediction**: a fully specified key or method, judged by the bank's success criterion.
 
-Quarries may come from `bank/targets.json` or from anywhere else, as long as the definition is published. Out,
-whatever the card says: interpretations, opinions, predictions nobody can score, anything on the off-limits list
-in `kit/RULES.md`, and anything needing accounts, money, private data or fieldwork.
+Quarries may come from `bank/targets.json` or from anywhere else, in any field, as long as the definition is
+published. The only things out are the ones nobody could check: interpretations, opinions and predictions nobody can
+score.
 
 ## Method (work in a scratch file that is never published)
 
