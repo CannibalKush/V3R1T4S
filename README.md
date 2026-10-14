@@ -79,25 +79,29 @@ F. Comellas' degree–diameter page describes itself as AI-free. These graphs ar
 
 ## 🗺 Known unknowns
 
-The hills nobody has climbed yet: **135 open problems in 13 categories**, each with a success criterion a stranger's computer can check. Your agent can pick from here, or roam anywhere else.
+The hills nobody has climbed yet: **135 open problems in 13 categories**, each with its own page: what counts as a win, how it's checked, where to confirm it's still open, ideas to start from, and the traps that fooled people before. Pick one and point your agent at it, or let it roam anywhere else.
 
 | Category | Open | For example |
 |---|---|---|
-| 🔢 Number hunts | 19 | the last unresolved Busy Beaver BB(6) machines |
-| 📊 Record tables | 17 | binary linear codes above codetables.de |
-| 🔐 Unbroken ciphers | 17 | the remaining unbroken 1941 German Army Enigma messages |
-| 📜 Undeciphered scripts | 16 | Linear A, the Indus script, unplaced cuneiform fragments |
-| 🕸️ Graphs, games, automata | 14 | a smaller cage, the rectilinear crossing number of K₂₈ |
-| ✏️ Erdős problems and proofs | 13 | open Erdős problems with a computable edge |
-| 🔭 Sky archives | 7 | variable stars and transits hiding in public survey data |
-| ⚪ Packings and physics | 7 | sphere packings in a cube or a 4D ball |
-| ⚡ Algorithms | 6 | fewer additions for fast matrix multiplication |
-| 🚚 Optimization benchmarks | 6 | best-known routes in CVRPLIB, open MIPLIB instances |
-| 🛡️ ML robustness | 5 | stronger attacks on RobustBench models |
-| 🏺 Ancient texts | 4 | restoring damaged Akkadian signs |
-| 🌋 Herculaneum scrolls | 4 | ink detection on carbonized papyrus |
+| 🔢 [Number hunts](known-unknowns/number-hunts/README.md) | 19 | the last unresolved Busy Beaver BB(6) machines |
+| 📊 [Record tables](known-unknowns/record-tables/README.md) | 17 | binary linear codes above codetables.de |
+| 🔐 [Unbroken ciphers](known-unknowns/unbroken-ciphers/README.md) | 17 | the remaining unbroken 1941 German Army Enigma messages |
+| 📜 [Undeciphered scripts](known-unknowns/undeciphered-scripts/README.md) | 16 | Linear A, the Indus script, unplaced cuneiform fragments |
+| 🕸️ [Graphs, games, automata](known-unknowns/graphs-games-automata/README.md) | 14 | a smaller cage, the rectilinear crossing number of K₂₈ |
+| ✏️ [Erdős problems and proofs](known-unknowns/erdos-and-proofs/README.md) | 13 | open Erdős problems with a computable edge |
+| 🔭 [Sky archives](known-unknowns/sky-archives/README.md) | 7 | variable stars and transits hiding in public survey data |
+| ⚪ [Packings and physics](known-unknowns/packings-physics/README.md) | 7 | sphere packings in a cube or a 4D ball |
+| ⚡ [Algorithms](known-unknowns/algorithms/README.md) | 6 | fewer additions for fast matrix multiplication |
+| 🚚 [Optimization benchmarks](known-unknowns/optimization-benchmarks/README.md) | 6 | best-known routes in CVRPLIB, open MIPLIB instances |
+| 🛡️ [ML robustness](known-unknowns/ml-robustness/README.md) | 5 | stronger attacks on RobustBench models |
+| 🏺 [Ancient texts](known-unknowns/ancient-texts/README.md) | 4 | restoring damaged Akkadian signs |
+| 🌋 [Herculaneum scrolls](known-unknowns/herculaneum-scrolls/README.md) | 4 | ink detection on carbonized papyrus |
 
-Full map, with sources and criteria → [bank/](bank/)
+Browse them all → [known-unknowns/](known-unknowns/README.md). To aim your agent at one:
+
+```
+set up V3R1T4S: https://github.com/elder-plinius/V3R1T4S and hunt known-unknowns/<category>/<problem>.md
+```
 
 ## 🔍 Don't trust us, check it
 

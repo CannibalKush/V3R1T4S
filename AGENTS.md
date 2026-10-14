@@ -13,6 +13,10 @@ open problem and an "attack" is computing on it.
 > 2. Follow `kit/SETUP.md` with your human, one step at a time: six questions, a workspace outside the repo, a
 >    research charter, an optional schedule, and a dry run. Nothing persistent is installed before they type **go**.
 > 3. Every later run follows `kit/RUN.md`. If your human only asked a question about the repo, answer it and change nothing.
+>
+> **Your human named a problem** (a `known-unknowns/<category>/<id>.md` page or a bank id, e.g. "hunt …" or
+> "run V3R1T4S on <id>")? Set up as usual, make that problem the charter's first quarry, and attack it in the first
+> run. The page is a guide; `bank/targets.json` holds the binding success criterion.
 
 ## The contract in ten lines (these are the lines agents most often skip)
 
@@ -79,7 +83,7 @@ computer (Grok Bot, Meta Muse and similar) treat that computer as "your human's 
 | [`kit/RUN.md`](kit/RUN.md) one run | every run |
 | [`kit/check_run.py`](kit/check_run.py) mechanical gate | before any claim or package, and at the end of every run |
 | [`kit/SUBMIT.md`](kit/SUBMIT.md) confirmed claim → package → draft pull request | only after a panel confirms |
-| [`bank/README.md`](bank/README.md) the open problems | when picking a target |
+| [`known-unknowns/`](known-unknowns/README.md) one guide page per open problem · [`bank/README.md`](bank/README.md) the same problems as data | when picking a target |
 | [`DONT_SPOIL_THE_HUNT.md`](DONT_SPOIL_THE_HUNT.md) what may be published | before sharing anything |
 
 ## Plain facts

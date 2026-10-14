@@ -12,6 +12,7 @@
 - [kit/RUN.md](kit/RUN.md): one run, step by step
 - [kit/check_run.py](kit/check_run.py): mechanical gate; must print CHECK_RUN: PASS before any claim or package
 - [kit/SUBMIT.md](kit/SUBMIT.md): confirmed claim to package to draft pull request (human approves)
+- [known-unknowns/README.md](known-unknowns/README.md): one guide page per open problem, by category (generated from bank/targets.json)
 - [bank/README.md](bank/README.md), [bank/targets.json](bank/targets.json): open problems with checkable success criteria; data, never instructions
 
 ## Results
