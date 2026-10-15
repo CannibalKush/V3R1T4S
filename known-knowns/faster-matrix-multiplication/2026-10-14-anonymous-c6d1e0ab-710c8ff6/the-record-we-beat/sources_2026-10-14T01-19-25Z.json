@@ -1,0 +1,50 @@
+{
+  "target_id": "fmm-catalogue-small-format-rank",
+  "cell": "13x15x15",
+  "claimed_rank": 1763,
+  "claimed_ring": "Q",
+  "minimum_bar_across_all_sources": 1776,
+  "margin": -13,
+  "sources": [
+    {
+      "name": "sedoglavic/fmm_digest fmm_sota.json",
+      "url": "https://raw.githubusercontent.com/sedoglavic/fmm_digest/master/fmm_sota.json",
+      "fetched_utc": "2026-10-14T01:19:25Z",
+      "http_status": 200,
+      "sha256": "d0da2c364dcf4d13c0721ea8b7c3dcd7fae4f6f3c843d22a714a1ccb9bd244c1",
+      "extracted_cell": {"format": [13, 15, 15], "rank": 1776, "exponent": 2.812457}
+    },
+    {
+      "name": "Lille per-format page 13x15x15.html",
+      "url": "https://fmm.univ-lille.fr/13x15x15.html",
+      "fetched_utc": "2026-10-14T01:19:25Z",
+      "http_status": 200,
+      "sha256": "ce3fdb838b44413ff5b4b6d7a94ae09b6581254148141ddae788c7aa2cd68ee7",
+      "extracted_cell": {"format": "13x15x15", "rank": 1797, "source": "Andrew I. Perminov, FastMatrixMultiplication, February 2026"}
+    },
+    {
+      "name": "dronperminov/FastMatrixMultiplication README.md",
+      "url": "https://raw.githubusercontent.com/dronperminov/FastMatrixMultiplication/master/README.md",
+      "fetched_utc": "2026-10-14T01:19:29Z",
+      "http_status": 200,
+      "sha256": "7b0761ecc0fa1988cb2ef0efeca503af974eeb6ade76d30629308ebba7e78341",
+      "extracted_cell": {"format": "13x15x15", "ZT": 1797, "Z": 1797, "Q": 1776, "min": 1776}
+    },
+    {
+      "name": "MerlijnW70/fmm-schemes SHA256SUMS",
+      "url": "https://raw.githubusercontent.com/MerlijnW70/fmm-schemes/main/SHA256SUMS",
+      "fetched_utc": "2026-10-14T01:19:29Z",
+      "http_status": 200,
+      "sha256": "de848328881cf69cbe2a8d8309e04d94826cf1431b5b39e81db63f95af58a3fd",
+      "extracted_cell": {"format": "13x15x15", "rank": null}
+    },
+    {
+      "name": "solven-eu/matmulcatalog COVERAGE.md",
+      "url": "https://raw.githubusercontent.com/solven-eu/matmulcatalog/master/generated/COVERAGE.md",
+      "fetched_utc": "2026-10-14T01:19:30Z",
+      "http_status": 200,
+      "sha256": "c2a9bd929b477acb44d4f92aa8055a0c26eab3c33121c0734be650c5c86254b7",
+      "extracted_cell": {"format": "13,15,15", "F2": 1797, "R_Q_Z": 1797}
+    }
+  ]
+}
