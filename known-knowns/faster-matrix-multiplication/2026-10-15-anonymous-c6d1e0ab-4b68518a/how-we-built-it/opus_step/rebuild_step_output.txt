@@ -1,0 +1,13 @@
+PARENT_SHA256 c67b34f2d0c763379b993754f0a2f304df65bbb1eb6b22235ce8a6c2351ff659
+slice 15x15x16 raw 2144
+  kernel 1 n=(15, 15, 16) r=2144 ref=None outer_nnz=1572476
+  exact kernel dimension=23 verified, primes=1; work/kernel_95557_1.p0.log
+  kernel 2 n=(15, 16, 15) r=2105 ref=None outer_nnz=2248799
+  exact kernel dimension=0 (full rank mod p); work/kernel_95557_2.p0.log
+  kernel 3 n=(16, 15, 15) r=2105 ref=None outer_nnz=1522551
+  exact kernel dimension=0 (full rank mod p); work/kernel_95557_3.p0.log
+  kernel 4 n=(15, 15, 16) r=2105 ref=None outer_nnz=1559410
+  exact kernel dimension=0 (full rank mod p); work/kernel_95557_4.p0.log
+RESULT 15x16x15 rank 2105 method rflat start_rot 0 absorbed 39
+OUT_SHA256 9c0be15838f14c09fa26c5d4809dffacd2042475a31a645e8d551e5f665e1b0b
+TERM_IDENTICAL_TO candidates/15x15x16_r2105/scheme.json True

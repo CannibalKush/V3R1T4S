@@ -1,0 +1,22 @@
+PID 93768
+Python 3.9.6 (default, Oct 17 2025, 17:15:53) 
+[Clang 17.0.0 (clang-1700.4.4.1)]
+CHILD_PID 93785
+CHILD_PID 93951
+numpy 2.0.2 python-flint 0.6.0 FLINT_threads 1
+STEP_0_SOURCE_SHA256 dc041354b5d9c0709aa06372f47f50422e5e027b63644f13be32715c3250683b CANONICAL_SEED_SHA256 22018645c44d46ad9b855ee2bf30df18a1188f0d4eb6435c4484b2f8679d3f95
+STEP 1 parent (17, 17, 17) 2723 axis 0 f ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)) e ((0, 1),) raw 2554
+    absorb (17, 17, 16): r=2554 support=8 nullity(mod p)=1 exact=1 kills=1 t_proj=0.8s t_exact=0.0s t_kill=0.0s
+STEP_SHA256 1 f5dca3b437c4bec43077dbe10178f5d82ffe89b4fb5d66078a352c4929556f87
+STEP 2 parent (16, 17, 17) 2553 axis 0 f ((1, 1), (8, 1)) e ((8, 1),) raw 2501
+    absorb (17, 17, 15): r=2501 support=1848 nullity(mod p)=23 exact=23 kills=38 t_proj=1.1s t_exact=0.0s t_kill=1.0s
+STEP_SHA256 2 51084e05e3ffe21393ec94f4ccb316e200ae5d5c09d0002d6bd0575977a87f9c
+STEP 3 parent (15, 17, 17) 2463 axis 2 f ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)) e ((4, 1),) raw 2313
+STEP_SHA256 3 f5a450314b3fb6085d44004678c436aa1414323e3d3777928e730bbf8b26f38f
+STEP 4 parent (15, 16, 17) 2313 axis 2 f ((10, 1),) e ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)) raw 2183
+    absorb (16, 15, 16): r=2183 support=14 nullity(mod p)=7 exact=7 kills=7 t_proj=0.9s t_exact=0.0s t_kill=0.0s
+STEP_SHA256 4 c67b34f2d0c763379b993754f0a2f304df65bbb1eb6b22235ce8a6c2351ff659
+STEP 5 parent (15, 16, 16) 2176 axis 2 f ((1, 1),) e ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 2), (13, 1), (14, 1), (15, 1)) raw 2107
+STEP_SHA256 5 93068b330eb2d0c57a211e64a897def155ffdcda6f78ff24d3405e598df0bde4
+CHILD_PID 95351
+REBUILD PASS {"scheme": "[the opus_step folder]/work/r2/pubchain_run/codex_chain/step_05_15x15x16_r2107.json", "sha256": "93068b330eb2d0c57a211e64a897def155ffdcda6f78ff24d3405e598df0bde4", "expected_sha256": "93068b330eb2d0c57a211e64a897def155ffdcda6f78ff24d3405e598df0bde4", "steps": 5, "exact_check": "PASS"}

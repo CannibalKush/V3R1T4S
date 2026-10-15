@@ -1,0 +1,2 @@
+opus_check: format=15x16x15 rank=2105 expect=2105 common_denominator_bits=16 products=72912151 wrong_coefficients=0
+PASS (exact integer arithmetic over every coefficient)

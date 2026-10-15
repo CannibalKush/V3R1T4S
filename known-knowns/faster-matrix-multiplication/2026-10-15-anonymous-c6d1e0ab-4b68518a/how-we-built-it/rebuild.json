@@ -1,0 +1,445 @@
+{
+  "parent_file": "rebuild_parent.json",
+  "original_parent_path": "work/17x17x17_r2723_Q.json",
+  "parent_sha256": "22018645c44d46ad9b855ee2bf30df18a1188f0d4eb6435c4484b2f8679d3f95",
+  "bootstrap": {
+    "file": "public_parent.npz",
+    "kind": "lita_npz",
+    "sha256": "dc041354b5d9c0709aa06372f47f50422e5e027b63644f13be32715c3250683b",
+    "original_path": "public_parent.npz (the LITA release file 17x17x17_r2723.npz, downloaded as REBUILD.md states)",
+    "public": true,
+    "label": "LITA published 17x17x17_r2723.npz (https://github.com/khoruzhii/lita)",
+    "seed_note": "",
+    "canonical_seed_sha256": "22018645c44d46ad9b855ee2bf30df18a1188f0d4eb6435c4484b2f8679d3f95"
+  },
+  "steps": [
+    {
+      "operation": "slice",
+      "axis": 0,
+      "f": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          -6
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "e": [
+        [
+          0,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": false,
+      "n": [
+        16,
+        17,
+        17
+      ],
+      "rank": 2553,
+      "note": "Exact Q slice+absorb of work/17x17x17_r2723_Q.json; axis=0; f=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)); e=((0, 1),); raw=2554; absorption=1",
+      "sha256": "f5dca3b437c4bec43077dbe10178f5d82ffe89b4fb5d66078a352c4929556f87",
+      "parent_sha256": "22018645c44d46ad9b855ee2bf30df18a1188f0d4eb6435c4484b2f8679d3f95",
+      "original_parent_path": "work/17x17x17_r2723_Q.json"
+    },
+    {
+      "operation": "slice",
+      "axis": 0,
+      "f": [
+        [
+          1,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "e": [
+        [
+          8,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        15,
+        17,
+        17
+      ],
+      "rank": 2463,
+      "note": "Parent work/16x17x17_r2553_Q.json; axis=0; pair index=0; f=((1, 1), (8, 1)); e=((8, 1),); raw rank=2501; absorbed=38; status=complete; beam width=4",
+      "sha256": "51084e05e3ffe21393ec94f4ccb316e200ae5d5c09d0002d6bd0575977a87f9c",
+      "parent_sha256": "f5dca3b437c4bec43077dbe10178f5d82ffe89b4fb5d66078a352c4929556f87",
+      "original_parent_path": "work/16x17x17_r2553_Q.json"
+    },
+    {
+      "operation": "slice",
+      "axis": 2,
+      "f": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          -6
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "e": [
+        [
+          4,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        15,
+        16,
+        17
+      ],
+      "rank": 2313,
+      "note": "Parent work/strong_beam/15x17x17_r2463_98126bae7b67.json; axis=2; pair index=2; f=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)); e=((4, 1),); raw rank=2313; absorbed=0; status=complete; beam width=4",
+      "sha256": "f5a450314b3fb6085d44004678c436aa1414323e3d3777928e730bbf8b26f38f",
+      "parent_sha256": "51084e05e3ffe21393ec94f4ccb316e200ae5d5c09d0002d6bd0575977a87f9c",
+      "original_parent_path": "work/strong_beam/15x17x17_r2463_98126bae7b67.json"
+    },
+    {
+      "operation": "slice",
+      "axis": 2,
+      "f": [
+        [
+          10,
+          1
+        ]
+      ],
+      "e": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          -6
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        15,
+        16,
+        16
+      ],
+      "rank": 2176,
+      "note": "Parent work/strong_beam/15x16x17_r2313_2e14c201df48.json; axis=2; pair index=7; f=((10, 1),); e=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)); raw rank=2183; absorbed=7; status=complete; beam width=4",
+      "sha256": "c67b34f2d0c763379b993754f0a2f304df65bbb1eb6b22235ce8a6c2351ff659",
+      "parent_sha256": "f5a450314b3fb6085d44004678c436aa1414323e3d3777928e730bbf8b26f38f",
+      "original_parent_path": "work/strong_beam/15x16x17_r2313_2e14c201df48.json"
+    },
+    {
+      "axis": 2,
+      "f": [
+        [
+          1,
+          1
+        ]
+      ],
+      "e": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          -6
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          2
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "forced_absorption": {
+        "rotation": 0,
+        "zero_terms": [
+          1439,
+          1448,
+          1535,
+          1471,
+          39,
+          463,
+          625,
+          1508,
+          641,
+          673,
+          1517,
+          1490,
+          1526,
+          1457,
+          98,
+          84,
+          76,
+          30,
+          14,
+          52,
+          106
+        ],
+        "kills": 35
+      },
+      "sha256": "93068b330eb2d0c57a211e64a897def155ffdcda6f78ff24d3405e598df0bde4",
+      "operation": "slice",
+      "n": [
+        15,
+        15,
+        16
+      ],
+      "rank": 2107,
+      "note": "Parent work/bridge_final/15x16x16_r2176_9e2a3f02e32e.json; axis=2; pair index=5; f=((1, 1),); e=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 2), (13, 1), (14, 1), (15, 1)); raw rank=2142; absorbed=35; status=complete; beam width=4; forced absorption trace=work/consensus_2108/beam.json",
+      "parent_sha256": "c67b34f2d0c763379b993754f0a2f304df65bbb1eb6b22235ce8a6c2351ff659",
+      "original_parent_path": "[an intermediate file of the search run, not needed by the rebuild]"
+    }
+  ]
+}
