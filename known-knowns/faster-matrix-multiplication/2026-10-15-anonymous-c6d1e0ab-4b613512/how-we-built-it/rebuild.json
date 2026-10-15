@@ -1,0 +1,309 @@
+{
+  "parent_file": "rebuild_parent.json",
+  "original_parent_path": "work/seed_beam/seed_15x15x15_r1977_7dcd228a49f5.json",
+  "parent_sha256": "f514e1817bc6fca134622b45c52a846e76499cc54b8536d19b8fe692b271d886",
+  "bootstrap": {
+    "file": "public_parent.json",
+    "kind": "json",
+    "sha256": "66441a49e2d251e9e526794468185abc5e1ae9044867c87dfb8a13da6b6e0a79",
+    "original_path": "[workspace path]",
+    "public": true,
+    "label": "Perminov supplied public exact scheme 15x15x15_m1977_Q.json",
+    "seed_note": "Canonical supplied seed data/parents/15x15x15_m1977_Q.json",
+    "canonical_seed_sha256": "f514e1817bc6fca134622b45c52a846e76499cc54b8536d19b8fe692b271d886"
+  },
+  "steps": [
+    {
+      "operation": "slice",
+      "axis": 1,
+      "f": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          -5
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ]
+      ],
+      "e": [
+        [
+          2,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        14,
+        15,
+        15
+      ],
+      "rank": 1842,
+      "note": "Parent work/seed_beam/seed_15x15x15_r1977_7dcd228a49f5.json; axis=1; pair index=1; f=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, -5), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1)); e=((2, 1),); raw rank=1843; absorbed=1; status=complete; beam width=4",
+      "sha256": "2c566f24f8e66e366634c11ccca70db3edfb726c53da1a2fb39d91e6be705c1b",
+      "parent_sha256": "f514e1817bc6fca134622b45c52a846e76499cc54b8536d19b8fe692b271d886",
+      "original_parent_path": "work/seed_beam/seed_15x15x15_r1977_7dcd228a49f5.json"
+    },
+    {
+      "operation": "slice",
+      "axis": 0,
+      "f": [
+        [
+          0,
+          1
+        ],
+        [
+          9,
+          1
+        ]
+      ],
+      "e": [
+        [
+          1,
+          1
+        ],
+        [
+          9,
+          -1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        13,
+        15,
+        15
+      ],
+      "rank": 1762,
+      "note": "Parent work/unified_beam/14x15x15_r1842_061fd3898bcf.json; axis=0; pair index=1; f=((0, 1), (9, 1)); e=((1, 1), (9, -1)); raw rank=1796; absorbed=34; status=complete; beam width=4",
+      "sha256": "11e445b2b7fcc95c022b5c7e77eef1049e7d065de974f492a110c3abc9700072",
+      "parent_sha256": "2c566f24f8e66e366634c11ccca70db3edfb726c53da1a2fb39d91e6be705c1b",
+      "original_parent_path": "work/unified_beam/14x15x15_r1842_061fd3898bcf.json"
+    },
+    {
+      "operation": "slice",
+      "axis": 2,
+      "f": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          -5
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ]
+      ],
+      "e": [
+        [
+          9,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        13,
+        14,
+        15
+      ],
+      "rank": 1645,
+      "note": "Parent work/unified_beam/13x15x15_r1762_091be577a09d.json; axis=2; pair index=6; f=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, -5), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1)); e=((9, 1),); raw rank=1650; absorbed=5; status=complete; beam width=4; direction sampler=4 distinct f x4 top e plus raw top8; raw-ranked index retained",
+      "sha256": "ed54d71a1ac4b594069aa578b6f290e20e0c2041bce281c865c556f30a505619",
+      "parent_sha256": "11e445b2b7fcc95c022b5c7e77eef1049e7d065de974f492a110c3abc9700072",
+      "original_parent_path": "work/unified_beam/13x15x15_r1762_091be577a09d.json"
+    },
+    {
+      "operation": "slice",
+      "axis": 2,
+      "f": [
+        [
+          0,
+          1
+        ]
+      ],
+      "e": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          -5
+        ],
+        [
+          8,
+          1
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        13,
+        14,
+        14
+      ],
+      "rank": 1538,
+      "note": "Parent work/unified_beam/13x14x15_r1645_2df805f091fa.json; axis=2; pair index=0; f=((0, 1),); e=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, -5), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1)); raw rank=1538; absorbed=0; status=complete; beam width=4; direction sampler=4 distinct f x4 top e plus raw top8; raw-ranked index retained",
+      "sha256": "4b613512756bdb5c0303dc17236ad63b3b8a4e931d898e75e863d95d6dd9ab9e",
+      "parent_sha256": "ed54d71a1ac4b594069aa578b6f290e20e0c2041bce281c865c556f30a505619",
+      "original_parent_path": "work/unified_beam/13x14x15_r1645_2df805f091fa.json"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+nice: setpriority: Operation not permitted
+PID 84418
+Python 3.9.6 (default, Oct 17 2025, 17:15:53) 
+[Clang 17.0.0 (clang-1700.4.4.1)]
+CHILD_PID 84419
+nice: setpriority: Operation not permitted
+CHILD_PID 84430
+nice: setpriority: Operation not permitted
+numpy 2.0.2 python-flint 0.6.0 FLINT_threads 1
+STEP_0_SOURCE_SHA256 66441a49e2d251e9e526794468185abc5e1ae9044867c87dfb8a13da6b6e0a79 CANONICAL_SEED_SHA256 f514e1817bc6fca134622b45c52a846e76499cc54b8536d19b8fe692b271d886
+STEP 1 parent (15, 15, 15) 1977 axis 1 f ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, -5), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1)) e ((2, 1),) raw 1843
+  kernel 1 n=(14, 15, 15) r=1843 ref=None outer_nnz=1499528
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_1.p0.log
+  kernel 2 n=(15, 15, 14) r=1843 ref=None outer_nnz=1024255
+  exact kernel dimension=1 verified, primes=1; work/kernel_84418_2.p0.log
+    absorb (15, 15, 14): r=1843 support=7 nullity(mod p)=1 exact=1 kills=1 t_proj=0.3s t_exact=0.0s t_kill=0.0s
+  kernel 3 n=(15, 14, 15) r=1842 ref=None outer_nnz=1735223
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_3.p0.log
+  kernel 4 n=(14, 15, 15) r=1842 ref=None outer_nnz=1499468
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_4.p0.log
+  kernel 5 n=(15, 15, 14) r=1842 ref=None outer_nnz=1024195
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_5.p0.log
+STEP_SHA256 1 2c566f24f8e66e366634c11ccca70db3edfb726c53da1a2fb39d91e6be705c1b
+STEP 2 parent (14, 15, 15) 1842 axis 0 f ((0, 1), (9, 1)) e ((1, 1), (9, -1)) raw 1796
+  kernel 6 n=(13, 15, 15) r=1796 ref=None outer_nnz=1367000
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_6.p0.log
+  kernel 7 n=(15, 15, 13) r=1796 ref=None outer_nnz=934721
+  exact kernel dimension=21 verified, primes=1; work/kernel_84418_7.p0.log
+    absorb (15, 15, 13): r=1796 support=918 nullity(mod p)=21 exact=21 kills=34 t_proj=0.5s t_exact=0.0s t_kill=0.4s
+  kernel 8 n=(15, 13, 15) r=1762 ref=None outer_nnz=1333759
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_8.p0.log
+  kernel 9 n=(13, 15, 15) r=1762 ref=None outer_nnz=1247785
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_9.p0.log
+  kernel 10 n=(15, 15, 13) r=1762 ref=None outer_nnz=931025
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_10.p0.log
+STEP_SHA256 2 11e445b2b7fcc95c022b5c7e77eef1049e7d065de974f492a110c3abc9700072
+STEP 3 parent (13, 15, 15) 1762 axis 2 f ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, -5), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1)) e ((9, 1),) raw 1650
+  kernel 11 n=(14, 13, 15) r=1650 ref=None outer_nnz=1793072
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_11.p0.log
+  kernel 12 n=(13, 15, 14) r=1650 ref=None outer_nnz=1449362
+  exact kernel dimension=5 verified, primes=1; work/kernel_84418_12.p0.log
+    absorb (13, 15, 14): r=1650 support=10 nullity(mod p)=5 exact=5 kills=5 t_proj=0.3s t_exact=0.0s t_kill=0.0s
+  kernel 13 n=(15, 14, 13) r=1645 ref=None outer_nnz=1357379
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_13.p0.log
+  kernel 14 n=(14, 13, 15) r=1645 ref=None outer_nnz=1791746
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_14.p0.log
+  kernel 15 n=(13, 15, 14) r=1645 ref=None outer_nnz=1448426
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_15.p0.log
+STEP_SHA256 3 ed54d71a1ac4b594069aa578b6f290e20e0c2041bce281c865c556f30a505619
+STEP 4 parent (13, 14, 15) 1645 axis 2 f ((0, 1),) e ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, -5), (8, 1), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1)) raw 1538
+  kernel 16 n=(14, 13, 14) r=1538 ref=None outer_nnz=1369230
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_16.p0.log
+  kernel 17 n=(13, 14, 14) r=1538 ref=None outer_nnz=1556306
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_17.p0.log
+  kernel 18 n=(14, 14, 13) r=1538 ref=None outer_nnz=1282819
+  exact kernel dimension=0 (full rank mod p); work/kernel_84418_18.p0.log
+STEP_SHA256 4 4b613512756bdb5c0303dc17236ad63b3b8a4e931d898e75e863d95d6dd9ab9e
+CHILD_PID 84505
+REBUILD PASS {"scheme": "[clean test directory]/[step file]", "sha256": "4b613512756bdb5c0303dc17236ad63b3b8a4e931d898e75e863d95d6dd9ab9e", "expected_sha256": "4b613512756bdb5c0303dc17236ad63b3b8a4e931d898e75e863d95d6dd9ab9e", "steps": 4, "exact_check": "PASS"}
