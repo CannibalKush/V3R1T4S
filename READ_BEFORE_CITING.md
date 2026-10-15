@@ -71,6 +71,13 @@ rewriting history. Being overtaken after the recorded snapshot is not an error, 
 object stays as a time-stamped bound. Missing or wrong credit counts as an error. Takedown requests from setters,
 maintainers and authors will be honoured promptly.
 
+### Log
+
+| date | what | reported by | status |
+|---|---|---|---|
+| 2026-10-15 | **Overtaken:** A(34,8,7) ≥ 602 (TROPHY_CASE row 26). Brouwer's Andw.html (Last-Modified 2026-10-14 13:36:17 GMT) now lists 603, credited to Ryan Freel ("email 2026-10-13"). That 603-word code keeps 564 words of our 602 (itself a polish of Boisclair's 601). Our 602 stays here as a time-stamped bound. | maintainer review of pull request #8 | recorded |
+| 2026-10-15 | **Credit:** the contributed hsp4 packages for N = 30, 35, 42 and 48 credited the posted packings to E. Specht; Packomania's author list gives N. J. A. Sloane, R. H. Hardin and W. D. Smith. Eleven hsp4 packages also carried N = 66 template text in their record and rebuild files. Corrected the same day, with a maintainer note in each package README. | maintainer review | corrected |
+
 ## Credits and license
 
 By **Pliny the Liberator** ([@elder-plinius](https://github.com/elder-plinius)) with Anthropic Claude agents. The

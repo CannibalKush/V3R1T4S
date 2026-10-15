@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** this package was built from the contributor's N = 66 template. The maintainer corrected the N = 66 leftovers in `the-record-we-beat/RECORD.md`, `how-we-built-it/COMMANDS.md` and this README, and corrected the credit: Packomania lists the posted N = 30 packing as by Sloane, Hardin and Smith, not Specht. The object, checker and panel files are unchanged.
+
 For d = 4 and N = 30, the 30 centres in hsp4-30-candidate.txt lie in the unit ball centred at the origin and have feasible radius r* = 0.315996223410303 (mpmath 50 digits, no tolerance), which exceeds the 12-decimal table value 0.315990168743 in hsp4_radius_as_fetched.txt by 6.05466730283547e-6 (>= 1e-10) and is not isometric to hsp4-30-posted.txt (sorted distance multisets differ by up to 0.035966937); the live re-fetch, History-of-updates and pending-queue clauses, including the unresolved category-unspecified Moki & Julio bundle, are not verifiable from these files and the pass is conditional on them.
 
 ## Check it yourself
@@ -32,12 +34,13 @@ packing above the table value and also prints PASS; SHA256SUMS pins the exact fi
 
 Not optimality, not a "record" in any sense beyond strictly exceeding the posted value in this table on this date, nothing
 about any other N or about hsp5/hsp6. Packomania has not been contacted; whether this packing is listed is the table
-owner's decision. This is one of 15 hsp4 rows improved in the same search; each is its own package (one cell per claim). N = 66 is in a separate pull request.
+owner's decision. This is one of 15 hsp4 rows improved in the same search; each is its own package (one cell per claim).
 
 ## Credits
 
-- Eckard Specht, Packomania (https://packomania.com/), who built and maintains the hsp4 table and posted the packing we
-  improved on ("program hsp4", 2010-2025); our search started from his posted coordinates for N = 30.
+- Eckard Specht, Packomania (https://packomania.com/), who built and maintains the hsp4 table.
+- N. J. A. Sloane, R. H. Hardin and W. D. Smith, authors of the posted N = 30 packing (Packomania txt/author.txt); our search
+  started from those posted coordinates.
 - The success criterion and checker definition are the V3R1T4S bank entry `packomania-hyperspheres-hsp4-hsp6`.
 - Method: sequential linear programming with a trust region (LPs solved by HiGHS through SciPy), then basin hopping by
   displacing the loosest balls; the D4 lattice of Conway and Sloane ("Sphere Packings, Lattices and Groups", 1988) was

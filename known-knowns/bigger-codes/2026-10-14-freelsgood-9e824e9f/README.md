@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** at the contributor's fetch (Brouwer's Andw.html, 2026-10-10) the A(27,6,10) cell was 12987. Brouwer has since adopted this code: the page re-fetched by the maintainer on 2026-10-15 (Last-Modified 14 Oct 2026 13:36:17 GMT) lists 13026, credited "Fr" (Ryan Freel), and links the same word list (`a27.6.10.13026H`). So the improvement is this contributor's and is now the table value. The maintainer also corrected this package's SHA256SUMS entry for INDEX.csv (it recorded the CRLF version of the file).
+
 The supplied explicit list of 13026 distinct binary words of length 27 and Hamming weight 10 has pairwise Hamming distance at least 6, proving A(27,6,10) >= 13026.
 
 PROVED-HERE: independent exhaustive checks establish the explicit lower bound. This improves the fetched lower bound by 39; it does not settle the exact maximum.

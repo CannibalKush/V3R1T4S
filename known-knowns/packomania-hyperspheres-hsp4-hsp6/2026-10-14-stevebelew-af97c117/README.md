@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** this package was built from the contributor's N = 66 template. The maintainer corrected the N = 66 leftovers in `the-record-we-beat/RECORD.md`, `how-we-built-it/COMMANDS.md` and this README. The object, checker and panel files are unchanged.
+
 For d = 4 and N = 54, the 54 centres in hsp4-54-candidate.txt lie in the unit ball centred at the origin and have feasible radius r* = 0.276798695687107 (mpmath 50 digits, no tolerance), which exceeds the 12-decimal table value 0.276798004181 in hsp4_radius_as_fetched.txt by 6.91506107385659e-7 (>= 1e-10) and is not isometric to hsp4-54-posted.txt (sorted distance multisets differ by up to 0.0037362048); the live re-fetch, History-of-updates and pending-queue clauses, including the unresolved category-unspecified Moki & Julio bundle, are not verifiable from these files and the pass is conditional on them.
 
 ## Check it yourself
@@ -32,7 +34,7 @@ packing above the table value and also prints PASS; SHA256SUMS pins the exact fi
 
 Not optimality, not a "record" in any sense beyond strictly exceeding the posted value in this table on this date, nothing
 about any other N or about hsp5/hsp6. Packomania has not been contacted; whether this packing is listed is the table
-owner's decision. This is one of 15 hsp4 rows improved in the same search; each is its own package (one cell per claim). N = 66 is in a separate pull request.
+owner's decision. This is one of 15 hsp4 rows improved in the same search; each is its own package (one cell per claim).
 
 ## Credits
 
