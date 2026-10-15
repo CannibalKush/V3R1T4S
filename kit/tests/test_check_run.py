@@ -3,7 +3,8 @@
 
     python3 kit/tests/test_check_run.py        (standard library only)
 """
-import contextlib, hashlib, io, json, os, shutil, sys, tempfile, unittest
+import builtins, contextlib, hashlib, io, json, os, shutil, sys, tempfile, unittest
+from unittest import mock
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
@@ -337,6 +338,60 @@ class BadFixtures(Base):
         w(E, "# Sealed envelope x\ntarget: toy-cipher\nproblem: Problem 7\n"
              "| file | frozen (UTC) | commitment |\n|---|---|---|\n| solution file 1 (key) | 2026-10-12T03:14:15Z | `7:3,1,4,2,5,6,1,7` |\n")
         self.assertFail("not part of the sealed-envelope template", "--package", os.path.dirname(E))
+
+
+class WindowsPortability(Base):
+    """Issue #152: on Windows with Python <= 3.14 open() defaults to the locale encoding (often cp1252),
+    and editors / PowerShell write CRLF line endings."""
+
+    def utf8_bank(self, extra=None):
+        bank = json.loads(json.dumps(BANK))
+        bank["targets"][1]["note"] = "\u220f over the key schedule"  # UTF-8 bytes e2 88 8f; 0x8f is undefined in cp1252
+        with open(os.path.join(self.W, "repo", "bank", "targets.json"), "wb") as f:
+            f.write((extra if extra is not None else json.dumps(bank, ensure_ascii=False)).encode("utf-8"))
+
+    @contextlib.contextmanager
+    def cp1252_locale(self):
+        real = builtins.open
+
+        def fake(file, mode="r", buffering=-1, encoding=None, *a, **k):
+            if "b" not in mode and encoding is None:
+                encoding = "cp1252"
+            return real(file, mode, buffering, encoding, *a, **k)
+        with mock.patch("builtins.open", fake):
+            yield
+
+    def test_bank_loads_under_cp1252_locale(self):
+        self.utf8_bank()
+        with self.cp1252_locale():
+            bank, _ = check_run.load_bank(self.W, {})
+        self.assertIn("toy-cipher", bank)
+
+    def test_commit_only_guard_under_cp1252_locale(self):
+        self.utf8_bank()
+        P = self.package(target="toy-cipher")
+        with self.cp1252_locale():
+            self.assertFail("may leave the machine only as a sealed envelope", "--package", P, "--workdir", self.W, "--no-exec")
+
+    def test_unreadable_bank_fails_loudly(self):
+        self.attack()
+        self.utf8_bank(extra='{"targets": [')
+        self.assertFail("could not read the bank", self.W)
+        P = self.package()
+        self.assertFail("could not read the bank", "--package", P, "--workdir", self.W, "--no-exec")
+
+    def test_crlf_dead_lines_pass(self):
+        self.attack()
+        for l in ("lens0", "lens1"):
+            p = os.path.join(self.R, "attempts", l, "report.md")
+            data = check_run.rbytes(p)
+            check_run.wbytes(p, data.replace(b"\n", b"\r\n"))
+        self.assertPass(self.W)
+
+    def test_crlf_report_without_dead_lines_still_fails(self):
+        self.attack()
+        check_run.wbytes(os.path.join(self.R, "attempts", "lens0", "report.md"), b"claim level: negative\r\ndead lines:\r\n- one\r\n")
+        self.assertFail("needs 'dead lines:'", self.W)
 
 
 class NullControlCounts(unittest.TestCase):

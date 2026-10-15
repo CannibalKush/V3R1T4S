@@ -87,9 +87,10 @@ def wbytes(path, data):
 
 
 def read(path, limit=MAX_SCAN):
+    """Text of a file as UTF-8, with CRLF line endings folded to LF (hashes use rbytes, not this)."""
     try:
         with open(path, "rb") as f:
-            return f.read(limit).decode("utf-8", "replace")
+            return f.read(limit).decode("utf-8", "replace").replace("\r\n", "\n")
     except OSError:
         return ""
 
@@ -133,7 +134,10 @@ def last_nonempty(text):
     return lines[-1] if lines else ""
 
 
-def load_bank(workdir, settings):
+def load_bank(workdir, settings, errors=None):
+    """First readable bank among the candidates. A candidate that exists but cannot be read or
+    parsed is appended to `errors` (if given) so the caller can fail loudly instead of running
+    without the bank's guards."""
     paths = []
     if settings.get("bank"):
         b = settings["bank"].split()[0]
@@ -144,10 +148,14 @@ def load_bank(workdir, settings):
     paths.append(os.path.join(here, "..", "bank", "targets.json"))
     for p in paths:
         try:
-            with open(p) as f:
+            with open(p, encoding="utf-8") as f:
                 data = json.load(f)
             return {t["id"]: t for t in data.get("targets", [])}, os.path.dirname(os.path.abspath(p))
-        except (OSError, ValueError, KeyError, TypeError):
+        except FileNotFoundError:
+            continue
+        except (OSError, ValueError, KeyError, TypeError, AttributeError) as e:
+            if errors is not None:
+                errors.append("%s: %s: %s" % (p, type(e).__name__, str(e)[:120]))
             continue
     return {}, None
 
@@ -329,7 +337,12 @@ def check_package(c, pkg, workdir=None, execute=True, timeout=900):
     pkg = os.path.abspath(pkg)
     label = "package %s" % os.path.basename(pkg)
     settings = kv(read(os.path.join(workdir, "settings.md"))) if workdir else {}
-    bank, _ = load_bank(workdir, settings)
+    bank_errors = []
+    bank, _ = load_bank(workdir, settings, bank_errors)
+    for e in bank_errors:
+        c.fail("could not read the bank %s" % e)
+    if not bank:
+        c.warn("could not load the bank (settings.md 'bank:', repo/bank/targets.json or kit/../bank/targets.json); bank-based guards were skipped")
     if os.path.isfile(pkg) and pkg.endswith(".md"):
         check_envelope(c, pkg, workdir, bank)
         return
@@ -780,7 +793,10 @@ def check_workspace(c, workdir, run=None, setup_only=False, execute=True, timeou
         c.fail("workspace %s not found" % workdir)
         return
     settings = kv(read(os.path.join(workdir, "settings.md")))
-    bank, bank_dir = load_bank(workdir, settings)
+    bank_errors = []
+    bank, bank_dir = load_bank(workdir, settings, bank_errors)
+    for e in bank_errors:
+        c.fail("could not read the bank %s" % e)
     if not bank:
         c.warn("could not load the bank (settings.md 'bank:' or repo/bank/targets.json)")
     check_setup(c, workdir, settings, setup_only)
