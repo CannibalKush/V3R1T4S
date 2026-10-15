@@ -18,7 +18,7 @@ ICONS = {
     "unbroken-ciphers": "🔐", "undeciphered-scripts": "📜", "ancient-texts": "🏺", "herculaneum-scrolls": "🌋",
     "number-hunts": "🔢", "erdos-and-proofs": "✏️", "record-tables": "📊", "graphs-games-automata": "🕸️",
     "packings-physics": "⚪", "algorithms": "⚡", "optimization-benchmarks": "🚚", "sky-archives": "🔭",
-    "ml-robustness": "🛡️", "disease-research": "🧬", "drug-discovery": "💊", "biology": "🦠",
+    "ml-robustness": "🛡️", "disease-research": "🧬", "drug-discovery": "💊", "biology": "🦠", "physics": "⚛️", "earth-and-sky": "🌍",
 }
 KIND = {"harvest": "harvest (many cells or partial wins within reach)", "standard": "standard",
         "moonshot": "moonshot (famous, long odds)"}

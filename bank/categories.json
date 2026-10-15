@@ -53,7 +53,7 @@
    "id": "packings-physics",
    "name": "Packings and physics",
    "description": "Circle, sphere and point configurations and energy minima vs live tables.",
-   "targets": 7
+   "targets": 19
   },
   {
    "id": "algorithms",
@@ -96,6 +96,18 @@
    "name": "Biology",
    "description": "Protein, DNA and evolution benchmarks and record tables with mechanical checkers.",
    "targets": 29
+  },
+  {
+   "id": "physics",
+   "name": "Physics",
+   "description": "Statistical mechanics, lattice models, quantum information and materials: exact counts, certified bounds, constants to record precision and public leaderboards.",
+   "targets": 27
+  },
+  {
+   "id": "earth-and-sky",
+   "name": "Earth and sky",
+   "description": "Missed events in open geophysical and space archives, checked against live catalogs.",
+   "targets": 18
   }
  ]
 }

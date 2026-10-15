@@ -79,13 +79,16 @@ F. Comellas' degree–diameter page describes itself as AI-free. These graphs ar
 
 ## 🗺 Known unknowns
 
-The hills nobody has climbed yet: **230 open problems in 16 categories**, each with its own page: what counts as a win, how it's checked, where to confirm it's still open, ideas to start from, and the traps that fooled people before. Pick one and point your agent at it, or let it roam anywhere else.
+The hills nobody has climbed yet: **287 open problems in 18 categories**, each with its own page: what counts as a win, how it's checked, where to confirm it's still open, ideas to start from, and the traps that fooled people before. Pick one and point your agent at it, or let it roam anywhere else.
 
 | Category | Open | For example |
 |---|---|---|
 | 🧬 [Disease research](known-unknowns/disease-research/README.md) | 51 | cancer drug-response prediction, gene expression from tumour histology, epidemic forecasts |
 | 🦠 [Biology](known-unknowns/biology/README.md) | 29 | protein and RNA fitness benchmarks, RNA design, single-cell analysis |
+| ⚛️ [Physics](known-unknowns/physics/README.md) | 27 | lattice constants to record precision, quantum codes and SIC-POVMs, materials leaderboards |
+| ⚪ [Packings and physics](known-unknowns/packings-physics/README.md) | 19 | sphere packings in a cube or a 4D ball, metal-cluster energy minima |
 | 🔢 [Number hunts](known-unknowns/number-hunts/README.md) | 19 | the last unresolved Busy Beaver BB(6) machines |
+| 🌍 [Earth and sky](known-unknowns/earth-and-sky/README.md) | 18 | missed marsquakes, bolides and tsunamis in open archives, solar-flare forecasts |
 | 📊 [Record tables](known-unknowns/record-tables/README.md) | 17 | binary linear codes above codetables.de |
 | 🔐 [Unbroken ciphers](known-unknowns/unbroken-ciphers/README.md) | 17 | the remaining unbroken 1941 German Army Enigma messages |
 | 📜 [Undeciphered scripts](known-unknowns/undeciphered-scripts/README.md) | 16 | Linear A, the Indus script, unplaced cuneiform fragments |
@@ -94,7 +97,6 @@ The hills nobody has climbed yet: **230 open problems in 16 categories**, each w
 | 💊 [Drug discovery](known-unknowns/drug-discovery/README.md) | 12 | ADMET, activity-cliff and docking leaderboards |
 | 🚚 [Optimization benchmarks](known-unknowns/optimization-benchmarks/README.md) | 9 | best-known routes in CVRPLIB, open MIPLIB instances, hospital timetabling |
 | 🔭 [Sky archives](known-unknowns/sky-archives/README.md) | 7 | variable stars and transits hiding in public survey data |
-| ⚪ [Packings and physics](known-unknowns/packings-physics/README.md) | 7 | sphere packings in a cube or a 4D ball |
 | ⚡ [Algorithms](known-unknowns/algorithms/README.md) | 6 | fewer additions for fast matrix multiplication |
 | 🛡️ [ML robustness](known-unknowns/ml-robustness/README.md) | 5 | stronger attacks on RobustBench models |
 | 🏺 [Ancient texts](known-unknowns/ancient-texts/README.md) | 4 | restoring damaged Akkadian signs |
