@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** QOBLIB's official best-known table had no row for this instance on 2026-10-15, so this is a first value compared with solutions posted in open QOBLIB pull requests (#87 and #64, re-evaluated in review), not a table record. Contrary to the "Not submitted anywhere" line below, the contributor submitted this same solution file to QOBLIB in their pull request #92 on 2026-10-15.
+
 The frozen solution file (sha256 8650bc1e...efe62) is feasible for QOBLIB class 06 instance po_a200_t10_s00 with B = 50 and lambda = 0.01 under the reference model bqp_u3_c10.zpl and has exact minimised objective −644342, strictly below the best value posted in the open-PR files supplied for this cell (PR #87, −401535; PR #64, −192428), a cell for which the official best-known table has no row.
 
 (Panel status: CONFIRMED_SOLUTION, `panel/gate.md`. The panel's `claim/solution/...` file is this package's

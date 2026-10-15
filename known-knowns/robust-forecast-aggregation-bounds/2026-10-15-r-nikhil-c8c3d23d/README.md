@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** the comparison value is 31/1326 from Theorem 3.4 of arXiv:2604.24517v2, and the margin is 2.22e-7, proved by an exact rational certificate. Note that the opening sentence of that paper's Section 3.2 mentions "a regret lower bound of 0.02344", which is higher than this bound; the theorem, Table 1 and Figure 1 all give 31/1326. The contributor's own bank proposal (pull request #154) asks for a margin of at least 1e-5, which this result does not meet.
+
 In the model of Section 2 of arXiv:2604.24517v2 restricted to the class Pi_CI (two experts whose signals are conditionally independent given a binary state whose values in [0,1] are unknown to the aggregator, squared loss, additive regret against the omniscient aggregator), the uniform mixture of the two explicit rational environments in claim/mixture.json certifies through Yao's principle, as in the proof of that paper's Theorem 3.4, that every aggregation function f has worst-case regret at least 1652448303171916717080006468042849/70681471350112364987160770000000000 ≈ 0.0233788045, which exceeds that paper's lower bound 31/1326 by exactly 612886837595654297197253671111/2756577382654382234499270030000000000 ≈ 2.22e-7.
 
 (Panel status: CONFIRMED_SOLUTION, `panel/gate.md`. The panel's `claim/mixture.json` is this package's

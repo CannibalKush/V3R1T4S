@@ -427,6 +427,28 @@ class NullControlCounts(unittest.TestCase):
                 self.assertTrue(any("unsigned decimal integer" in f for f in failures))
 
 
+
+class SourcePlaceholders(Base):
+    """C/C++ sources may contain <word_word> tokens such as #include <unordered_map> (reported in pull request #8)."""
+
+    def _confirmed(self):
+        self.attack(levels=("partial_win_claim", "negative"))
+        panel(os.path.join(self.R, "panel"))
+        w(os.path.join(self.W, "REPORT.md"), "# Report\nHeadline: CONFIRMED_PARTIAL on toy-record.\n")
+        return self.package()
+
+    def test_cpp_include_is_not_a_placeholder(self):
+        P = self._confirmed()
+        w(os.path.join(P, "how-we-built-it", "search.cpp"), "#include <unordered_map>\n#include <unordered_set>\nint main(){return 0;}\n")
+        self.sums(P)
+        self.assertPass(self.W)
+
+    def test_placeholder_in_document_still_fails(self):
+        P = self._confirmed()
+        w(os.path.join(P, "HOW_WE_FOUND_IT.md"), "Contributor text, unverified. Built by <credit_name>.\n")
+        self.sums(P)
+        self.assertFail("unfilled placeholder <credit_name>", self.W)
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)
 

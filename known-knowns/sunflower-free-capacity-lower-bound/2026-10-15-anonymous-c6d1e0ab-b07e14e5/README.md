@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** the exact value was confirmed independently (the family checked two ways; one more set ruled out on the plain CNF by two SAT solvers and by a separate branch-and-bound). Partial win p2 also requires that the value was not previously published: no OEIS entry or later paper has it, but Abbott and Exoo (1992) could not be read in review, so novelty is likely but not certain.
+
 g(7,3) = 12, meaning the family claim/object/family_g7_3_12.json (sha256 b07e14e50f5669104565b4f3252e88b2589e80a346037127d0c0f02975aad8e0) is a 3-uniform 3-sunflower-free family of 12 distinct members on [7], and the proof claim/object/nosb.drup is verified by drat-trim as an UNSAT proof of the proved CNF claim/object/nosb.cnf (exactly the 315 sunflower clauses plus an "at least 13" counter), which the shipped generator regenerates identically in all variables and clauses but not byte-for-byte (its first comment line differs); no claim is made about the 1.5545 rate bar or any other (n,r).
 
 Path note: the sentence above is quoted word for word from `panel/gate.md`, and it names the panel's `claim/` folder. In this package the same files, with identical bytes, are `object/family_g7_3_12.json`, `object/nosb.cnf` and `object/nosb.drup`.

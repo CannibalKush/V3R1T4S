@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** QOBLIB's official best-known table had no row for this instance on 2026-10-15, so this is a first value compared with solutions posted in open QOBLIB pull requests (#87 and #64, re-evaluated in review), not a table record. Contrary to the "Not submitted anywhere" line below, the contributor submitted this same solution file to QOBLIB in their pull request #92 on 2026-10-15.
+
 The canonical count file claim/solution/a200_t10_orig_b050_l1e-02_solution.sol is feasible for QOBLIB class 06 instance po_a200_t10_orig (instance files as packaged in claim/instance/) with B = 50 and lambda = 0.01, and its exact objective under the class's minimised reference model (claim/definition/bqp_u3_c10.zpl with claim/definition/parameter_u3_c10.zpl, lambda set to 0.01, Zimpl rounding half away from zero) is -691624, strictly below (by 140239) the bar of -551385, which is the exactly re-evaluated objective of the PR #87 solution file copied in claim/bar/ and, per the claim's status record, the best value posted in an open QOBLIB pull request for cell a200_t10_orig_b050_l1e-02, a cell for which the official best-known table (copy in claim/bar/06-portfolio-solutions-README.md) has no row.
 
 (Panel status: CONFIRMED_SOLUTION, `panel/gate.md`. The panel's `claim/solution/...` file is this package's

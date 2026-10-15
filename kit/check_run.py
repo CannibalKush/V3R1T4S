@@ -26,6 +26,9 @@ NEGATION_RE = re.compile(r"(?i)\b(not|no|never|without|nor|cannot|can't|isn't|ar
                          r"would|could|should|requires?|if|before|instead|neither|none|nothing|downgraded|zero)\b|n't\b")
 PLACEHOLDER_RE = re.compile(r"<(WORKDIR|[A-Za-z]+(?:[-_][A-Za-z]+)+|YYYY[^>]{0,20}|date|time|tag|id|lens|credit|"
                             r"value|url|family|n|path|name)>")
+# Source code legitimately contains <word_word> tokens (e.g. C++ #include <unordered_map>), so it is exempt from the
+# placeholder check; documents, data and receipts are not.
+SOURCE_EXTS = (".py", ".sh", ".c", ".cc", ".cpp", ".cxx", ".h", ".hh", ".hpp", ".hxx", ".rs", ".go", ".jl", ".java")
 LEAK_RES = [
     (re.compile(r"/" r"Users/[^/\s'\"`)]+"), "absolute macOS user path"),
     (re.compile(r"/" r"home/[^/\s'\"`)]+"), "absolute Linux home path"),
@@ -260,7 +263,7 @@ def leak_scan(c, root, label, never_publish=(), workdir=None, skip_prompt=True):
                 break
         if workdir and workdir in t:
             c.fail("%s: the workspace's absolute path appears in %s" % (label, r))
-        if not (skip_prompt and r.split(os.sep)[0] == "prompt") and PLACEHOLDER_RE.search(t) and not r.endswith((".py", ".sh")):
+        if not (skip_prompt and r.split(os.sep)[0] == "prompt") and PLACEHOLDER_RE.search(t) and not r.endswith(SOURCE_EXTS):
             c.fail("%s: unfilled placeholder %s in %s" % (label, PLACEHOLDER_RE.search(t).group(0), r))
         low = t.lower()
         for e in never_publish:

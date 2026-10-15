@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** the exact value was confirmed independently (the family checked two ways; one more set ruled out on the plain CNF by two SAT solvers and by a separate branch-and-bound). Partial win p2 also requires that the value was not previously published: no OEIS entry or later paper has it, but Abbott and Exoo (1992) could not be read in review, so novelty is likely but not certain.
+
 The 3-uniform 3-sunflower-free (empty core included) maximum family size on [8] is exactly 12, shown by claim/object/family_g8_3_12.json (sha256 f50c754478941fea73040430cfecc91e76de235b97ad541fcd59955eda163fa7, 12 distinct triples, no sunflower) and by claim/object/sb.drup, a DRUP proof drat-trim verifies against the lex-leader CNF claim/object/sb.cnf (a sound symmetry-broken form of "at least 13 members", whose clauses regenerate from gen_cnf.py with python-sat 1.9.dev15 identically except for one stale header comment line); no claim about the 1.5545 rate bar, other (n,r), or novelty.
 
 Path note: the sentence above is quoted word for word from `panel/gate.md`, and it names the panel's `claim/` folder. In this package the same files, with identical bytes, are `object/family_g8_3_12.json`, `object/sb.cnf` and `object/sb.drup`.

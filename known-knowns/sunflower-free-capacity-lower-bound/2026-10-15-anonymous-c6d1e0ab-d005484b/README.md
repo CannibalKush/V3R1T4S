@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** the exact value was confirmed independently (the family checked two ways; one more set ruled out on the plain CNF by two SAT solvers and by a separate branch-and-bound). Partial win p2 also requires that the value was not previously published: no OEIS entry or later paper has it, but Abbott and Exoo (1992) could not be read in review, so novelty is likely but not certain.
+
 claim/object/family_g8_4_24.json (sha256 d005484b9bf31c11634f4ed9c6cc2e1f4c99b6005a2f471f70fd9726bfbd09ca) is a family of 24 distinct 4-subsets of {1..8} with no three members (empty core included) having pairwise equal intersections, and drat-trim verifies claim/object/sb.drup as a refutation of the lex-leader-symmetry-broken CNF claim/object/sb.cnf for "at least 25 such members", whose clauses (apart from its first comment line, which the shipped generator words differently) the shipped generator regenerates, so g(8,4) = 24 exactly, with no claim about the 1.5545 rate bar or any other (n,r).
 
 Path note: the sentence above is quoted word for word from `panel/gate.md`, and it names the panel's `claim/` folder. In this package the same files, with identical bytes, are `object/family_g8_4_24.json`, `object/sb.cnf` and `object/sb.drup`.

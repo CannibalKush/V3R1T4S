@@ -2,6 +2,8 @@
 
 ## What
 
+> **Maintainer note (2026-10-15):** this package was submitted under `known-knowns/bigger-codes/` (the constant-weight family) and was moved here by the maintainer, next to the other codetables results. Nothing inside it changed except this note.
+
 The generator matrix in claim/object/code_q2_n213_k26_d77.json (sha256 924876aa988e3a9da62a776f88c297db6aa005b475fe3ad9e76291685851cd12) has rank 26 over GF(2) and exact minimum distance 77 (A_77 = 1170) by full enumeration of all 67,108,863 nonzero codewords with two agreeing methods, which is strictly above the lower bound 76 and at most the upper bound 90 shown in the live codetables.de [213,26] cell fetched 2026-10-15T00:14:28Z, and it is not one of, nor by the paper's own text derived from, the seven LinCodeEvolve codes of arXiv:2609.37056; a live arXiv search for other newer claims was not completed.
 
 Path note: the sentence above is quoted word for word from `panel/gate.md`, and it names the panel's `claim/` folder. In this package the same file, with identical bytes, is `object/code_q2_n213_k26_d77.json`. The arXiv search the criterion reviewer did not complete was done by the novelty reviewer (`panel/novelty.md`), who found no claim reaching d = 77 at this cell.
