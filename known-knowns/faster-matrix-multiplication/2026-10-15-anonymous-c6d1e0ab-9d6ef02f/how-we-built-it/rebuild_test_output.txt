@@ -1,0 +1,46 @@
+nice: setpriority: Operation not permitted
+PID 70767
+Python 3.9.6 (default, Oct 17 2025, 17:15:53) 
+[Clang 17.0.0 (clang-1700.4.4.1)]
+CHILD_PID 70768
+nice: setpriority: Operation not permitted
+nice: setpriority: Operation not permitted
+CHILD_PID 70788
+numpy 2.0.2 python-flint 0.6.0 FLINT_threads 1
+STEP_0_SOURCE_SHA256 8365355f0f3ae6bc3efd445517fbd473c91477cd1c2b2aeb08c0b3b85182fd1d CANONICAL_SEED_SHA256 fdefcd37455dbd949d0a7b54602b5d9e58b33ce7e5280124e0627249750af5f0
+STEP 1 parent (15, 16, 16) 2180 axis 0 f ((3, 1), (8, 1)) e ((8, 1),) raw 2145
+mode step 0 base 195 pivot 201 inc 20 nnz 171663 -> 72392 dense 697 time 0.2655317783355713
+mode step 0 base 255 pivot 145 inc 18 nnz 193023 -> 69026 dense 689 time 0.40508604049682617
+  kernel 1 n=(14, 16, 16) r=2145 ref=mode outer_nnz=3953612
+  exact kernel dimension=5 verified, primes=1; work/kernel_70767_1.p0.log
+    absorb (14, 16, 16): r=2145 support=10 nullity(mod p)=5 exact=5 kills=5 t_proj=4.3s t_exact=0.0s t_kill=0.0s
+mode step 0 base 255 pivot 145 inc 18 nnz 192985 -> 68988 dense 689 time 0.37420225143432617
+mode step 0 base 193 pivot 6 inc 22 nnz 159430 -> 70647 dense 635 time 0.40520286560058594
+  kernel 2 n=(16, 16, 14) r=2140 ref=mode outer_nnz=3521725
+  exact kernel dimension=10 verified, primes=1; work/kernel_70767_2.p0.log
+    absorb (16, 16, 14): r=2140 support=608 nullity(mod p)=10 exact=10 kills=21 t_proj=4.9s t_exact=0.0s t_kill=0.3s
+mode step 0 base 194 pivot 35 inc 27 nnz 158342 -> 71113 dense 631 time 0.34259891510009766
+mode step 0 base 194 pivot 185 inc 24 nnz 160073 -> 71970 dense 637 time 0.27849578857421875
+  kernel 3 n=(16, 14, 16) r=2119 ref=mode outer_nnz=3587180
+  exact kernel dimension=1 verified, primes=1; work/kernel_70767_3.p0.log
+    absorb (16, 14, 16): r=2119 support=2 nullity(mod p)=1 exact=1 kills=1 t_proj=4.2s t_exact=0.0s t_kill=0.0s
+mode step 0 base 194 pivot 185 inc 24 nnz 160069 -> 71966 dense 637 time 0.3560607433319092
+mode step 0 base 231 pivot 152 inc 17 nnz 192185 -> 75462 dense 687 time 0.4364171028137207
+  kernel 4 n=(14, 16, 16) r=2118 ref=mode outer_nnz=4143602
+  exact kernel dimension=1 verified, primes=1; work/kernel_70767_4.p0.log
+    absorb (14, 16, 16): r=2118 support=3 nullity(mod p)=1 exact=1 kills=1 t_proj=3.9s t_exact=0.0s t_kill=0.0s
+mode step 0 base 225 pivot 16 inc 16 nnz 191929 -> 78028 dense 686 time 0.36543798446655273
+mode step 0 base 201 pivot 77 inc 27 nnz 157940 -> 69400 dense 629 time 0.3006112575531006
+  kernel 5 n=(16, 16, 14) r=2117 ref=mode outer_nnz=3934762
+  exact kernel dimension=0 (full rank mod p); work/kernel_70767_5.p0.log
+mode step 0 base 201 pivot 77 inc 27 nnz 157940 -> 69400 dense 629 time 0.3681919574737549
+mode step 0 base 194 pivot 185 inc 24 nnz 160039 -> 71936 dense 637 time 0.3111119270324707
+  kernel 6 n=(16, 14, 16) r=2117 ref=mode outer_nnz=3853436
+  exact kernel dimension=0 (full rank mod p); work/kernel_70767_6.p0.log
+mode step 0 base 194 pivot 185 inc 24 nnz 160039 -> 71936 dense 637 time 0.33345603942871094
+mode step 0 base 225 pivot 16 inc 16 nnz 191929 -> 78028 dense 686 time 0.401979923248291
+  kernel 7 n=(14, 16, 16) r=2117 ref=mode outer_nnz=3911813
+  exact kernel dimension=0 (full rank mod p); work/kernel_70767_7.p0.log
+STEP_SHA256 1 6e1e9e76e34ddfe293053317981cf84e8ec25927fa7b3f82430d0ddf964c4193
+CHILD_PID 71751
+REBUILD PASS {"scheme": "[clean test directory]/[step file]", "sha256": "6e1e9e76e34ddfe293053317981cf84e8ec25927fa7b3f82430d0ddf964c4193", "expected_sha256": "6e1e9e76e34ddfe293053317981cf84e8ec25927fa7b3f82430d0ddf964c4193", "steps": 1, "exact_check": "PASS"}

@@ -1,0 +1,49 @@
+{
+  "parent_file": "rebuild_parent.json",
+  "original_parent_path": "work/seed_beam/seed_15x16x16_r2180_bf15596ce6ac.json",
+  "parent_sha256": "fdefcd37455dbd949d0a7b54602b5d9e58b33ce7e5280124e0627249750af5f0",
+  "bootstrap": {
+    "file": "public_parent.json",
+    "kind": "json",
+    "sha256": "8365355f0f3ae6bc3efd445517fbd473c91477cd1c2b2aeb08c0b3b85182fd1d",
+    "original_path": "data/parents/trophy_15x16x16_r2180_Q.json",
+    "public": true,
+    "label": "V3R1T4S public repo: known-knowns/faster-matrix-multiplication/schemes/15x16x16_r2180_Q.json",
+    "seed_note": "Canonical supplied seed data/parents/trophy_15x16x16_r2180_Q.json",
+    "canonical_seed_sha256": "fdefcd37455dbd949d0a7b54602b5d9e58b33ce7e5280124e0627249750af5f0"
+  },
+  "steps": [
+    {
+      "axis": 0,
+      "f": [
+        [
+          3,
+          1
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "e": [
+        [
+          8,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        14,
+        16,
+        16
+      ],
+      "rank": 2117,
+      "note": "Parent work/seed_beam/seed_15x16x16_r2180_bf15596ce6ac.json; axis=0; pair index=9; f=((3, 1), (8, 1)); e=((8, 1),); raw rank=2145; absorbed=28; status=complete; beam width=4",
+      "sha256": "6e1e9e76e34ddfe293053317981cf84e8ec25927fa7b3f82430d0ddf964c4193",
+      "parent_sha256": "fdefcd37455dbd949d0a7b54602b5d9e58b33ce7e5280124e0627249750af5f0",
+      "original_parent_path": "work/seed_beam/seed_15x16x16_r2180_bf15596ce6ac.json"
+    }
+  ]
+}
