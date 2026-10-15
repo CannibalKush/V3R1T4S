@@ -1,0 +1,321 @@
+{
+  "parent_file": "rebuild_parent.json",
+  "original_parent_path": "work/17x17x17_r2723_Q.json",
+  "parent_sha256": "22018645c44d46ad9b855ee2bf30df18a1188f0d4eb6435c4484b2f8679d3f95",
+  "bootstrap": {
+    "file": "public_parent.npz",
+    "kind": "lita_npz",
+    "sha256": "dc041354b5d9c0709aa06372f47f50422e5e027b63644f13be32715c3250683b",
+    "original_path": "data/lita/17x17x17_r2723.npz",
+    "public": true,
+    "label": "LITA published 17x17x17_r2723.npz (https://github.com/khoruzhii/lita)",
+    "seed_note": "",
+    "canonical_seed_sha256": "22018645c44d46ad9b855ee2bf30df18a1188f0d4eb6435c4484b2f8679d3f95"
+  },
+  "steps": [
+    {
+      "axis": 0,
+      "f": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          -6
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "e": [
+        [
+          0,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": false,
+      "n": [
+        16,
+        17,
+        17
+      ],
+      "rank": 2553,
+      "note": "Exact Q slice+absorb of work/17x17x17_r2723_Q.json; axis=0; f=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)); e=((0, 1),); raw=2554; absorption=1",
+      "sha256": "f5dca3b437c4bec43077dbe10178f5d82ffe89b4fb5d66078a352c4929556f87",
+      "parent_sha256": "22018645c44d46ad9b855ee2bf30df18a1188f0d4eb6435c4484b2f8679d3f95",
+      "original_parent_path": "work/17x17x17_r2723_Q.json"
+    },
+    {
+      "axis": 0,
+      "f": [
+        [
+          8,
+          1
+        ]
+      ],
+      "e": [
+        [
+          8,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        15,
+        17,
+        17
+      ],
+      "rank": 2463,
+      "note": "Parent work/16x17x17_r2553_Q.json; axis=0; pair index=3; f=((8, 1),); e=((8, 1),); raw rank=2502; absorbed=39; status=complete; beam width=4",
+      "sha256": "9ebf1dd0a32bd9b49f29386ad49bf74f01a613a69159b48a40b4cf248803a5be",
+      "parent_sha256": "f5dca3b437c4bec43077dbe10178f5d82ffe89b4fb5d66078a352c4929556f87",
+      "original_parent_path": "work/16x17x17_r2553_Q.json"
+    },
+    {
+      "axis": 2,
+      "f": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          -6
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "e": [
+        [
+          5,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        15,
+        16,
+        17
+      ],
+      "rank": 2313,
+      "note": "Parent work/strong_beam/15x17x17_r2463_c39a14cd63ca.json; axis=2; pair index=3; f=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)); e=((5, 1),); raw rank=2313; absorbed=0; status=complete; beam width=4",
+      "sha256": "5d8085edc06740bcedbcfa7bbb3f92da85eb374774b340b1204b5ccdd835d419",
+      "parent_sha256": "9ebf1dd0a32bd9b49f29386ad49bf74f01a613a69159b48a40b4cf248803a5be",
+      "original_parent_path": "work/strong_beam/15x17x17_r2463_c39a14cd63ca.json"
+    },
+    {
+      "axis": 2,
+      "f": [
+        [
+          10,
+          1
+        ]
+      ],
+      "e": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          8,
+          -6
+        ],
+        [
+          9,
+          1
+        ],
+        [
+          10,
+          1
+        ],
+        [
+          11,
+          1
+        ],
+        [
+          12,
+          1
+        ],
+        [
+          13,
+          1
+        ],
+        [
+          14,
+          1
+        ],
+        [
+          15,
+          1
+        ],
+        [
+          16,
+          1
+        ]
+      ],
+      "rng_seed": 1,
+      "max_rounds": 50,
+      "canonicalize": true,
+      "n": [
+        15,
+        16,
+        16
+      ],
+      "rank": 2176,
+      "note": "Parent work/strong_beam/15x16x17_r2313_06929dd70557.json; axis=2; pair index=7; f=((10, 1),); e=((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)); raw rank=2183; absorbed=7; status=complete; beam width=4",
+      "sha256": "2095186e1215bd90009436c122d8f6cc78b89b0fe1f1943234ad02d8f9d1bd3e",
+      "parent_sha256": "5d8085edc06740bcedbcfa7bbb3f92da85eb374774b340b1204b5ccdd835d419",
+      "original_parent_path": "work/strong_beam/15x16x17_r2313_06929dd70557.json"
+    }
+  ]
+}

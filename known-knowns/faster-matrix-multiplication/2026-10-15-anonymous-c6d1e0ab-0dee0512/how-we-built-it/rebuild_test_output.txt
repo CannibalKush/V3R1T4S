@@ -1,0 +1,57 @@
+nice: setpriority: Operation not permitted
+PID 74127
+Python 3.9.6 (default, Oct 17 2025, 17:15:53) 
+[Clang 17.0.0 (clang-1700.4.4.1)]
+CHILD_PID 74147
+nice: setpriority: Operation not permitted
+CHILD_PID 74319
+nice: setpriority: Operation not permitted
+numpy 2.0.2 python-flint 0.6.0 FLINT_threads 1
+STEP_0_SOURCE_SHA256 dc041354b5d9c0709aa06372f47f50422e5e027b63644f13be32715c3250683b CANONICAL_SEED_SHA256 22018645c44d46ad9b855ee2bf30df18a1188f0d4eb6435c4484b2f8679d3f95
+STEP 1 parent (17, 17, 17) 2723 axis 0 f ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)) e ((0, 1),) raw 2554
+  kernel 1 n=(16, 17, 17) r=2554 ref=None outer_nnz=2492665
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_1.p0.log
+  kernel 2 n=(17, 17, 16) r=2554 ref=None outer_nnz=1272828
+  exact kernel dimension=1 verified, primes=1; work/kernel_74127_2.p0.log
+    absorb (17, 17, 16): r=2554 support=8 nullity(mod p)=1 exact=1 kills=1 t_proj=0.7s t_exact=0.0s t_kill=0.0s
+  kernel 3 n=(17, 16, 17) r=2553 ref=None outer_nnz=2197346
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_3.p0.log
+  kernel 4 n=(16, 17, 17) r=2553 ref=None outer_nnz=2492155
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_4.p0.log
+  kernel 5 n=(17, 17, 16) r=2553 ref=None outer_nnz=1272760
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_5.p0.log
+STEP_SHA256 1 f5dca3b437c4bec43077dbe10178f5d82ffe89b4fb5d66078a352c4929556f87
+STEP 2 parent (16, 17, 17) 2553 axis 0 f ((8, 1),) e ((8, 1),) raw 2502
+  kernel 6 n=(15, 17, 17) r=2502 ref=None outer_nnz=2336747
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_6.p0.log
+  kernel 7 n=(17, 17, 15) r=2502 ref=None outer_nnz=1194874
+  exact kernel dimension=24 verified, primes=1; work/kernel_74127_7.p0.log
+    absorb (17, 17, 15): r=2502 support=1849 nullity(mod p)=24 exact=24 kills=39 t_proj=1.2s t_exact=0.0s t_kill=1.2s
+  kernel 8 n=(17, 15, 17) r=2463 ref=None outer_nnz=1253626
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_8.p0.log
+  kernel 9 n=(15, 17, 17) r=2463 ref=None outer_nnz=1477967
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_9.p0.log
+  kernel 10 n=(17, 17, 15) r=2463 ref=None outer_nnz=1190705
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_10.p0.log
+STEP_SHA256 2 9ebf1dd0a32bd9b49f29386ad49bf74f01a613a69159b48a40b4cf248803a5be
+STEP 3 parent (15, 17, 17) 2463 axis 2 f ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)) e ((5, 1),) raw 2313
+  kernel 11 n=(16, 15, 17) r=2313 ref=None outer_nnz=1841374
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_11.p0.log
+  kernel 12 n=(15, 17, 16) r=2313 ref=None outer_nnz=1774424
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_12.p0.log
+  kernel 13 n=(17, 16, 15) r=2313 ref=None outer_nnz=2095740
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_13.p0.log
+STEP_SHA256 3 5d8085edc06740bcedbcfa7bbb3f92da85eb374774b340b1204b5ccdd835d419
+STEP 4 parent (15, 16, 17) 2313 axis 2 f ((10, 1),) e ((0, 1), (1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, -6), (9, 1), (10, 1), (11, 1), (12, 1), (13, 1), (14, 1), (15, 1), (16, 1)) raw 2183
+  kernel 14 n=(16, 15, 16) r=2183 ref=None outer_nnz=1715637
+  exact kernel dimension=7 verified, primes=1; work/kernel_74127_14.p0.log
+    absorb (16, 15, 16): r=2183 support=14 nullity(mod p)=7 exact=7 kills=7 t_proj=1.1s t_exact=0.0s t_kill=0.0s
+  kernel 15 n=(15, 16, 16) r=2176 ref=None outer_nnz=2673006
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_15.p0.log
+  kernel 16 n=(16, 16, 15) r=2176 ref=None outer_nnz=1966809
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_16.p0.log
+  kernel 17 n=(16, 15, 16) r=2176 ref=None outer_nnz=1714960
+  exact kernel dimension=0 (full rank mod p); work/kernel_74127_17.p0.log
+STEP_SHA256 4 2095186e1215bd90009436c122d8f6cc78b89b0fe1f1943234ad02d8f9d1bd3e
+CHILD_PID 75333
+REBUILD PASS {"scheme": "[clean test directory]/[step file]", "sha256": "2095186e1215bd90009436c122d8f6cc78b89b0fe1f1943234ad02d8f9d1bd3e", "expected_sha256": "2095186e1215bd90009436c122d8f6cc78b89b0fe1f1943234ad02d8f9d1bd3e", "steps": 4, "exact_check": "PASS"}
