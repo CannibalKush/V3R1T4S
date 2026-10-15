@@ -65,7 +65,7 @@
    "id": "optimization-benchmarks",
    "name": "Optimization benchmarks",
    "description": "Best-known solutions on public routing, scheduling and MIP benchmark libraries.",
-   "targets": 6
+   "targets": 9
   },
   {
    "id": "sky-archives",
@@ -78,6 +78,24 @@
    "name": "ML robustness",
    "description": "Stronger attacks and soundness counterexamples on public, locally run benchmark models.",
    "targets": 5
+  },
+  {
+   "id": "disease-research",
+   "name": "Disease research",
+   "description": "Cancer, rare and neglected diseases, antimicrobial resistance and outbreaks: public data, public scorers, computational claims only.",
+   "targets": 51
+  },
+  {
+   "id": "drug-discovery",
+   "name": "Drug discovery",
+   "description": "Molecular property, binding, docking and design leaderboards scored on official splits.",
+   "targets": 12
+  },
+  {
+   "id": "biology",
+   "name": "Biology",
+   "description": "Protein, DNA and evolution benchmarks and record tables with mechanical checkers.",
+   "targets": 29
   }
  ]
 }
