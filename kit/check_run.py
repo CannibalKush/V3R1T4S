@@ -210,12 +210,18 @@ def check_null(c, path, label):
         c.fail("%s: null test required but %s is missing (>= 400 controls through the same pipeline)" % (label, os.path.basename(path)))
         return False
     d = kv(read(path))
+    controls = d.get("controls", "")
     try:
-        n = int(re.sub(r"[^0-9]", "", d.get("controls", "")) or 0)
+        if not re.fullmatch(r"[0-9]+", controls):
+            raise ValueError
+        n = int(controls)
     except ValueError:
-        n = 0
+        c.fail("%s: null_test.md controls must be an unsigned decimal integer" % label)
+        n = None
     good = True
-    if n < 400:
+    if n is None:
+        good = False
+    elif n < 400:
         c.fail("%s: null_test.md reports %d controls; at least 400 are required" % (label, n))
         good = False
     for k in ("best_control", "real", "command"):
@@ -847,3 +853,4 @@ def main(argv=None):
 
 if __name__ == "__main__":
     sys.exit(main())
+

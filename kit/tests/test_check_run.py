@@ -339,5 +339,39 @@ class BadFixtures(Base):
         self.assertFail("not part of the sealed-envelope template", "--package", os.path.dirname(E))
 
 
+class NullControlCounts(unittest.TestCase):
+    def check_count(self, value):
+        with tempfile.TemporaryDirectory(prefix="v3r1t4s_null_test_") as tmp:
+            path = os.path.join(tmp, "null_test.md")
+            w(path, "controls: %s\nbest_control: 0.4\nreal: 0.9\n"
+              "real_beats_all_controls: yes\ncommand: python3 null.py\n" % value)
+            c = check_run.Checker(quiet=True)
+            return check_run.check_null(c, path, "fixture"), c.fails
+
+    def test_plain_integer_counts_pass(self):
+        for value in ("400", "401", "1000", " 400 "):
+            with self.subTest(value=value):
+                accepted, failures = self.check_count(value)
+                self.assertTrue(accepted, failures)
+                self.assertEqual(failures, [])
+
+    def test_insufficient_integer_counts_fail(self):
+        for value in ("0", "4", "399"):
+            with self.subTest(value=value):
+                accepted, failures = self.check_count(value)
+                self.assertFalse(accepted)
+                self.assertTrue(any("at least 400" in f for f in failures))
+
+    def test_malformed_counts_fail(self):
+        for value in ("", "-400", "+400", "4.00", "400.0", "4e2", "NaN", "Infinity",
+                      "1,000", "4_000", "200 + 200", "400 controls", "400 # counted",
+                      "400 or 500", "４００", "٤٠٠"):
+            with self.subTest(value=value[:80]):
+                accepted, failures = self.check_count(value)
+                self.assertFalse(accepted)
+                self.assertTrue(any("unsigned decimal integer" in f for f in failures))
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=1)
+
