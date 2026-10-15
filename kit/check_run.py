@@ -774,7 +774,7 @@ def check_run_dir(c, workdir, run, bank, dry):
     return tid, entry
 
 
-def check_workspace(c, workdir, run=None, setup_only=False, execute=True):
+def check_workspace(c, workdir, run=None, setup_only=False, execute=True, timeout=900):
     workdir = os.path.abspath(workdir)
     if not os.path.isdir(workdir):
         c.fail("workspace %s not found" % workdir)
@@ -798,7 +798,7 @@ def check_workspace(c, workdir, run=None, setup_only=False, execute=True):
             if d.startswith("."):
                 continue
             if os.path.isdir(p) or p.endswith(".md"):
-                check_package(c, p, workdir, execute=execute)
+                check_package(c, p, workdir, execute=execute, timeout=timeout)
             else:
                 c.fail("outbox/%s: outbox holds only package folders (confirmed claims)" % d)
     # commit-only secrets must not leave private/
@@ -844,7 +844,7 @@ def main(argv=None):
         wd = a.workdir2 or a.workdir
         check_package(c, a.package, os.path.abspath(wd) if wd else None, execute=not a.no_exec, timeout=a.timeout)
     elif a.workdir:
-        check_workspace(c, a.workdir, a.run, a.setup, execute=not a.no_exec)
+        check_workspace(c, a.workdir, a.run, a.setup, execute=not a.no_exec, timeout=a.timeout)
     else:
         ap.print_help()
         return 2
