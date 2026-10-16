@@ -449,6 +449,8 @@ def _run_checks(root, timeout):
         return r.returncode, r.stdout.decode("utf-8", "replace")
     except subprocess.TimeoutExpired:
         return -1, "TIMEOUT"
+    except OSError as e:
+        return -1, "could not run checker: %s" % e
 
 
 def run_own_checker(c, pkg, label, timeout):
@@ -485,8 +487,12 @@ def run_own_checker(c, pkg, label, timeout):
         rc2, out2 = _run_checks(bad, timeout)
         if rc2 == 0 and re.search(r"\bPASS\b", last_nonempty(out2)):
             c.warn("%s: the checker still printed PASS after one digit of the object was changed; make sure it really checks the object" % label)
-        else:
+        elif rc2 is not None and rc2 > 0 and last_nonempty(out2) == "FAIL":
+            # SUBMIT.md defines terminal PASS/FAIL. Negative statuses are
+            # signals or our execution-error sentinel, not protocol rejection.
             c.ok("%s: a corrupted copy of the object is rejected" % label)
+        else:
+            c.warn("%s: corrupted-copy check is inconclusive (exit %s); no semantic rejection was established" % (label, rc2))
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 
